@@ -1,0 +1,82 @@
+{% extends 'layouts/container.html' %}
+{% import "macros/_menu.html" as menu %}
+{% import "macros/_modal.html" as modal %}
+{% block title %}Manage documents{% endblock title %}
+
+{% block nav_items %}
+    {{ menu.set_macro(project_id) }}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="/project/{{project_id}}/manage_documents/import_documents"
+                      enctype="multipart/form-data">
+                    <div class="form-group">
+                        <br>
+                        <label for="inputFile" class="label-input-file"><i class="fa fa-file-code"></i> Import XML (TEI or
+                            EAD required)</label>
+                        <hr>
+                        <input type="file" name="inputFile[]" class="form-control-file" multiple="">
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <hr>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <br>
+                <div class="container">
+                    <p class="input-files-list"><i class="fa fa-folder-open folder-open-filesinput"></i> {{ documents |
+                    length }} documents already upload</p>
+                    {% if documents | length > 1 %}
+                        <div>
+                            {{ modal.modal_btn(
+                            "#Delete-all-documents-"+project_id|string,
+                            "fa fa-trash-alt",
+                            "Delete all documents",
+                                    "danger") }}
+                            {{ modal.modal_box(
+                            "Delete-all-documents-"+project_id | string,
+                            "Delete-All-Documents-ModalLabel",
+                            "Remove all documents",
+                            url_for("remove_documents", project_id=project_id),
+                            "Are you sure remove all documents from project ?",
+                            "remove_all_documents",
+                            "remove_all_documents",
+                            "True",
+                            "Delete") }}
+                        </div>
+                    {% endif %}
+                    <br>
+                    <ul class="list-inputfiles-already-load">
+                        {% for document in documents %}
+                            <div>
+                                <label for="remove_document"><span class="material-icons">article</span> {{
+                                        document.filename
+                                        }}</label>
+                                {{ modal.modal_btn(
+                                "#Delete-document-"+document.id|string,
+                                "fa fa-trash-alt",
+                                "",
+                                "danger") }}
+                                {{ modal.modal_box(
+                                "Delete-document-"+document.id | string,
+                                "Delete-Document-ModalLabel",
+                                "Remove document",
+                                url_for("remove_document", project_id=project_id),
+                                "Are you sure delete document : " + document.filename + " ?",
+                                "remove_document",
+                                "remove_document",
+                                document.id,
+                                "Delete") }}
+                            </div>
+                            <br>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

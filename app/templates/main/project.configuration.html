@@ -1,0 +1,135 @@
+{% extends 'layouts/container.html' %}
+{% import "macros/_menu.html" as menu %}
+{% import "macros/_modal.html" as modal  %}
+
+{% block nav_items %}
+    {{ menu.set_macro(project.id) }}
+{% endblock %}
+
+
+{% block metacontent %}
+    <div class="col-sm-12 offset-2 position-absolute mt-5 metacontent-container">
+        <h1><i class="fa fa-history"></i> Actual configuration</h1>
+        <hr>
+        <h5><i class="fa fa-robot"></i> Ner recommender profile</h5>
+        <h6>Language :</h6>
+        <p id="recommender-language-field"></p>
+        <h6>Ner model name :</h6>
+        <p id="recommender-model-name-field"></p>
+        <h6>Model tags :</h6>
+        <ul id="actual-mapping-tagset"></ul>
+        {% if project.is_config_ner_valid %}
+            <div id="ner_perf_gauge" class="plot"></div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    <span id="project_{{ project.id }}" class="project_id"></span>
+    <div class="container-fluid">
+        <div class="col-9 offset-2 mt-5">
+            <!-- if lot of options create a scroll bar here : -->
+            <!-- <div style="overflow:scroll; height:900px; width:1800px;"> -->
+            <form id="ner-recommender-form">
+                <h2 class="title-ner-recommender"> <input id="activate-settings-ner-recommenders" class="activate-ner-recommender-checkbox" type="checkbox" onchange="ChangeNerModelSettingsContainer(this)"> NER Recommenders
+                    {% if project.is_config_ner_valid %}<i id="state-ner-recommender" class="fa fa-check"></i>{% else %}<i id="state-ner-recommender" class="fa fa-times"></i>{% endif %}
+                </h2>
+                <div id="ner-recommenders-settings">
+                    <h3><i class="fa fa-globe"></i> Model Language (Required)</h3>
+                    <label for="langs_spacy_available">Choose a language in list (for more details on lang labels, check <a href="https://spacy.io/usage/models#languages" target="_blank">Language SpaCy documentation</a>) : </label><br>
+                    <select id="langs_spacy_available" name="lang_spacy"></select>
+                    <!--
+                    <input class="check check-language" type="checkbox" name="language" value="fr" checked> fr
+                    <input class="check check-language" type="checkbox" name="language" value="en"> en
+                     -->
+                    <br>
+                    <br>
+                    <!-- Experimental part if new NER framework exist
+                    <h3> NER Framework</h3>
+                    <input class="check" type="checkbox" name="framework_ner" value="spacy"> <img style="height: 80px; width: 80px" src="https://upload.wikimedia.org/wikipedia/commons/8/88/SpaCy_logo.svg">
+                    <input class="check" type="checkbox" name="framework_ner" value="flair"> <img style="height: 60px; width: 60px" src="https://raw.githubusercontent.com/flairNLP/flair/d20c3fd07474e6103780fbe2b65302871f8db33d/resources/docs/flair_logo_2020.svg">
+                    <br>
+                    <br>-->
+                    <h3><i class="fa fa-cog"></i> NER model (Required)</h3>
+                    <label for="model_type_list">Choose a model in list according to the previous language (use a custom spaCy model or check available <a href="https://spacy.io/models" target="_blank">trained models & pipelines</a>) : </label><br>
+                    <select id="model_type_list" name="model_type"></select>
+                    <br>
+                    <br>
+                </div>
+            </form>
+            <button id="btn-confirm-ner-recommender" type="submit"  name="submit" class="btn btn-outline-primary" {% if mappings | length > 0 %}data-toggle="modal" data-target="#Warning-Modal-NER-Recommender"{% else %}onclick="sendNerRecommenderConfiguration()"{% endif %}>
+                <i class="fa fa-save"></i> Save
+            </button>
+            <hr>
+            {{ modal.modal_box(
+                    "Warning-Modal-NER-Recommender",
+                    "Warning-Modal-NER-Recommender-label",
+                    "Warning !",
+                    "",
+                    "You try to apply a new ner recommender on already annotated documents.</p><p>This will result in <b>rewriting the current mapping</b> and <b>removing all annotations</b>. It may be better to create a new project to apply new configuration.</p><p>Are you sure to continue?",
+                    "",
+                    "apply-recommender-anyway",
+                    "True",
+                    "Save & Continue") }}
+            <h2>Annotation mapping</h2>
+            <table id="table_mapping" class="table table-bordered table-hover">
+                <thead>
+                <tr class="table-secondary">
+                    <th scope="col">NER label</th>
+                    <th scope="col">Prefered Index label</th>
+                    <th scope="col">Color</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for mapping in mappings %}
+                    <tr class="table-info" id="mapping_{{mapping.id}}">
+                        <td>
+                            <input id="nerLabel_{{mapping.id}}" class="ner-model-label-input" type="text" name="NerLabel" value="{{ mapping.label }}" autocomplete='off' readonly>
+                        </td>
+                        <td>
+                            <input id="prefNerLabel_{{mapping.id}}" type="text" name="NerPrefLabel"
+                                   value="{{ mapping.pref_label }}" autocomplete='off'>
+                        </td>
+                        <td>
+                            <input id="color_{{mapping.id}}" name="tableColor" type="color" value="{{mapping.color}}" autocomplete='off'>
+                        </td>
+                        <td><button id="saveModificationTable_{{mapping.id}}" type="button" name="saveModificationTable" class="btnSavePairLabel btn btn-success" value="{{mapping.id}}"
+                                    title="Save modifications on map item" onclick="save_pair_ner_label(this)"><i
+                                class="fa fa-save"></i></button></td>
+                        <td><button type="button" class="btnRemovePairLabel btn btn-danger" value="{{ mapping.id }}"
+                                    title="Remove map item" onclick="remove_pair_ner_label(this)"><i
+                                class="fa fa-trash-alt"></i></button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <h5>Add new pair to mapping scope : </h5>
+            <hr>
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="NewNerLabel" class="sr-only">NewNerLabel</label>
+                    <input type="text" class="form-control" id="NewNerLabel" placeholder="New ner label" autocomplete='off' required>
+                    <div id="invalidFeedbackNerLabel" class="invalid-feedback"></div>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="NewPrefNerLabel" class="sr-only">NewPrefNerLabel</label>
+                    <input type="text" class="form-control" id="NewPrefNerLabel" placeholder="New prefered label" autocomplete='off' required>
+                    <div id="invalidFeedbackPrefNerLabel" class="invalid-feedback"></div>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="color" class="form-control-color" id="NewColorPair" autocomplete='off' required>
+                </div>
+                <input type="button" class="btnSaveNewPairLabel btn btn-success mb-2" title="Add new pair"
+                       value="add new item" onclick="new_pair_ner_label('{{project.id}}')">
+            </form>
+            <hr>
+        </div>
+        <br>
+    </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/configuration_requests.min.js')}}"></script>
+{% endblock script %}

@@ -1,0 +1,93 @@
+{% extends 'layouts/container.html' %}
+{% import "macros/_navigation.html" as nav %}
+{% import "macros/_menu.html" as menu %}
+
+{% block title %}Workflow{% endblock title %}
+
+{% block nav_items %}
+    {{ menu.set_macro(project.id) }}
+{% endblock %}
+
+{% block metacontent %}
+    <div class="col-sm-12 offset-2 position-absolute mt-5 metacontent-container" style="overflow: auto !important; max-height: 85%">
+        <h1>{{ project.project_name }}</h1>
+        <br>
+        <fieldset class="fieldset_info">
+            <legend class="legend_info">Configuration state</legend>
+            <div>
+                <p>
+                    <b>NER recommender: </b>
+                    {% if project.is_config_ner_valid %}
+                        <i class="fa fa-check-circle"></i>
+                    {% else %}
+                        <i class="fa fa-times-circle"></i>
+                    {% endif %}
+                </p>
+            </div>
+        </fieldset>
+    <br>
+    <div class="btn-toolbar pull-right">
+    <button id="edit-description" type="button" class="btn btn-sm btn-primary ">edit description <i class="fa-brands fa-markdown"></i></button>
+        <button id="save-description" type="button" class="btn btn-sm btn-success" style="display: none">save description</button>
+    </div>
+    <br>
+    <br>
+        <div id="project-description-workflow">{{ project.description }}</div>
+    <br>
+        <div id='chart'></div>
+        <br>
+    </div>
+{% endblock metacontent %}
+
+{% block content %}
+    <span id="{{ project.id }}" class="global_project_id"></span>
+    {{ nav.corpora_list(documents, project) }}
+{% endblock content %}
+
+{% block script %}
+    <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename="js/project.workflow.min.js") }}"></script>
+    <script type="text/javascript">
+        const projectID                  = document.querySelector(".global_project_id").id;
+        const projectDescriptionWorkflow = document.querySelector("#project-description-workflow");
+        const descriptionEditBtn         = document.querySelector("#edit-description");
+        const descriptionSaveBtn         = document.querySelector("#save-description");
+
+        showdown.setFlavor('github');
+        const converter = new showdown.Converter();
+
+        function render_markdown(text) {
+            return converter.makeHtml(text);
+        }
+
+
+        let text = projectDescriptionWorkflow.textContent;
+        projectDescriptionWorkflow.innerHTML = render_markdown(text);
+
+        descriptionEditBtn.addEventListener('click', function(){
+            descriptionEditBtn.style['display'] = 'none';
+            descriptionSaveBtn.style['display'] = '';
+            let textArea = document.createElement('textarea');
+            textArea.setAttribute('cols', '55')
+            textArea.innerHTML = text;
+            projectDescriptionWorkflow.parentNode.replaceChild(textArea, projectDescriptionWorkflow)
+            descriptionSaveBtn.addEventListener('click', function(){
+            let data = {new_description:textArea.value};
+            fetch('/save_description/'+projectID, {
+            method  :"POST",
+            headers : new Headers({"Content-Type" : "application/json"}),
+            body    : JSON.stringify(data)
+        }).then(function () {
+                 document.location.reload();
+            })
+        });
+
+        });
+
+
+
+
+
+    </script>
+{% endblock script %}

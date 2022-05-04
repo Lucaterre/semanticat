@@ -1,0 +1,23 @@
+{% macro set_macro(project_id) %}
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="nav-link" href="{{ url_for('index') }}"><i class="fa fa-folder"></i> New/Edit
+                        Project(s)</a>
+                    <a class="nav-link" href="{{ url_for('project', project_id=project_id) }}"><i
+                            class="fa fa-home" aria-hidden="true"></i> Project workflow</a>
+                    <a class="nav-link" href="{{ url_for('manage_documents', project_id=project_id) }}"><i
+                            class="fa fa-file"></i> Manage document(s)</a>
+                    <a class="nav-link" href="{{ url_for('configuration', project_id=project_id) }}"><i
+                            class="fa fa-tools"></i> Configuration</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+{% endmacro %}

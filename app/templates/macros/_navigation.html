@@ -1,0 +1,208 @@
+{% import "macros/_modal.html" as modal %}
+{% macro project_list(projects) %}
+    <br>
+    <div class="col">
+        <div class="spinner-grow text-primary" role="status"></div>
+        {{ modal.modal_btn(
+                "#modal-project-edition",
+                "fa fa-folder-plus",
+                " Create a new project ",
+                "info") }}
+    </div>
+    <div class="col">
+        {{ modal.modal_project_initialisation() }}
+        <ul class="list-group list-group-flush">
+            <h3 class="list-group-item bg-dark text-white list-projects-navigation">Projects</h3>
+            <div class="overflow-auto project-item-container">
+                {% for project in projects %}
+                    <div class="list-group-item list-group-item-action ">
+                        <div class="row">
+                            <div class="col">
+                        <span class="title">
+                            <strong>{{ project.project_name }}</strong>
+                        </span>
+                                <br>
+                                <span class="project-descriptor">
+                            <p>{{project.date_time}}</p>
+                        </span>
+                            </div>
+                            <div class="col">
+                                <div class="btn-toolbar pull-right">
+                                    {{ modal.modal_btn(
+                                            "#Delete-all-project-"+project.id|string,
+                                            "fa fa-folder-minus",
+                                            "Clear",
+                                            "danger") }}
+                                    <a class="btn btn-success mr-1" href="{{ url_for('project', project_id=project.id) }}"><i
+                                            class="fa fa-folder-open"></i> Open</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ modal.modal_box(
+                            "Delete-all-project-"+project.id | string,
+                            "Delete-All-Project-ModalLabel",
+                            "Remove Project : "+ project.project_name,
+                            url_for('remove_project', project_id=project.id),
+                            "Are you sure remove project "+ project.project_name + " with all documents ?",
+                            "remove_all_documents",
+                            "remove_all_project",
+                            "True",
+                            "Delete") }}
+                {% endfor %}
+            </div>
+        </ul>
+    </div>
+{% endmacro %}
+
+{% macro corpora_list(docs, project) %}
+    <div class="col-11 offset-1 mt-5">
+        <ul class="list-group list-group-flush">
+            <h3 class="list-group-item bg-dark text-white list-corpora-document-item">{{docs | length }} Documents</h3>
+            <div class="col">
+                <br>
+                <div class="btn-toolbar pull-left">
+                    {# Create a variables to control state of documents to apply possible batch #}
+                    {% set total_docs_parse = namespace(items=0) %}
+                    {% set ids_docs_parse   = [] %}
+                    {% set total_docs_ner   = namespace(items=0) %}
+                    {% set ids_docs_ner     = [] %}
+                    {% for doc in docs %}
+                        {% if doc.is_parse == False %}
+                            {{ ids_docs_parse.append(doc.id) | d('', true) }}
+                            {% set total_docs_parse.items = total_docs_parse.items + 1  %}
+                        {% endif %}
+                        {% if doc.is_ner_applied == False and doc.is_parse == True %}
+                            {{ ids_docs_ner.append(doc.id) | d('', true) }}
+                            {% set total_docs_ner.items = total_docs_ner.items + 1  %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if total_docs_parse.items  > 0 %}
+                        <br>
+                        <button id="parse_documents_batch" name="parse_documents" type="submit" class="btn btn-primary" onclick="run_batch_parsing(this, {{project.id}}, {{ ids_docs_parse }})"><i
+                                class="fa fa-play-circle"></i> Parse All</button>
+                    {% endif %}
+                    {% if total_docs_ner.items  > 0 and total_docs_parse.items < docs | length %}
+                        <br>
+                        <button id="ner_documents_batch" name="ner_documents" type="submit" class="btn btn-primary" onclick="run_batch_ner(this, {{project.id}}, {{ ids_docs_ner }})"><i
+                                class="fa fa-play-circle"></i> Apply NER on all</button>
+                    {% endif %}
+                </div>
+            </div>
+            <div>
+                <div class="progress progress-batch" style="width: 80%; height: 30px; margin:
+                                               10px; background-color: #393c4b; display: None">
+                    <div class="progress-bar progress-bar-striped" id="progressbar-component-progress-batch"
+                         role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                         style="width: 0%">
+                        <span class="pbar progress-bar-label-batch">0%</span>
+                    </div>
+                </div>
+                <!-- Document items -->
+                <div class="overflow-auto document-item-container">
+                    {% for doc in docs %}
+                        <li class="list-group-item px-0">
+                            <a class="btn collapsed btn_expand_doc" data-toggle="collapse"
+                               href="#collapseExample{{ doc.id }}" role="button" aria-expanded="true"
+                               aria-controls="collapseExample{{ doc.id }}">
+                                <div style="text-align: center">
+                                    <p>
+                                        {% if doc.schema == "tei" %}<img alt='tei_file_logo' src="{{ url_for('static', filename="images/tei_file_icon.png") }}" height="50px" width="40px">{% endif %}
+                                        {% if doc.schema == "ead" %}<img alt='ead_file_logo' src="{{ url_for('static', filename="images/ead_file_icon.png") }}" height="50px" width="40px">{% endif %}
+                                        <b>{{ doc.filename }}</b>{% if doc.edited_at != "" %} | <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                        Last edited : {{ doc.edited_at }}{% endif %}
+                                    </p><span class="mr-3 a_doc"></span>
+                                </div>
+                            </a>
+                            <div class="collapse show" id="collapseExample{{ doc.id }}">
+                                <div class="card-body mt-2">
+                                    {#
+                                     #
+                                     # Flow templates : parse ; ner ; nel ; export
+                                     #
+                                     #}
+                                    {% if doc.is_parse == False and doc.is_ner_applied == False %}
+
+                                        <button name="all_parse_{{ doc.id }}" type="submit" class="btn btn-primary btn-progress"
+                                                value="parse,{{doc.id}},{{project.id}}" onclick="run_parse({{project.id}}, {{doc.id}})"><i class="fa fa-play-circle"></i> Parse &
+                                            Extract</button>
+                                    {% endif %}
+                                    {% if doc.is_parse == True %}
+
+                                        <button name="all_ner_{{ doc.id }}"
+                                                type="submit"
+                                                class="btn btn-primary-ner btn-primary
+                                                {% if doc.is_ner_applied == True %}
+                                                btn-success
+                                                {% else %}
+                                                {% if project.is_config_ner_valid == 1 %}
+                                                btn-progress
+                                                {% else %}
+                                                btn-danger
+                                                {% endif %}
+                                                {% endif %}"
+                                                {% if project.is_config_ner_valid == 0 %}
+                                                data-toggle="tooltip" title="You need to configure NER settings. Go to [MENU] > [CONFIGURATION]"
+                                                {% endif %}
+                                                {% if project.is_config_ner_valid == 1 and doc.is_ner_applied == True %}
+                                                data-toggle="modal" data-target="#modal-warning-ner-{{ doc.id }}"
+                                                {% endif %}
+                                                {% if project.is_config_ner_valid == 1 and doc.is_ner_applied == False  %}
+                                                onclick="run_ner({{project.id}}, {{doc.id}})"
+                                                {% endif %}
+                                                value="{% if project.is_config_ner_valid == 1 %}ner,{{doc.id}},{{project.id}}{% else %}ner_disable{% endif %}"><i
+                                                class="fa fa-play-circle"></i> Launch
+                                            NER</button>
+                                        {{ modal.modal_warning_retry_ner(project.id, doc.id) }}
+                                        <i class="fa fa-chevron-right"></i>
+                                        <button type="button" class="btn btn-outline-dark" onclick="window.location.href='{{ url_for('workbase_ner', project_id=project.id, doc_id=doc.id) }}';"><i class="fa fa-highlighter"></i>
+                                            Correct named entities</button>
+
+
+                                        <i class="fa fa-chevron-right"></i>
+                                        {#% if doc.is_nel_applied == False %#}
+                                           <!-- <a class="btn btn-primary" href="{#{
+                                                    url_for('nel', project_id=project.id, doc_id=doc.id) }#}"><i
+                                                    class="fa fa-play-circle" style="font-size: 1.30em;"></i> Launch
+                                                Linking</a>
+                                            <i class="fa fa-chevron-right"></i>-->
+                                        {#%  elif doc.is_nel_applied %#}
+                                          <!--  <a class="btn btn-outline-dark" href="#"><i class="fa fa-spider-web" style="font-size: 1.30em; color:  #2cb23e ;"></i>
+                                                Correct linking</a>
+                                            <i class="fa fa-chevron-right"></i>-->
+                                        {#% endif %#}
+
+                                        {{ modal.modal_btn(
+                                                "#ExporterModal-"+doc.id|string,
+                                                "fa fa-file-export file-export-workflow",
+                                                "Export document",
+                                                "",
+                                                "export-doc-"+doc.id|string,
+                                                "btn-outline-dark btn-exporter"
+                                                ) }}
+                                        {{ modal.modal_document_exporter(project.id, doc.id, doc.schema) }}
+                                        </div>
+                                        </div>
+                                        <div class="progress progress-ner-alone progress-{{doc.id}}" style="width: 750px; height: 22px; margin:
+                                                10px; display: none">
+                                            <div class="progress-bar progress-bar-striped" id="progressbar-component-{{doc.id}}"
+                                                 role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 0%">
+                                                <span class="pbar progress-bar-label-{{doc.id}}">0%</span>
+                                            </div>
+
+                                        </div>
+                                    {% endif %}
+
+
+
+                        </li>
+                    {% endfor %}
+                </div>
+            </div>
+        </ul>
+    </div>
+{% endmacro %}
+
+

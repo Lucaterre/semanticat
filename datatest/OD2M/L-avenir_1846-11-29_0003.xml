@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title> L-avenir_1846-11-29_0003 </title>
+    <editor> Manuela Martini </editor>
+    <respStmt>
+     <name> Laurie Vanneau </name>
+     <resp> correction </resp>
+    </respStmt>
+    <respStmt>
+     <name> Marie Lauricella </name>
+     <resp> collecte </resp>
+    </respStmt>
+    <respStmt>
+     <name> Margot Magguili </name>
+     <resp> collecte </resp>
+    </respStmt>
+    <respStmt>
+     <name> Alix Chagué </name>
+     <resp> collecte, transcription, correction </resp>
+    </respStmt>
+    <respStmt>
+     <name> Anaïs Chambat </name>
+     <resp> édition </resp>
+    </respStmt>
+   </titleStmt>
+   <publicationStmt>
+    <p> ANR Time-Us(2017-2021) </p>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     <idno type="Numelyo"> BML_01PER0030210727 </idno>
+    </p>
+    <p type="published"> publié le <date when-iso="1846-11-29"> 1846-11-29 </date>
+    </p>
+    <p>
+     <idno type="num_journal"> 13 </idno>
+    </p>
+    <p>
+     <idno type="num_year"> 0 </idno>
+    </p>
+    <p>
+     <idno type="URI"> http://collections.bm-lyon.fr/BML_01PER0030210727 </idno>
+    </p>
+    <p type="hearing"> audience du <date when-iso="1846-11-18"> 1846-11-18 </date>
+    </p>
+   </sourceDesc>
+  </fileDesc>
+ </teiHeader>
+ <text ana="L'Avenir_1846-11-18">
+  <milestone ana="PH-Lyon" unit="audience"/>
+  <pb n="3"/>
+  <body>
+   <p> Audience du 18 novembre. — Présidence de M. Bertrand. </p>
+   <p> Nugue se plaint de ce que Thibaudier aurait fait délivrer un livret à une apprentie avant
+    l'époque fixée par le Conseil lors de la résiliation de l'acte d'apprentissage commencé chez
+    Nugue. Le Conseil maintient le livret parce qu'aucune réserve n'avait été stipulée en faveur de
+    Nugue. </p>
+   <p> — Bouge demande à Baril une indemnité à raison de la mauvaise confection d'une pièce et
+    explique que cette mauvaise confection provient de l'emploi d'un remis défectueux. Cette affaire
+    a été renvoyée devant arbitres. </p>
+   <p> — Julifier, que par erreur nous avons, dans notre dernier numéro, désigné sous le nom de
+    Repronier, refuse de s'en tenir à la décision des experts qui ne lui ont accordé que vingt fr.
+    d'indemnité, contre Girel, pour avoir confectionné des échantillons — Après les explications des
+    parties le Conseil maintient la décision des experts. </p>
+   <p> — Drevet et Garcin demandent l'autorisation de </p>
+   <p> crire sur le livret d'OIéon, chef d'atelier, une créance de soixante francs qui leur est
+    due.—Cette autorisation leur est accordée </p>
+   <p> — Ve Perrin réclame à Teillard le paiement de la façon d'une pièce fabriquée pour lui, et que
+    mal à propos il a payée à Chambard, l'un des ouvriers employés par elle. Teillard prétend que
+    Chambard avait son métier pour maître chez Mme Perrin. —Le Conseil considérant que la loi ne
+    reconnaît pas deux maîtres dans le même atelier, condamne Teillard à payer à la Ve Perrin le
+    prix de façon qui lui est dû , autorise Teillard à exercer son recours contre Chambard , et à
+    faire inscrire sa créance sur le livret du chef d'alelier qui occupe Chambard. </p>
+  </body>
+ </text>
+</TEI>

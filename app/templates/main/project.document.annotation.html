@@ -1,0 +1,123 @@
+{% extends 'layouts/container.html' %}
+{% import "macros/_menu.html" as menu %}
+{% import "macros/_modal.html" as modal %}
+
+{% block add_css %}
+    <!-- recogito CSS -->
+    <link href="{{ url_for('static', filename="css/recogito.min.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block nav_items %}
+    {{ menu.set_macro(project_id) }}
+{% endblock %}
+
+{% block metacontent %}
+    <div class="col-sm-12 offset-1  mt-5 metacontent-container">
+        <div id="list-info-container">
+            <div class="row">
+                <div class="col">
+                    <h2><i class="fa fa-tag"></i><span id="total-annotation">0</span> annotations</h2>
+                </div>
+                    <div id="spinner-meta-annotation-loading" style="display: None" class="spinner-border text-dark m-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+            </div>
+            <hr>
+            <div id="number-annotations">
+                <input type="text" id="search-input"  placeholder="Search for annotations..">
+                <input id="clear-input-text" type="submit" value="clear">
+                <i class="fa fa-question" title="Query mention in all annotations. To restore list, click on clear or annotate the text."></i>
+                <br>
+                <br>
+                {% for label, color in mapping.items() %}
+                    <span id="entityLabel" class="{{ label }}">{{label}} <i class="fa fa-angle-down"></i></span>
+                    <span id="entityLabelCount-{{ label }}">0</span>
+                    <ul id="list-{{ label }}" class="list-group list-label" style="width:auto; max-height:400px; overflow-y:auto; padding:0; margin:0;">
+                        {% for mention, count in stats_mention[label] %}
+                            <li id="list-{{ label }}-{{ mention }}" class="list-state list-group-item d-flex justify-content-between align-items-center">
+                                <button id="remove/$-$/{{ label }}/$-$/{{ mention }}" class="btn btn-danger btn-sm btn-remove"><i class="fa fa-times"></i></button>
+                                {{ mention }}
+                                <span id="list-badge-{{ label }}-{{ mention }}" class="badge">{{ count }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <br>
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-5 offset-1">
+            <div class="col-11">
+                <span id="project_{{ project_id }}" class="project_id"></span>
+                <span id="document_{{ document_id }}" class="document_id"></span>
+                <h2><i class="fa fa-file"></i> Document : {{ document.filename }}</h2>
+                {% if format == "ead" %}
+                    <div>
+                        <nav aria-label="research-pagination">
+                            <ul class="pagination">
+                                {% for page in sentences.iter_pages() %}
+                                    {% if page %}
+                                        {% if page != sentences.page %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="{{url_for('workbase_ner', doc_id=document_id, project_id=project_id,  page=page) }}">{{page}}</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item active disabled">
+                                                <a id="actual_page" class="page-link">{{page}} <span class="sr-only"></span></a>
+                                            </li>
+                                        {% endif %}
+                                    {% else %}
+                                        <li class="page-item disabled">
+                                            <a class="page-link">...</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                    </div>
+                {% endif %}
+                <hr>
+                <div class="selection"  id="text">{{ text | safe }}</div>
+                <div class="justify-content-center">
+                    <div id="spinner-load" class="spinner-border text-dark spinner-annotation-wait" role="status"></div>
+                </div>
+            </div>
+
+            <div class="col" id="options-selector">
+                <br>
+                <br>
+                <button class="btn btn-dark" id="zoomIn" title="zoom in"><i title="zoom in" class="fa fa-search-plus"></i></button>
+                <br>
+                <button class="btn btn-dark" id="zoomOut" title="zoom out"><i title="zoom out" class="fa fa-search-minus"></i></button>
+                <br>
+                <button class="btn btn-dark" id="import_json"><i title="import annotations in JSON (W3C annotation data format)" class="fa fa-file-export"></i></button>
+                <input id="json-input" type="file" name="name" style="display: none;" />
+                <br>
+                <!--<button class="btn btn-danger" id="remove-all-annotations"><i title="delete all annotations" class="fa fa-trash-alt"></i></button>-->
+                <button class="btn btn-danger" data-target="#modal-remove-all-annotations" data-toggle="modal"><i title="delete all annotations" class="fa fa-trash-alt"></i></button>
+            </div>
+            {{ modal.modal_box("modal-remove-all-annotations",
+                        "modal-remove-all-annotations-label",
+                        "Remove all annotations",
+                        "",
+                        "Are you sure remove all annotations from document " + document.filename + " ?",
+                        "remove-all-annotations",
+                        "remove-all-annotations",
+                        "",
+                        "Continue") }}
+        </div>
+    </div>
+    <br>
+{% endblock content %}
+
+{% block script %}
+    <!-- recogito JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename="js/recogito/recogito.min.js") }}"></script>
+    <!-- recogito custom JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename="js/recogito-custom/recogito.custom.js") }}"></script>
+{% endblock script %}

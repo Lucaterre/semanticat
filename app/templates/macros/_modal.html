@@ -1,0 +1,155 @@
+{# Gerneric modal btn #}
+{% macro modal_btn(data_target, icon, msg, type, custom_id="", custom_class="") %}
+    <button {% if custom_id|length != 0 %}id="{{ custom_id }}"{% endif %} type="button" class="btn btn-{{ type }} {{ custom_class }}" data-toggle="modal" data-target="{{data_target}}">
+        <i class='{{ icon }}'></i> {{ msg }}
+    </button>
+{% endmacro %}
+
+{# Generic modal box #}
+{% macro modal_box(id_general, aria_labelledby, modal_header_msg, action_form_url, modal_body_msg, btn_action_name, btn_action_id, btn_action_value, btn_action_msg, on_click_action="") %}
+    <div class="modal" id="{{ id_general }}" tabindex="-1" role="dialog" aria-labelledby="{{ aria_labelledby }}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>{{ modal_header_msg }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{action_form_url}}"
+                      enctype="multipart/form-data">
+                    <div class="modal-body">
+                        {{ modal_body_msg | safe }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger" name="{{ btn_action_name }}"
+                                id="{{ btn_action_id }}" value="{{ btn_action_value }}" onclick="{{ on_click_action }}">{{ btn_action_msg }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Specifics modals #}
+
+{# Project intialisation description #}
+{% macro modal_project_initialisation() %}
+    <div id="modal-project-edition" class="modal fade bd-example-modal-lg new_project_toogle" tabindex="-1" role="dialog"
+         aria-labelledby="Modal-label-project-initialisation" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">New Project</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <form method="POST" class="form_project_section">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-10">
+                                    <label>Title</label>
+                                    <br>
+                                    <input type="text" name="project_name">
+                                    <br>
+                                    <br>
+                                    <label for="project-description">Description <i class="fa-brands fa-markdown"></i></label>
+                                    <br>
+                                    <textarea id="project-description" name="project-description" cols="50"></textarea>
+                                    <br>
+                                    <br>
+                                    <div id="pre-markdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Warning retry NER #}
+{% macro modal_warning_retry_ner(project_id, document_id) %}
+    <div class="modal" id="modal-warning-ner-{{ document_id }}" tabindex="-1" role="dialog" aria-labelledby="nerWarningModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nerWarningLongTitle"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        Warning ! Replace annotations</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You try to apply the NER model again, this will replace your current annotations with new ones.
+                    Are you sure to continue?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button  type="button"
+                             class="btn btn-warning modal-warning-launch-ner-process" onclick="run_ner({{ project_id }}, {{ document_id }}, 1)">Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Document exporter #}
+{% macro modal_document_exporter(project_id, document_id, schema) %}
+    <div class="modal fade" id="ExporterModal-{{ document_id }}" tabindex="-1" role="dialog" aria-labelledby="ExporterModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    {% if schema == "ead" %}
+                        <h5 class="modal-title" id="ExporterModalLabel">Export XML EAD options</h5>
+                    {% elif schema == "tei" %}
+                        <h5 class="modal-title" id="ExporterModalLabel">Export XML TEI options</h5>
+                    {% endif %}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="form-export-{{ document_id }}" name="form_export" action="{{ url_for('export_enhanced', project_id=project_id, doc_id=document_id)}}" method="post">
+                    <div class="modal-body">
+                        <input type="radio" id="exportW3cAnnotations-{{ document_id }}"
+                               name="export_format" value="w3c_annotations" checked>
+                        <label for="exportW3cAnnotations">annotations in JSON (<a href="https://www.w3.org/TR/annotation-model/" target="_blank">W3C data model</a>)</label><br>
+                        {% if schema == "ead" %}
+                            <input type="radio" id="exportEadInline-{{ document_id }}"
+                                   name="export_format" value="inline_xslt" checked>
+                            <label for="exportEadInline">annotations inline</label><br>
+
+                            <input type="radio" id="exportEadControlaccess-{{ document_id }}"
+                                   name="export_format" value="ead_controlaccess">
+                            <label for="exportEadControlaccess">annotations to controlaccess level</label>
+                        {% elif schema == "tei" %}
+                            <input type="radio" id="exportTeiInlineOffsets-{{ document_id }}"
+                                   name="export_format" value="tei_inline_offsets" checked>
+                            <label for="exportTeiInlineOffsets">annotations inline (based on characters offsets)</label><br>
+
+                            <input type="radio" id="exportTeiInlineMatch-{{ document_id }}"
+                                   name="export_format" value="inline_xslt">
+                            <label for="exportTeiInlineMatch">annotations inline (based on surface form matching)</label>
+                        {% endif %}
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-confirm-export" onclick="loading_export({{ project_id }},{{document_id}})">Export</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

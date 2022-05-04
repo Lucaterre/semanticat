@@ -1,0 +1,10 @@
+{% extends 'layouts/container.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="col-9 offset-2 mt-5">
+            <h3><i class="fa-solid fa-circle-xmark"></i> Oh no! It seems that you got lost: this page doesn't exist...</h3>
+             <a href="{{url_for('index')}}"> <i class="fa-solid fa-arrow-right-to-bracket"></i> Go back to the main page.</a>
+        </div>
+    </div>
+{% endblock %}

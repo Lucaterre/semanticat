@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html' %}
+{% import "macros/_navigation.html" as nav %}
+{% import "macros/_menu.html" as menu %}
+
+{% block body %}
+
+    {#% block help_tool %#}{#% endblock %#}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid ">
+            {% include 'partials/_navbar_header.html' %}
+            {% block nav_items %}{% endblock %}
+            {% include 'partials/_navbar_server_actions.html'  %}
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container-fluid base-main-container">
+        <div class="row">
+            <!-- border-top-right-radius: 280px 60em; -->
+            <div class="col-3 base-main-metacontent-container">
+                {% block metacontent %}{% endblock %}
+            </div>
+            <div class="col base-main-view-container min-vh-100">
+                {% include 'partials/_flashes.html' %}
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    {% include 'partials/_footer.html' %}
+
+
+    <!-- additional JS scripts -->
+    {% block script %}{% endblock %}
+
+    <!-- rewrite this in single script -->
+    <script type="text/javascript" src="{{ url_for('static', filename="js/generic.js") }}"></script>
+
+{% endblock body %}

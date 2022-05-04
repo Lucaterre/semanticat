@@ -1,0 +1,42 @@
+{% extends 'layouts/container.html' %}
+{% import "macros/_navigation.html" as nav %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block metacontent %}
+    <div class="initial-description">
+        <br>
+        <br>
+        <br>
+        <h1>Welcome to Semantic<span class="moon-arobase-logo">@</span> !</h1>
+        <h3>Ready to enrich XML formats with semantic annotations</h3>
+        <br>
+        <h5><i class="fa fa-rocket icon-intro"></i> Create a new project or pick one in
+            list to start</h5>
+        <br>
+        {% if mode == "development" %}
+        <span style="color: yellow"><b>Mode</b> : {{ mode }}</span>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block content %}
+    {{ nav.project_list(projects) }}
+{% endblock content %}
+{% block script %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script type="text/javascript">
+        const projectDescriptionEdition = document.querySelector("#project-description");
+        const markdownRender            = document.querySelector("#pre-markdown");
+        showdown.setFlavor('github');
+        var converter = new showdown.Converter();
+
+
+        projectDescriptionEdition.addEventListener('keyup', function(){
+            let text = projectDescriptionEdition.value;
+            let html = converter.makeHtml(text);
+            markdownRender.innerHTML = html;
+        })
+
+
+    </script>
+{% endblock %}

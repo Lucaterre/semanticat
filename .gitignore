@@ -1,0 +1,32 @@
+# IDEs, notebooks
+.vscode/*
+.idea/*
+ipynb_checkpoints/*
+
+# caches
+.pytest_cache/*
+
+# virtualenv
+venv/
+venvtest/
+
+# DB test
+app/db_config/semanticat_test.db
+app/db_config/semanticat_dev.db
+app/db_config/semanticat.db
+
+# NER models test
+app/instance_config/my_features/my_models/n4a_v1_lg_cnn_fr
+app/instance_config/my_features/my_models/v1_n4a
+
+
+# legacy, experimentals code
+app/stylesheet/*
+LEGACY/
+app/lib/linking_components/
+
+# dataset
+datatest/ead
+datatest/ehri
+datatest/reden_dataset
+datatest/text

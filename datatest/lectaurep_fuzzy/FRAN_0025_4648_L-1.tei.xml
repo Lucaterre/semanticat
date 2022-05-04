@@ -1,0 +1,2868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title xml:lang="fr">
+     FRAN_0025_4648_L-1.tei
+    </title>
+    <author>
+     Lectaurep
+    </author>
+    <funder>
+     Ministry of Higher Education, Research and Innovation
+    </funder>
+    <respStmt>
+     <resp>
+      Edited and encoded by
+     </resp>
+     <persName>
+      <forename>
+       Alix
+      </forename>
+      <surname>
+       Chagué
+      </surname>
+     </persName>
+    </respStmt>
+    <respStmt>
+     <resp>
+      Edited and encoded by
+     </resp>
+     <persName>
+      <forename>
+       Hugo
+      </forename>
+      <surname>
+       Scheithauer
+      </surname>
+     </persName>
+    </respStmt>
+    <respStmt>
+     <resp>
+      Transcription by
+     </resp>
+     <orgName>
+      Département du Minutier central des notaires de Paris
+     </orgName>
+    </respStmt>
+    <respStmt>
+     <resp>
+      Digitization by
+     </resp>
+     <orgName>
+      Archives nationales
+     </orgName>
+    </respStmt>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Lectaurep (Archives nationales, Inria)
+    </authority>
+    <availability>
+     <licence target="https://creativecommons.org/licenses/by/4.0/">
+      <p>
+       Distributed under a Creative Commons Attribution 4.0 International (CC BY 4.0)
+      </p>
+     </licence>
+    </availability>
+    <date when-iso="2020"/>
+   </publicationStmt>
+   <seriesStmt>
+    <title type="main">
+     Répertoires de notaires de Paris
+    </title>
+   </seriesStmt>
+   <sourceDesc>
+    <p/>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>
+     L'encodage de ce document s'est fait dans le cadre du projet LECTAUREP
+    </p>
+   </projectDesc>
+   <editorialDecl>
+    <correction>
+     <p xml:lang="fr">
+      Aucune correction
+     </p>
+    </correction>
+    <hyphenation eol="all" rend="sh">
+     <p>
+      Toutes les coupures de mots pour fin de ligne (indiquées principalement avec un tiretsimple) ont été conservées.
+     </p>
+    </hyphenation>
+   </editorialDecl>
+  </encodingDesc>
+  <revisionDesc>
+   <change when="2022-03-29T14:56:08.499352+00:00">
+    Creation
+   </change>
+   <change when="2022-03-29T14:56:08.499386+00:00">
+    Last change
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <sourceDoc>
+  <graphic height="4365px" url="FRAN_0025_4648_L-1" width="2996px" xml:id="FRAN_0025_4648_L-1"/>
+  <surfaceGrp facs="#FRAN_0025_4648_L-1">
+   <surface points="2787,276 2777,622 189,622 122,630 116,392 116,279 2725,270" type="header" xml:id="eSc_textblock_5d6930a3">
+    <zone points="2431,352 2439,323 2562,305 2581,327 2693,312 2701,360 2690,389 2650,407 2537,385 2504,414 2435,414" type="mask" xml:id="eSc_line_91d9a6ea">
+     <path points="2434,356 2702,363" type="baseline"/>
+     <line>
+      RELATION
+     </line>
+    </zone>
+    <zone points="520,392 527,341 633,327 655,345 702,331 728,345 764,327 800,349 957,331 1004,349 1012,400 1001,414 524,407" type="mask" xml:id="eSc_line_2bd23b41">
+     <path points="523,394 1015,401" type="baseline"/>
+     <line>
+      NATURE ET ESPÈCE
+     </line>
+    </zone>
+    <zone points="1161,392 1164,352 1194,327 1212,341 1270,327 1485,341 1521,327 1576,349 1627,334 2118,341 2224,323 2275,345 2286,392 2257,418 2206,429 2045,411 1933,411 1914,429 1616,418 1437,465 1412,440 1339,425 1292,436 1266,418 1164,414" type="mask" xml:id="eSc_line_1acbf82d">
+     <path points="1161,392 1612,389 2286,392" type="baseline"/>
+     <line>
+      NOMS, PRÉNOMS ET DOMICILES DES PARTIES
+     </line>
+    </zone>
+    <zone points="185,407 200,363 262,374 262,432 192,440" type="mask" xml:id="eSc_line_552007e6">
+     <path points="187,410 273,408" type="baseline"/>
+     <line>
+      N^OS
+     </line>
+    </zone>
+    <zone points="323,418 331,367 414,367 429,396 396,425 331,425" type="mask" xml:id="eSc_line_27a74dd1">
+     <path points="326,421 433,400" type="baseline"/>
+     <line>
+      DATES
+     </line>
+    </zone>
+    <zone points="2530,425 2526,392 2570,378 2584,411 2533,425" type="mask" xml:id="eSc_line_d5b43de3">
+     <path points="2532,428 2588,414" type="baseline"/>
+     <line>
+      1E
+     </line>
+    </zone>
+    <zone points="647,454 651,411 851,411 877,421 888,458 815,476 651,472" type="mask" xml:id="eSc_line_1fcb710a">
+     <path points="651,458 826,458 889,459" type="baseline"/>
+     <line>
+      DES ACTES :
+     </line>
+    </zone>
+    <zone points="2380,461 2384,403 2413,400 2446,421 2588,421 2679,396 2712,396 2722,458 2712,516 2617,534 2428,541 2384,520" type="mask" xml:id="eSc_line_c5c7b43e">
+     <path points="2381,465 2668,461 2725,459" type="baseline"/>
+     <line>
+      TERESIeMERt.
+     </line>
+    </zone>
+    <zone points="203,483 211,451 251,454 258,483 211,491" type="mask" xml:id="eSc_line_4b78b3c4">
+     <path points="206,485 261,485" type="baseline"/>
+     <line>
+      DU
+     </line>
+    </zone>
+    <zone points="349,476 364,447 404,476 396,494 356,501" type="mask" xml:id="eSc_line_6310d5f5">
+     <path points="353,479 405,479" type="baseline"/>
+     <line>
+      DE
+     </line>
+    </zone>
+    <zone points="145,549 171,501 225,520 302,476 313,545 298,560 149,556" type="mask" xml:id="eSc_line_b112df28">
+     <path points="146,550 316,549" type="baseline"/>
+     <line>
+      REPERTOIRE
+     </line>
+    </zone>
+    <zone points="327,538 338,494 393,516 425,509 414,585 385,582 371,560 331,560" type="mask" xml:id="eSc_line_24898bff">
+     <path points="331,541 431,553" type="baseline"/>
+     <line>
+      ACTES
+     </line>
+    </zone>
+    <zone points="1325,556 1328,505 1408,505 1423,520 1547,501 1565,516 1703,520 1747,498 1798,498 1816,516 1882,498 1914,516 2074,512 2111,494 2122,541 2085,574 2009,563 1860,578 1816,556 1718,582 1685,563 1594,582 1565,560 1416,574 1328,563" type="mask" xml:id="eSc_line_700c4929">
+     <path points="1327,557 2125,545" type="baseline"/>
+     <line>
+      INDICATIONS, SITUATIONS ET PRIX DES BIENS
+     </line>
+    </zone>
+    <zone points="487,578 491,545 564,534 698,534 713,574 684,592 491,592" type="mask" xml:id="eSc_line_6a553446">
+     <path points="488,579 582,571 714,576" type="baseline"/>
+     <line>
+      EN BREVETS
+     </line>
+    </zone>
+    <zone points="819,574 826,534 899,538 931,523 997,538 1015,520 1037,520 1048,571 1037,589 1001,592 822,585" type="mask" xml:id="eSc_line_0d2493a9">
+     <path points="820,578 946,571 1050,574" type="baseline"/>
+     <line>
+      EN MINUTES
+     </line>
+    </zone>
+    <zone points="2362,571 2369,538 2468,549 2475,571 2453,585 2369,582" type="mask" xml:id="eSc_line_ce1e02e0">
+     <path points="2366,572 2479,574" type="baseline"/>
+     <line>
+      DATES
+     </line>
+    </zone>
+    <zone points="2548,571 2581,534 2675,549 2682,571 2555,592" type="mask" xml:id="eSc_line_15c81c5d">
+     <path points="2550,573 2686,573" type="baseline"/>
+     <line>
+      DROITS
+     </line>
+    </zone>
+   </surface>
+   <surface points="317,654 302,4186 214,4215 101,4201 123,688 124,640" type="col_1" xml:id="eSc_textblock_d037242e">
+    <zone points="163,782 167,742 236,709 276,723 305,774 269,811 203,814 171,785" type="mask" xml:id="eSc_line_5864c2ee">
+     <path points="165,784 309,778" type="baseline"/>
+     <line>
+      296
+     </line>
+    </zone>
+    <zone points="163,854 182,807 265,811 302,854 273,898 171,883" type="mask" xml:id="eSc_line_c15e783f">
+     <path points="164,856 303,856" type="baseline"/>
+     <line>
+      297
+     </line>
+    </zone>
+    <zone points="156,942 163,894 251,891 302,898 309,945 298,1003 269,1003 247,982 160,989" type="mask" xml:id="eSc_line_060a7332">
+     <path points="157,944 312,947" type="baseline"/>
+     <line>
+      258
+     </line>
+    </zone>
+    <zone points="149,1047 185,989 287,1018 298,1040 291,1073 254,1087 156,1087" type="mask" xml:id="eSc_line_87ebb2f3">
+     <path points="152,1051 202,1050 302,1042" type="baseline"/>
+     <line>
+      299
+     </line>
+    </zone>
+    <zone points="156,1178 163,1127 262,1120 258,1218 225,1204 160,1218" type="mask" xml:id="eSc_line_ef667502">
+     <path points="157,1179 272,1183" type="baseline"/>
+     <line>
+      300
+     </line>
+    </zone>
+    <zone points="149,1269 200,1218 229,1218 269,1258 294,1262 273,1305 192,1316 156,1302" type="mask" xml:id="eSc_line_e7b3471d">
+     <path points="151,1273 298,1265" type="baseline"/>
+     <line>
+      301
+     </line>
+    </zone>
+    <zone points="156,1451 163,1393 291,1385 305,1440 258,1491 163,1469" type="mask" xml:id="eSc_line_1eca9959">
+     <path points="157,1453 218,1455 306,1442" type="baseline"/>
+     <line>
+      302
+     </line>
+    </zone>
+    <zone points="156,1655 156,1600 258,1585 265,1687 163,1684" type="mask" xml:id="eSc_line_ed57f255">
+     <path points="158,1656 207,1658 275,1647" type="baseline"/>
+     <line>
+      303
+     </line>
+    </zone>
+    <zone points="156,1826 160,1775 185,1767 254,1778 269,1818 262,1876 163,1858" type="mask" xml:id="eSc_line_718dc12d">
+     <path points="159,1828 273,1822" type="baseline"/>
+     <line>
+      304
+     </line>
+    </zone>
+    <zone points="160,2015 171,1953 273,1964 276,2044 189,2055 167,2040" type="mask" xml:id="eSc_line_14004d2d">
+     <path points="162,2018 218,2011 284,2012" type="baseline"/>
+     <line>
+      305
+     </line>
+    </zone>
+    <zone points="160,2175 167,2102 254,2102 254,2215 167,2197" type="mask" xml:id="eSc_line_1e7ea673">
+     <path points="163,2176 263,2178" type="baseline"/>
+     <line>
+      306
+     </line>
+    </zone>
+    <zone points="160,2269 160,2215 265,2207 280,2258 254,2309 171,2291" type="mask" xml:id="eSc_line_24317d8c">
+     <path points="163,2271 235,2262 282,2261" type="baseline"/>
+     <line>
+      307
+     </line>
+    </zone>
+    <zone points="156,2357 163,2320 229,2306 294,2324 302,2360 273,2389 160,2386" type="mask" xml:id="eSc_line_888092aa">
+     <path points="157,2360 304,2361" type="baseline"/>
+     <line>
+      308
+     </line>
+    </zone>
+    <zone points="163,2440 171,2404 265,2400 283,2408 291,2444 280,2484 167,2469" type="mask" xml:id="eSc_line_593a54c8">
+     <path points="164,2444 222,2444 292,2447" type="baseline"/>
+     <line>
+      309
+     </line>
+    </zone>
+    <zone points="185,2498 192,2469 240,2473 280,2498 273,2524 192,2509" type="mask" xml:id="eSc_line_c6eb19f0">
+     <path points="187,2502 281,2500" type="baseline"/>
+     <line>
+      310
+     </line>
+    </zone>
+    <zone points="174,2538 200,2506 258,2520 276,2542 240,2542 178,2593" type="mask" xml:id="eSc_line_5eb5f27c">
+     <path points="175,2542 279,2546" type="baseline"/>
+     <line>
+      311
+     </line>
+    </zone>
+    <zone points="185,2582 247,2542 273,2546 280,2582 207,2626 192,2619" type="mask" xml:id="eSc_line_9ab722d4">
+     <path points="187,2586 281,2584" type="baseline"/>
+     <line>
+      312
+     </line>
+    </zone>
+    <zone points="192,2633 236,2604 276,2629 269,2655 200,2655" type="mask" xml:id="eSc_line_48aa0c9e">
+     <path points="193,2636 279,2630" type="baseline"/>
+     <line>
+      715
+     </line>
+    </zone>
+    <zone points="178,2680 185,2648 211,2662 251,2651 269,2673 254,2702 211,2717 185,2702" type="mask" xml:id="eSc_line_5ddc82c1">
+     <path points="181,2681 273,2677" type="baseline"/>
+     <line>
+      314
+     </line>
+    </zone>
+    <zone points="178,2735 185,2709 214,2717 265,2695 316,2735 269,2768 203,2768 185,2749" type="mask" xml:id="eSc_line_e3a51323">
+     <path points="178,2735 316,2735" type="baseline"/>
+     <line>
+      315
+     </line>
+    </zone>
+    <zone points="182,2789 185,2753 251,2760 280,2786 269,2811 189,2804" type="mask" xml:id="eSc_line_4f486460">
+     <path points="183,2791 281,2789" type="baseline"/>
+     <line>
+      316
+     </line>
+    </zone>
+    <zone points="185,2840 189,2808 258,2811 287,2837 262,2859 192,2848" type="mask" xml:id="eSc_line_5c0719ff">
+     <path points="187,2841 289,2839" type="baseline"/>
+     <line>
+      317
+     </line>
+    </zone>
+    <zone points="192,2888 192,2840 287,2877 276,2928 200,2902" type="mask" xml:id="eSc_line_6fae3dc1">
+     <path points="193,2890 289,2879" type="baseline"/>
+     <line>
+      318
+     </line>
+    </zone>
+    <zone points="163,2946 185,2888 211,2913 269,2924 273,3019 167,2960" type="mask" xml:id="eSc_line_6d162ece">
+     <path points="166,2950 283,2946" type="baseline"/>
+     <line>
+      39
+     </line>
+    </zone>
+    <zone points="160,3080 163,3022 283,3048 294,3080 280,3102 163,3102" type="mask" xml:id="eSc_line_afc7955c">
+     <path points="161,3083 218,3088 298,3084" type="baseline"/>
+     <line>
+      320
+     </line>
+    </zone>
+    <zone points="189,3131 196,3106 214,3102 280,3113 287,3131 280,3160 196,3160" type="mask" xml:id="eSc_line_288530aa">
+     <path points="191,3135 289,3135" type="baseline"/>
+     <line>
+      321
+     </line>
+    </zone>
+    <zone points="160,3215 167,3164 251,3171 305,3215 298,3248 269,3273 167,3266" type="mask" xml:id="eSc_line_16075df1">
+     <path points="163,3219 309,3219" type="baseline"/>
+     <line>
+      322
+     </line>
+    </zone>
+    <zone points="156,3364 163,3324 283,3324 294,3357 287,3386 232,3411 163,3411" type="mask" xml:id="eSc_line_610763ea">
+     <path points="159,3366 230,3362 298,3361" type="baseline"/>
+     <line>
+      323
+     </line>
+    </zone>
+    <zone points="258,3390 320,3335 378,3368 316,3451 283,3470 243,3448 236,3419" type="mask" xml:id="eSc_line_cf5f512e">
+     <path points="259,3392 319,3452" type="baseline"/>
+     <line>
+      -
+     </line>
+    </zone>
+    <zone points="149,3564 160,3502 276,3517 280,3572 247,3622 218,3601 174,3612 152,3586" type="mask" xml:id="eSc_line_5907c0d6">
+     <path points="152,3566 203,3568 283,3575" type="baseline"/>
+     <line>
+      324
+     </line>
+    </zone>
+    <zone points="156,3702 160,3666 200,3644 273,3662 283,3702 214,3735 160,3728" type="mask" xml:id="eSc_line_7ca9d06e">
+     <path points="157,3703 222,3707 286,3706" type="baseline"/>
+     <line>
+      316
+     </line>
+    </zone>
+    <zone points="163,3775 171,3746 196,3739 262,3753 269,3775 258,3801 171,3797" type="mask" xml:id="eSc_line_69a56124">
+     <path points="165,3776 271,3778" type="baseline"/>
+     <line>
+      316
+     </line>
+    </zone>
+    <zone points="156,3903 160,3866 192,3852 287,3859 298,3892 294,3950 247,3975 163,3979" type="mask" xml:id="eSc_line_59c9681d">
+     <path points="157,3905 214,3899 300,3893" type="baseline"/>
+     <line>
+      327
+     </line>
+    </zone>
+    <zone points="145,4073 182,4023 291,4030 298,4073 291,4117 251,4124 152,4208" type="mask" xml:id="eSc_line_b2798c4c">
+     <path points="149,4074 302,4074" type="baseline"/>
+     <line>
+      38
+     </line>
+    </zone>
+   </surface>
+   <surface points="436,640 433,727 418,4186 320,4172 305,3910 310,652" type="col_2" xml:id="eSc_textblock_59e3475e">
+    <zone points="331,778 342,738 411,756 418,782 407,818 334,814" type="mask" xml:id="eSc_line_684232ad">
+     <path points="334,780 420,784" type="baseline"/>
+     <line>
+      23
+     </line>
+    </zone>
+    <zone points="338,851 338,803 393,822 404,843 389,894 349,883" type="mask" xml:id="eSc_line_b053e6fd">
+     <path points="340,852 406,844" type="baseline"/>
+     <line>
+      24
+     </line>
+    </zone>
+    <zone points="334,934 342,891 393,894 385,1000 338,978" type="mask" xml:id="eSc_line_bbb1a1e5">
+     <path points="336,936 404,942" type="baseline"/>
+     <line>
+      24
+     </line>
+    </zone>
+    <zone points="327,1033 334,985 425,1033 418,1069 382,1098 334,1080" type="mask" xml:id="eSc_line_37c5a5a5">
+     <path points="328,1034 420,1036 426,1036" type="baseline"/>
+     <line>
+      24
+     </line>
+    </zone>
+    <zone points="320,1178 327,1123 393,1142 393,1211 327,1218" type="mask" xml:id="eSc_line_150f6732">
+     <path points="323,1179 404,1182" type="baseline"/>
+     <line>
+      26
+     </line>
+    </zone>
+    <zone points="331,1444 338,1396 385,1385 404,1404 400,1484 334,1484" type="mask" xml:id="eSc_line_c40ef663">
+     <path points="334,1447 412,1451" type="baseline"/>
+     <line>
+      26
+     </line>
+    </zone>
+    <zone points="316,1640 331,1589 374,1585 407,1604 407,1687 323,1691" type="mask" xml:id="eSc_line_94b3be7d">
+     <path points="317,1643 418,1641" type="baseline"/>
+     <line>
+      26
+     </line>
+    </zone>
+    <zone points="320,1829 323,1771 414,1767 440,1789 498,1771 509,1833 480,1880 433,1876 418,1891 367,1866 323,1876" type="mask" xml:id="eSc_line_0c12e52a">
+     <path points="323,1831 376,1834 433,1836 510,1834" type="baseline"/>
+     <line>
+      26 (2 et)
+     </line>
+    </zone>
+    <zone points="313,2011 313,1956 342,1956 382,1924 393,2047 323,2047" type="mask" xml:id="eSc_line_7ab9916e">
+     <path points="315,2012 400,2007" type="baseline"/>
+     <line>
+      26
+     </line>
+    </zone>
+    <zone points="305,2167 316,2102 356,2106 389,2146 411,2146 418,2175 389,2218 309,2193" type="mask" xml:id="eSc_line_3e5ac04e">
+     <path points="309,2170 356,2171 420,2176" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="331,2255 338,2211 353,2207 404,2226 411,2258 393,2309 334,2287" type="mask" xml:id="eSc_line_ca9de8ce">
+     <path points="332,2257 386,2258 412,2259" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="316,2360 323,2309 349,2309 418,2324 425,2364 414,2415 320,2404" type="mask" xml:id="eSc_line_1c3fbfbc">
+     <path points="317,2364 429,2367" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="316,2448 323,2404 404,2400 404,2469 323,2469" type="mask" xml:id="eSc_line_b7cc2cfe">
+     <path points="320,2451 412,2449" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="334,2491 342,2466 371,2462 396,2469 404,2491 342,2524" type="mask" xml:id="eSc_line_2d27c184">
+     <path points="336,2494 406,2492" type="baseline"/>
+     <line>
+      29
+     </line>
+    </zone>
+    <zone points="338,2531 345,2506 407,2498 414,2538 342,2546" type="mask" xml:id="eSc_line_49b775f3">
+     <path points="340,2534 416,2542" type="baseline"/>
+     <line>
+      84
+     </line>
+    </zone>
+    <zone points="331,2575 342,2531 407,2538 404,2604 334,2600" type="mask" xml:id="eSc_line_7ab031ac">
+     <path points="334,2578 416,2580" type="baseline"/>
+     <line>
+      87
+     </line>
+    </zone>
+    <zone points="338,2640 345,2608 407,2622 414,2640 393,2662 345,2659" type="mask" xml:id="eSc_line_ca1be64f">
+     <path points="342,2644 416,2644" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="334,2684 400,2662 418,2688 396,2709 338,2706" type="mask" xml:id="eSc_line_a5be088c">
+     <path points="338,2687 420,2689" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="342,2735 349,2702 418,2735 389,2760 349,2757" type="mask" xml:id="eSc_line_e920b408">
+     <path points="344,2737 420,2737" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="345,2797 353,2757 411,2764 418,2800 349,2811" type="mask" xml:id="eSc_line_021f81a8">
+     <path points="346,2799 420,2803" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="338,2829 349,2808 418,2829 411,2859 345,2859" type="mask" xml:id="eSc_line_4d9b8eb5">
+     <path points="342,2833 420,2833" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="338,2884 345,2859 404,2859 404,2909 345,2909" type="mask" xml:id="eSc_line_586db3b6">
+     <path points="342,2887 412,2887" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="345,2939 353,2909 385,2906 407,2913 414,2939 407,3019 353,3015" type="mask" xml:id="eSc_line_382f6035">
+     <path points="346,2940 416,2940" type="baseline"/>
+     <line>
+      27
+     </line>
+    </zone>
+    <zone points="323,3070 331,3030 411,3019 407,3113 327,3102" type="mask" xml:id="eSc_line_a38c1856">
+     <path points="325,3072 422,3074" type="baseline"/>
+     <line>
+      28
+     </line>
+    </zone>
+    <zone points="338,3139 345,3110 393,3110 393,3179 371,3186 345,3168" type="mask" xml:id="eSc_line_36e628cc">
+     <path points="342,3141 404,3141" type="baseline"/>
+     <line>
+      29
+     </line>
+    </zone>
+    <zone points="320,3215 331,3171 356,3171 411,3215 404,3255 356,3270 327,3259" type="mask" xml:id="eSc_line_51965978">
+     <path points="323,3219 414,3218" type="baseline"/>
+     <line>
+      30
+     </line>
+    </zone>
+    <zone points="327,3430 342,3361 404,3368 400,3459 331,3466" type="mask" xml:id="eSc_line_9b84b073">
+     <path points="331,3431 414,3435" type="baseline"/>
+     <line>
+      3
+     </line>
+    </zone>
+    <zone points="331,3572 331,3506 382,3521 385,3604 338,3608" type="mask" xml:id="eSc_line_7ff170f8">
+     <path points="332,3573 394,3571" type="baseline"/>
+     <line>
+      3
+     </line>
+    </zone>
+    <zone points="320,3724 327,3666 393,3688 396,3757 327,3746" type="mask" xml:id="eSc_line_d3692820">
+     <path points="321,3727 406,3724" type="baseline"/>
+     <line>
+      4
+     </line>
+    </zone>
+    <zone points="327,3768 334,3742 371,3746 385,3768 378,3812 334,3804" type="mask" xml:id="eSc_line_eebeb895">
+     <path points="328,3772 388,3772" type="baseline"/>
+     <line>
+      4
+     </line>
+    </zone>
+    <zone points="331,3910 334,3855 367,3837 425,3830 480,3852 484,3946 418,3957 396,3939 338,3943" type="mask" xml:id="eSc_line_da7ca591">
+     <path points="334,3911 494,3909" type="baseline"/>
+     <line>
+      9 (3 et)
+     </line>
+    </zone>
+    <zone points="327,4073 338,4026 353,4023 414,4084 400,4124 356,4132 327,4117" type="mask" xml:id="eSc_line_62bec548">
+     <path points="329,4077 418,4088" type="baseline"/>
+     <line>
+      4
+     </line>
+    </zone>
+   </surface>
+   <surface points="765,640 768,829 753,2440 757,2606 756,2691 756,2936 753,4157 578,4215 436,4201 430,640" type="col_3" xml:id="eSc_textblock_90b05d34">
+    <zone points="436,858 440,774 509,774 527,789 662,778 691,800 789,800 800,854 789,876 735,891 684,876 440,887" type="mask" xml:id="eSc_line_7d74ff51">
+     <path points="440,860 803,857" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="433,956 436,887 520,887 556,913 575,894 644,894 680,876 757,905 822,876 833,945 822,974 760,1018 669,978 578,982 538,1022 484,1022 462,1003 436,1025" type="mask" xml:id="eSc_line_e4956aeb">
+     <path points="436,959 556,949 837,949" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="313,1280 320,1222 553,1214 560,1280 516,1342 444,1349 422,1327 407,1342 320,1349" type="mask" xml:id="eSc_line_f5527805">
+     <path points="316,1284 564,1284" type="baseline"/>
+     <line>
+      26 (21 Maurs et)
+     </line>
+    </zone>
+    <zone points="440,2258 447,2193 480,2207 578,2193 607,2211 673,2197 669,2298 444,2295" type="mask" xml:id="eSc_line_296e3b58">
+     <path points="441,2259 684,2269" type="baseline"/>
+     <line>
+      Procuration
+     </line>
+    </zone>
+    <zone points="436,2357 440,2302 516,2309 538,2287 556,2306 637,2309 713,2255 797,2255 808,2342 782,2382 695,2397 677,2378 615,2378 513,2397 440,2375" type="mask" xml:id="eSc_line_98ed5699">
+     <path points="437,2360 728,2364 811,2346" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="425,2455 433,2404 473,2397 527,2422 640,2422 666,2397 695,2397 720,2422 742,2400 797,2397 797,2477 433,2473" type="mask" xml:id="eSc_line_99776add">
+     <path points="429,2458 476,2458 808,2458" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="433,2495 476,2469 556,2480 597,2466 746,2480 775,2469 837,2495 757,2520 684,2520 662,2506 436,2520" type="mask" xml:id="eSc_line_64130e82">
+     <path points="434,2498 597,2506 618,2506 840,2498" type="baseline"/>
+     <line>
+      Crtificat de Propriété
+     </line>
+    </zone>
+    <zone points="429,2542 433,2524 469,2513 757,2520 786,2506 800,2538 764,2568 666,2553 604,2571 433,2564" type="mask" xml:id="eSc_line_e0fbcfbb">
+     <path points="432,2544 466,2543 529,2548 581,2544 677,2552 802,2539" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="429,2593 433,2564 578,2557 793,2557 804,2586 764,2615 433,2615" type="mask" xml:id="eSc_line_8ac7059d">
+     <path points="432,2597 524,2597 567,2589 806,2589" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="429,2637 433,2615 495,2608 815,2608 829,2633 819,2648 728,2662 433,2651" type="mask" xml:id="eSc_line_aac937f3">
+     <path points="432,2638 830,2636" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="429,2684 433,2651 571,2669 582,2655 637,2651 724,2666 793,2644 811,2644 822,2680 815,2706 436,2702" type="mask" xml:id="eSc_line_5609f660">
+     <path points="430,2686 553,2695 826,2684" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="436,2735 440,2699 782,2702 804,2735 757,2757 440,2749" type="mask" xml:id="eSc_line_76e32b07">
+     <path points="437,2739 556,2735 603,2734 633,2735 807,2736" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="429,2793 433,2753 520,2753 567,2771 618,2753 680,2768 706,2749 746,2768 789,2749 800,2789 753,2811 433,2804" type="mask" xml:id="eSc_line_472765f7">
+     <path points="430,2797 542,2800 804,2792" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="425,2840 440,2800 469,2815 506,2804 680,2819 786,2797 815,2797 826,2837 786,2859 433,2859" type="mask" xml:id="eSc_line_747ed0f5">
+     <path points="428,2841 502,2844 538,2837 589,2837 629,2844 829,2839" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="436,2895 440,2859 626,2862 666,2848 695,2862 811,2848 822,2888 811,2902 764,2902 738,2928 611,2906 560,2909 546,2928 444,2924" type="mask" xml:id="eSc_line_d61737eb">
+     <path points="438,2896 542,2891 764,2895 825,2889" type="baseline"/>
+     <line>
+      Certificat de Propriété
+     </line>
+    </zone>
+    <zone points="455,4081 462,4023 706,4023 749,4033 757,4081 746,4128 462,4132" type="mask" xml:id="eSc_line_c77a9c78">
+     <path points="456,4084 760,4082" type="baseline"/>
+     <line>
+      Subte M^e Baullar
+     </line>
+    </zone>
+   </surface>
+   <surface points="1093,643 1091,698 1088,4215 771,4186 757,2910 766,2690 771,2411 771,1178 774,727 775,643" type="col_4" xml:id="eSc_textblock_b517d91b">
+    <zone points="768,792 771,723 786,716 848,716 873,738 928,716 957,742 1008,738 1019,789 1012,814 982,814 968,832 859,811 815,840 775,840" type="mask" xml:id="eSc_line_1cbcfd35">
+     <path points="771,795 931,792 1021,792" type="baseline"/>
+     <line>
+      Donation
+     </line>
+    </zone>
+    <zone points="808,1029 815,982 833,971 953,978 961,1029 946,1069 815,1069" type="mask" xml:id="eSc_line_a4a4cd19">
+     <path points="809,1033 962,1031" type="baseline"/>
+     <line>
+      Prêt
+     </line>
+    </zone>
+    <zone points="757,1182 764,1113 826,1127 917,1116 931,1131 1033,1113 1052,1131 1106,1131 1117,1178 1110,1204 1081,1214 764,1207" type="mask" xml:id="eSc_line_f13402cf">
+     <path points="760,1184 1121,1180" type="baseline"/>
+     <line>
+      Prestation de Serment
+     </line>
+    </zone>
+    <zone points="800,1269 870,1207 906,1225 1004,1218 1004,1294 844,1305 808,1273" type="mask" xml:id="eSc_line_fb19f4a9">
+     <path points="800,1269 1012,1269" type="baseline"/>
+     <line>
+      Bail
+     </line>
+    </zone>
+    <zone points="771,1455 775,1425 822,1378 971,1385 982,1458 950,1480 866,1495 775,1476" type="mask" xml:id="eSc_line_9d919dab">
+     <path points="771,1455 895,1444 982,1458" type="baseline"/>
+     <line>
+      Vente
+     </line>
+    </zone>
+    <zone points="768,1655 775,1589 811,1604 844,1582 888,1600 921,1585 975,1604 971,1684 771,1687" type="mask" xml:id="eSc_line_dfae641c">
+     <path points="768,1655 982,1665" type="baseline"/>
+     <line>
+      Bail
+     </line>
+    </zone>
+    <zone points="793,1829 797,1782 840,1764 880,1775 895,1760 982,1789 997,1829 982,1869 800,1862" type="mask" xml:id="eSc_line_eea8058f">
+     <path points="796,1832 873,1840 1001,1833" type="baseline"/>
+     <line>
+      Bail
+     </line>
+    </zone>
+    <zone points="771,2018 779,1953 808,1967 829,1949 880,1946 913,1967 931,1949 979,1967 1044,1960 1055,1996 1048,2033 1022,2044 873,2036 782,2058" type="mask" xml:id="eSc_line_1b95bc1d">
+     <path points="774,2019 939,2015 1059,2000" type="baseline"/>
+     <line>
+      Adjudication
+     </line>
+    </zone>
+    <zone points="789,2175 793,2120 833,2102 906,2117 924,2102 968,2117 990,2102 1015,2171 1001,2237 793,2240" type="mask" xml:id="eSc_line_7e18536a">
+     <path points="790,2176 844,2175 1017,2173" type="baseline"/>
+     <line>
+      Dépôt
+     </line>
+    </zone>
+    <zone points="764,2931 782,2888 848,2869 866,2884 971,2884 1055,2866 1092,2888 1092,2971 1037,2957 953,2971 935,2953 815,2953 771,2971" type="mask" xml:id="eSc_line_f475e5e0">
+     <path points="766,2934 833,2935 1103,2935" type="baseline"/>
+     <line>
+      Déclaration Commene
+     </line>
+    </zone>
+    <zone points="760,3084 771,3011 797,3026 924,3015 939,3030 1062,3019 1095,3030 1103,3088 1066,3110 764,3099" type="mask" xml:id="eSc_line_7d48cab0">
+     <path points="762,3088 826,3084 1104,3091" type="baseline"/>
+     <line>
+      Acceptation Command
+     </line>
+    </zone>
+    <zone points="753,3139 768,3102 888,3095 1070,3106 1081,3131 1070,3157 964,3142 757,3157" type="mask" xml:id="eSc_line_e6ffd8be">
+     <path points="754,3140 806,3136 848,3135 1084,3134" type="baseline"/>
+     <line>
+      Dépôt de Décharge
+     </line>
+    </zone>
+    <zone points="768,3186 800,3150 844,3160 862,3142 1019,3153 1059,3179 1001,3208 804,3208 782,3186" type="mask" xml:id="eSc_line_df2895a4">
+     <path points="768,3186 1059,3179" type="baseline"/>
+     <line>
+      de Mandat
+     </line>
+    </zone>
+    <zone points="749,3237 757,3190 804,3208 1066,3190 1099,3208 1106,3237 1099,3262 757,3262" type="mask" xml:id="eSc_line_80d33f8e">
+     <path points="752,3240 1107,3239" type="baseline"/>
+     <line>
+      Renonciation à fone
+     </line>
+    </zone>
+    <zone points="757,3284 760,3262 793,3255 1150,3251 1183,3262 1194,3288 1168,3310 760,3317" type="mask" xml:id="eSc_line_371c5e7f">
+     <path points="760,3285 1196,3289" type="baseline"/>
+     <line>
+      Vio d'exicut en testamentaire
+     </line>
+    </zone>
+    <zone points="826,3415 833,3375 913,3357 990,3371 997,3422 986,3451 924,3477 910,3462 866,3477 829,3466" type="mask" xml:id="eSc_line_b34da084">
+     <path points="828,3419 1001,3426" type="baseline"/>
+     <line>
+      Bail
+     </line>
+    </zone>
+    <zone points="826,3575 833,3506 942,3510 975,3572 968,3601 935,3615 833,3608" type="mask" xml:id="eSc_line_bef50f24">
+     <path points="829,3577 979,3575" type="baseline"/>
+     <line>
+      Bail
+     </line>
+    </zone>
+    <zone points="757,3717 768,3655 804,3670 928,3670 942,3655 1081,3670 1088,3717 1081,3746 764,3742" type="mask" xml:id="eSc_line_67d98838">
+     <path points="760,3721 1092,3719" type="baseline"/>
+     <line>
+      Dépôt ét at Matériel
+     </line>
+    </zone>
+    <zone points="771,3764 789,3739 859,3750 957,3732 1001,3746 1012,3768 993,3797 939,3793 891,3815 873,3797 844,3808 775,3793" type="mask" xml:id="eSc_line_f25e743b">
+     <path points="772,3768 1015,3772" type="baseline"/>
+     <line>
+      Mainlevée
+     </line>
+    </zone>
+    <zone points="768,3906 782,3844 855,3863 964,3863 997,3848 1055,3863 1066,3903 1052,3939 1008,3928 979,3950 840,3928 771,3935" type="mask" xml:id="eSc_line_4e0830ee">
+     <path points="769,3908 942,3910 1068,3904" type="baseline"/>
+     <line>
+      Transport
+     </line>
+    </zone>
+    <zone points="804,4095 808,4026 837,4030 851,4012 961,4030 964,4132 844,4135 811,4114" type="mask" xml:id="eSc_line_cb1a354c">
+     <path points="804,4095 971,4088" type="baseline"/>
+     <line>
+      Vente
+     </line>
+    </zone>
+   </surface>
+   <surface points="2355,654 2369,4157 2311,4215 1088,4213 1106,640" type="col_5" xml:id="eSc_textblock_a7c31b30">
+    <zone points="1139,716 1143,676 1161,662 1223,654 1266,676 1285,658 1376,651 1405,651 1434,676 1576,676 1601,654 1619,672 1652,654 1678,672 1707,654 1751,669 1780,651 1823,669 1907,651 1954,702 1943,742 1907,745 1143,734" type="mask" xml:id="eSc_line_a9b261f8">
+     <path points="1141,719 1244,716 1827,720 1958,705" type="baseline"/>
+     <line>
+      An 1937, mois d'Avril
+     </line>
+    </zone>
+    <zone points="1103,792 1106,731 1161,731 1183,752 1204,734 1226,756 1259,742 1332,742 1346,756 1703,742 1729,756 1903,752 1925,738 1976,752 2009,734 2034,749 2082,731 2151,752 2184,738 2202,752 2231,731 2340,727 2351,778 2340,807 2264,796 2249,811 2136,796 2067,811 1754,796 1718,811 1641,800 1623,814 1561,800 1485,814 1346,814 1325,800 1281,814 1146,814 1106,800" type="mask" xml:id="eSc_line_97ffa0d4">
+     <path points="1105,794 1962,792 2034,785 2354,780" type="baseline"/>
+     <line>
+      Morlevat (par Made) à son mari sus-nommé pleine- propriété
+     </line>
+    </zone>
+    <zone points="1095,847 1103,800 1146,814 1281,814 1295,800 1343,814 1518,814 1532,800 1598,800 1612,814 1638,800 1761,800 1791,814 1816,800 1907,814 2060,814 2078,800 2125,814 2155,800 2173,814 2242,814 2257,800 2307,800 2337,840 2326,862 2286,872 2267,858 2242,872 2082,872 2067,858 1099,872" type="mask" xml:id="eSc_line_fbe239b1">
+     <path points="1099,850 1153,847 1619,851 1769,843 2340,843" type="baseline"/>
+     <line>
+      Pénisjard (d'une action Boy Marché au nom de Joseph)
+     </line>
+    </zone>
+    <zone points="1099,894 1106,869 1241,880 1266,865 1281,880 1299,865 1376,880 1441,862 1459,880 1561,880 1579,862 1696,862 1747,898 1630,923 1532,923 1485,905 1408,905 1372,923 1103,913" type="mask" xml:id="eSc_line_6abe5e83">
+     <path points="1102,898 1750,900" type="baseline"/>
+     <line>
+      64 Rue Lepic à Paris, décédé
+     </line>
+    </zone>
+    <zone points="1099,945 1113,898 1139,920 1485,905 1528,920 1689,920 1710,898 1936,894 1969,920 2016,905 2104,916 2129,891 2155,913 2195,913 2220,891 2362,891 2373,934 2366,967 2329,967 2311,949 2155,949 2136,963 2111,949 2074,967 2049,949 1994,971 1936,956 1918,971 1849,971 1823,953 1681,953 1609,971 1474,953 1339,967 1321,956 1306,971 1259,953 1230,967 1106,967" type="mask" xml:id="eSc_line_4e4cbde5">
+     <path points="1102,949 1150,945 1630,942 1718,945 1936,942 2020,934 2375,936" type="baseline"/>
+     <line>
+      Brunet (de 1515f 12 livret Caisse d'Epargne au nom de Arsène
+     </line>
+    </zone>
+    <zone points="1095,985 1117,956 1255,956 1274,974 1317,960 1343,974 1394,953 1427,967 1470,953 1510,971 1681,971 1714,953 1787,949 1856,982 1823,1007 1689,996 1583,1011 1401,1000 1099,1014" type="mask" xml:id="eSc_line_85f55631">
+     <path points="1098,989 1132,989 1212,996 1354,996 1405,993 1860,985" type="baseline"/>
+     <line>
+      Marie) 2 Rue Hoche à Ivry décédé
+     </line>
+    </zone>
+    <zone points="1103,1047 1121,1007 1321,1014 1408,1000 1430,1014 1470,996 1492,1014 1514,1000 1583,1014 1652,989 1689,989 1729,1014 1914,993 1954,1014 1994,993 2024,1014 2067,993 2136,1014 2191,996 2337,989 2348,1029 2337,1051 2307,1054 2162,1047 2082,1062 1885,1062 1871,1047 1743,1062 1659,1047 1525,1047 1496,1062 1106,1058" type="mask" xml:id="eSc_line_a888b937">
+     <path points="1106,1050 1306,1043 1382,1041 1416,1036 2224,1036 2264,1035 2350,1032" type="baseline"/>
+     <line>
+      Lucg (par Ct Foncier de France 19 Rue des Capucine Paris
+     </line>
+    </zone>
+    <zone points="1099,1094 1113,1062 1397,1073 1434,1051 1583,1051 1601,1069 1659,1051 1689,1069 1776,1047 1874,1047 1903,1065 2107,1065 2162,1043 2282,1043 2318,1080 2307,1105 2238,1094 2169,1113 2151,1098 2074,1116 1940,1102 1747,1120 1689,1105 1674,1120 1525,1120 1496,1102 1474,1120 1437,1102 1397,1120 1383,1105 1328,1105 1314,1120 1277,1105 1103,1113" type="mask" xml:id="eSc_line_7192919d">
+     <path points="1101,1097 1507,1091 2319,1083" type="baseline"/>
+     <line>
+      à Renée Augusta) 5 Rue Germain Piloy à Paris &amp; 55.000^f
+     </line>
+    </zone>
+    <zone points="1099,1145 1103,1113 1226,1120 1270,1102 1314,1116 1354,1098 1397,1116 1485,1116 1496,1138 1456,1156 1103,1156" type="mask" xml:id="eSc_line_7eeed749">
+     <path points="1101,1147 1497,1141" type="baseline"/>
+     <line>
+      20 ans à 6x2%
+     </line>
+    </zone>
+    <zone points="1121,1178 1124,1145 1463,1145 1510,1116 1641,1138 1685,1116 1743,1127 1769,1113 1787,1127 1823,1113 1852,1127 1911,1113 1951,1127 2049,1113 2078,1123 2093,1109 2326,1109 2337,1174 2246,1200 1951,1200 1933,1185 1871,1200 1852,1185 1772,1200 1740,1185 1667,1200 1619,1185 1561,1200 1383,1200 1354,1185 1306,1200 1124,1196" type="mask" xml:id="eSc_line_f123fa6a">
+     <path points="1123,1181 1537,1181 1583,1178 1874,1178 1925,1185 1962,1178 2340,1178" type="baseline"/>
+     <line>
+      Dubonnet (par Robert) 19 Av. de Versailles à Paris, Inventaire
+     </line>
+    </zone>
+    <zone points="1095,1218 1113,1196 1306,1204 1321,1189 1383,1204 1558,1204 1583,1189 1700,1204 1714,1189 1769,1204 1856,1189 1878,1204 1929,1189 1943,1204 1998,1200 2009,1222 1787,1247 1743,1229 1707,1247 1645,1229 1587,1247 1099,1240" type="mask" xml:id="eSc_line_75c62cd4">
+     <path points="1099,1222 2012,1225" type="baseline"/>
+     <line>
+      du 15-12-36 devant Collet not. à Nantes
+     </line>
+    </zone>
+    <zone points="1095,1262 1099,1236 1619,1247 1641,1229 1678,1247 1732,1233 1758,1247 1896,1247 1918,1229 1958,1244 1980,1222 2140,1214 2340,1214 2351,1258 2322,1287 1099,1284" type="mask" xml:id="eSc_line_23b5bbf9">
+     <path points="1098,1265 1393,1265 2354,1262" type="baseline"/>
+     <line>
+      Normandin (par Germaine Ernestine Adèle Gizot veuve de Jean Clémen
+     </line>
+    </zone>
+    <zone points="1095,1316 1099,1287 1121,1302 1139,1287 1237,1302 1368,1302 1394,1287 1408,1302 1452,1284 1732,1298 1780,1280 1951,1294 2060,1276 2151,1276 2166,1291 2242,1276 2337,1291 2348,1305 2337,1331 2206,1320 2060,1334 1812,1324 1729,1338 1492,1327 1401,1342 1099,1342" type="mask" xml:id="eSc_line_85f2dca7">
+     <path points="1099,1317 1310,1324 1481,1320 2350,1309" type="baseline"/>
+     <line>
+      Joseph) 1 Boulevard Bineau à Levallois-Perret à Robert Léonce
+     </line>
+    </zone>
+    <zone points="1095,1356 1099,1338 1179,1338 1201,1324 1215,1338 1237,1324 1306,1338 1532,1338 1547,1324 1583,1338 1609,1324 1707,1338 1812,1324 1842,1338 1885,1324 1914,1338 1958,1324 2158,1338 2202,1324 2340,1324 2351,1360 2329,1389 2293,1374 2227,1374 2213,1389 2176,1374 2162,1389 1743,1389 1667,1374 1619,1389 1601,1374 1518,1374 1492,1389 1405,1374 1295,1389 1244,1374 1204,1389 1190,1374 1099,1374" type="mask" xml:id="eSc_line_7692a0b3">
+     <path points="1096,1360 1155,1359 1175,1364 1285,1364 1623,1371 1994,1364 2352,1364" type="baseline"/>
+     <line>
+      Le Gall, 112 Rue de la Garenne à Courlevoie, locaux à Levallois
+     </line>
+    </zone>
+    <zone points="1099,1407 1106,1371 1186,1371 1201,1385 1725,1374 1772,1404 1710,1429 1685,1418 1532,1429 1507,1414 1459,1429 1386,1414 1143,1429 1103,1414" type="mask" xml:id="eSc_line_02fc39af">
+     <path points="1101,1411 1237,1407 1774,1406" type="baseline"/>
+     <line>
+      1 Bd Bineau 6 ans 2900F + 50x
+     </line>
+    </zone>
+    <zone points="1095,1458 1099,1411 1146,1433 1190,1418 1237,1436 1379,1436 1485,1418 1536,1433 1714,1429 1776,1404 1867,1404 1892,1429 1980,1429 2067,1425 2093,1400 2253,1400 2333,1444 2322,1473 2286,1458 2249,1473 2144,1458 1980,1476 1842,1476 1816,1462 1794,1476 1754,1465 1692,1480 1623,1480 1601,1465 1561,1480 1408,1465 1394,1484 1343,1469 1175,1469 1139,1484 1099,1473" type="mask" xml:id="eSc_line_0c1f49b1">
+     <path points="1097,1460 2336,1447" type="baseline"/>
+     <line>
+      Henrat (par Louis Auguste) et Adèle Marie Amélie Sustrac
+     </line>
+    </zone>
+    <zone points="1095,1509 1103,1476 1226,1484 1252,1458 1303,1476 1339,1462 1361,1484 1412,1484 1430,1465 1543,1484 1587,1458 1630,1484 1685,1484 1700,1469 1747,1480 1761,1465 1791,1484 1816,1462 1856,1480 1929,1462 1969,1484 2005,1462 2049,1462 2071,1484 2100,1462 2195,1462 2224,1484 2267,1458 2362,1458 2373,1498 2362,1527 2297,1513 2173,1513 2155,1527 2111,1513 2093,1527 1896,1527 1834,1513 1780,1527 1099,1516" type="mask" xml:id="eSc_line_4f323a37">
+     <path points="1098,1510 1390,1514 1548,1508 1985,1510 2047,1502 2140,1505 2374,1502" type="baseline"/>
+     <line>
+      sa fe 154 Rue de Grenelle Paris à Jean Louis Gabriel Hélène Roche
+     </line>
+    </zone>
+    <zone points="1095,1556 1099,1516 1208,1516 1230,1535 1266,1516 1332,1516 1365,1535 1405,1516 1459,1516 1477,1535 1525,1516 1565,1535 1696,1524 1725,1535 1743,1516 1765,1535 1791,1516 1834,1516 1852,1535 1947,1535 1980,1516 2034,1535 2147,1535 2169,1516 2300,1516 2395,1549 2344,1589 2275,1571 2180,1585 2016,1571 1980,1589 1670,1578 1645,1589 1619,1571 1583,1585 1412,1585 1383,1571 1346,1589 1277,1589 1255,1571 1099,1578" type="mask" xml:id="eSc_line_223bd2da">
+     <path points="1096,1559 1132,1556 1170,1549 1190,1549 1285,1564 1627,1560 2125,1564 2242,1556 2396,1552" type="baseline"/>
+     <line>
+      35 ter av. Joffre à la Garenne Colombes propriété aux Petites Dalles
+     </line>
+    </zone>
+    <zone points="1092,1607 1095,1578 1448,1593 1514,1575 1579,1589 1619,1575 1681,1604 1627,1611 1609,1629 1325,1633 1295,1615 1230,1633 1146,1618 1095,1629" type="mask" xml:id="eSc_line_31024b67">
+     <path points="1095,1609 1255,1604 1339,1615 1685,1607" type="baseline"/>
+     <line>
+      45.000f payés comptants
+     </line>
+    </zone>
+    <zone points="1092,1651 1121,1615 1157,1633 1244,1633 1285,1611 1310,1633 1616,1633 1656,1607 1714,1607 1747,1636 1856,1636 1874,1618 1922,1636 1973,1607 2140,1607 2198,1633 2238,1607 2275,1625 2348,1607 2358,1658 2333,1684 2307,1669 2089,1669 2056,1684 1998,1669 1954,1684 1732,1684 1627,1665 1547,1680 1528,1665 1492,1680 1350,1680 1336,1665 1095,1676" type="mask" xml:id="eSc_line_f1869fe8">
+     <path points="1095,1655 1350,1662 1927,1660 2013,1658 2359,1660" type="baseline"/>
+     <line>
+      Bruneau (par Madeleine Léoide Appoline) 89 B^d des Amtassa
+     </line>
+    </zone>
+    <zone points="1095,1698 1099,1673 1488,1684 1532,1669 1598,1684 1630,1669 1649,1684 1732,1687 2311,1673 2344,1702 2333,1727 2267,1727 2249,1713 2191,1727 2166,1713 2107,1727 2093,1713 2024,1727 1962,1727 1947,1713 1911,1727 1659,1727 1616,1709 1587,1724 1536,1724 1521,1709 1099,1724" type="mask" xml:id="eSc_line_c2ec002e">
+     <path points="1096,1702 1481,1701 1539,1702 1958,1709 2219,1704 2347,1705" type="baseline"/>
+     <line>
+      deurs à Herblay à Reine Anna Madeleine Marie Louise Dumas
+     </line>
+    </zone>
+    <zone points="1095,1742 1103,1716 1306,1727 1350,1713 1372,1727 1390,1713 1405,1727 1452,1713 1550,1731 1612,1716 1663,1731 1714,1716 1747,1731 2257,1716 2311,1731 2322,1749 2311,1764 2169,1764 2078,1782 1994,1782 1954,1764 1831,1782 1667,1782 1619,1767 1510,1782 1467,1764 1350,1764 1336,1778 1303,1764 1263,1778 1223,1764 1099,1767" type="mask" xml:id="eSc_line_bc1cf1fc">
+     <path points="1096,1744 1587,1746 1740,1749 2217,1749 2326,1753" type="baseline"/>
+     <line>
+      épouse de Herbert Maraval, locaux à Paris 45 Rue Rodier
+     </line>
+    </zone>
+    <zone points="1092,1800 1095,1767 1419,1767 1503,1778 1514,1796 1492,1818 1365,1818 1346,1804 1241,1818 1113,1804 1095,1818" type="mask" xml:id="eSc_line_e4a127ce">
+     <path points="1094,1802 1516,1798" type="baseline"/>
+     <line>
+      Pans 4.000 fancs.
+     </line>
+    </zone>
+    <zone points="1103,1844 1121,1800 1499,1811 1547,1786 1681,1786 1707,1811 1780,1811 1845,1786 2013,1786 2031,1804 2067,1789 2089,1811 2155,1793 2202,1811 2227,1786 2337,1782 2348,1829 2311,1858 2249,1866 2169,1851 2140,1866 2118,1851 1991,1851 1976,1866 1827,1866 1801,1851 1765,1866 1652,1866 1638,1851 1514,1866 1477,1851 1441,1866 1106,1855" type="mask" xml:id="eSc_line_b70726c5">
+     <path points="1106,1845 1270,1844 1758,1847 2009,1836 2267,1840 2349,1832" type="baseline"/>
+     <line>
+      Hons-Olivier (par Joseph Edouard Gabriel) 8 Rue Boucherat
+     </line>
+    </zone>
+    <zone points="1095,1891 1106,1858 1179,1858 1197,1873 1263,1873 1277,1858 1383,1866 1408,1891 1390,1909 1103,1906" type="mask" xml:id="eSc_line_6342a9d1">
+     <path points="1096,1893 1412,1895" type="baseline"/>
+     <line>
+      à Athis Mons et
+     </line>
+    </zone>
+    <zone points="1401,1887 1405,1869 1467,1855 1518,1869 1594,1855 1736,1869 1780,1851 1831,1866 1863,1855 1976,1866 1991,1851 2078,1866 2096,1847 2122,1862 2166,1847 2220,1862 2333,1851 2344,1880 2333,1906 1412,1902" type="mask" xml:id="eSc_line_6c5d8732">
+     <path points="1405,1891 1543,1891 1649,1899 1713,1895 1798,1891 2347,1884" type="baseline"/>
+     <line>
+      autres à Pauline Marguerite Georgette Hausser
+     </line>
+    </zone>
+    <zone points="1095,1938 1099,1906 1241,1898 2340,1898 2351,1931 2311,1956 1958,1956 1943,1942 1842,1956 1787,1942 1729,1956 1590,1956 1568,1942 1437,1942 1405,1956 1099,1949" type="mask" xml:id="eSc_line_744db043">
+     <path points="1098,1939 1386,1935 1452,1934 1631,1937 1729,1931 1860,1938 1940,1931 2278,1936 2352,1934" type="baseline"/>
+     <line>
+      épouse de Robert Jean Jacques Geyrard 75 Bd Suchet 9 ans
+     </line>
+    </zone>
+    <zone points="1095,1975 1099,1946 1113,1942 1219,1956 1412,1956 1441,1942 1568,1942 1590,1956 1787,1942 1801,1956 1863,1956 1943,1942 1987,1975 1969,1993 1099,1993" type="mask" xml:id="eSc_line_f0531e86">
+     <path points="1097,1978 1572,1975 1991,1978" type="baseline"/>
+     <line>
+      35.000 frs locaux à Paris 34 Mdd de Clichy
+     </line>
+    </zone>
+    <zone points="1095,2029 1099,1996 1124,1978 1172,2000 1397,2000 1430,1978 1470,2000 1492,1982 1576,2000 1605,1978 1652,2000 1689,1982 1732,2000 1772,1978 1798,1996 1867,1996 1882,1982 1969,1996 1991,1975 2020,1993 2042,1975 2133,1975 2169,1996 2198,1982 2227,1996 2253,1975 2307,2007 2297,2029 2158,2044 2136,2026 2111,2044 1951,2026 1681,2047 1598,2044 1583,2029 1550,2047 1499,2033 1430,2047 1394,2029 1357,2047 1099,2044" type="mask" xml:id="eSc_line_35e56985">
+     <path points="1097,2031 1141,2029 1157,2022 1197,2029 1383,2029 1414,2018 1510,2022 1776,2022 1814,2015 1876,2017 1914,2022 2031,2011 2311,2011" type="baseline"/>
+     <line>
+      Pinquier (par Albert de torak 17 R. St Martin, fonds de
+     </line>
+    </zone>
+    <zone points="1099,2080 1103,2044 1128,2036 1150,2051 1357,2051 1376,2036 1539,2051 1561,2033 1605,2047 1692,2033 1725,2047 1823,2047 1842,2033 1903,2047 1918,2033 1994,2029 2100,2044 2293,2029 2318,2055 2307,2077 2231,2095 2013,2080 1987,2098 1791,2098 1747,2080 1729,2098 1518,2084 1485,2102 1467,2087 1321,2084 1303,2102 1281,2087 1121,2102 1103,2084" type="mask" xml:id="eSc_line_c6424cdb">
+     <path points="1101,2082 1321,2077 1417,2074 1448,2066 2193,2061 2322,2058" type="baseline"/>
+     <line>
+      commerce) cahier de charges du 1^er Nv. 193775.100 + 2940f
+     </line>
+    </zone>
+    <zone points="1095,2120 1099,2087 1121,2102 1215,2102 1241,2087 1292,2102 1408,2087 1434,2102 1463,2084 1485,2098 1518,2084 1732,2098 1754,2084 1805,2113 1794,2138 1099,2135" type="mask" xml:id="eSc_line_f06f8ab1">
+     <path points="1096,2124 1809,2117" type="baseline"/>
+     <line>
+      fois préalables + loyers Parrièrés.
+     </line>
+    </zone>
+    <zone points="1095,2171 1103,2127 1124,2146 1215,2127 1266,2146 1423,2142 1445,2127 1463,2142 1659,2142 1787,2138 1842,2120 1914,2138 1998,2135 2013,2120 2107,2135 2133,2117 2235,2113 2333,2117 2344,2157 2307,2186 2235,2189 2173,2175 2107,2189 1958,2175 1892,2193 1831,2178 1805,2193 1670,2182 1630,2197 1612,2178 1390,2178 1372,2200 1288,2186 1226,2200 1208,2182 1157,2197 1103,2189" type="mask" xml:id="eSc_line_f667d40c">
+     <path points="1096,2175 1270,2178 1594,2171 2089,2164 2173,2157 2348,2158" type="baseline"/>
+     <line>
+      Cobert (de décharge de mandat concernant la succession de Louise) pro-
+     </line>
+    </zone>
+    <zone points="1092,2218 1095,2189 1510,2193 1539,2178 1609,2178 1638,2207 1609,2229 1521,2226 1496,2240 1397,2240 1376,2226 1361,2240 1328,2229 1299,2244 1175,2244 1095,2229" type="mask" xml:id="eSc_line_f1be6db8">
+     <path points="1095,2222 1266,2215 1332,2213 1502,2223 1640,2208" type="baseline"/>
+     <line>
+      curation du 15 février 1936
+     </line>
+    </zone>
+    <zone points="1092,2266 1095,2229 1641,2240 1674,2211 1718,2207 1874,2207 1896,2226 1951,2218 1973,2237 2042,2237 2071,2207 2253,2237 2293,2207 2333,2255 2322,2273 2257,2284 1732,2273 1718,2287 1095,2287" type="mask" xml:id="eSc_line_4b79ee59">
+     <path points="1093,2269 1463,2269 1707,2258 1973,2269 2169,2258 2337,2258" type="baseline"/>
+     <line>
+      Denis (par Jules Maurice Armand) 20 B^d Malesherbes à Paris en bl
+     </line>
+    </zone>
+    <zone points="1092,2309 1113,2280 1139,2295 1248,2295 1263,2280 1325,2280 1339,2295 1456,2280 1477,2295 1510,2280 1528,2295 1561,2277 1594,2291 1765,2277 1783,2291 1863,2291 1874,2313 1823,2328 1656,2317 1518,2331 1095,2320" type="mask" xml:id="eSc_line_a4e50047">
+     <path points="1093,2313 1157,2313 1285,2324 1338,2321 1876,2316" type="baseline"/>
+     <line>
+      pr mainlevée aux hypothèques de bours
+     </line>
+    </zone>
+    <zone points="1088,2360 1092,2335 1208,2335 1223,2320 1241,2335 1514,2335 1547,2320 1630,2331 1656,2317 1696,2331 1729,2317 1823,2331 1871,2309 1889,2328 1958,2331 1991,2302 2246,2302 2264,2320 2326,2313 2344,2338 2322,2360 1991,2353 1954,2371 1678,2371 1630,2357 1532,2375 1092,2375" type="mask" xml:id="eSc_line_5177409a">
+     <path points="1092,2361 1496,2360 1532,2353 1805,2353 1954,2342 2347,2342" type="baseline"/>
+     <line>
+      Cormedet des Chomettes (de 125 act. Ste Elairage Chaffage et Force
+     </line>
+    </zone>
+    <zone points="1095,2400 1099,2378 1128,2368 1456,2378 1558,2364 1609,2375 1627,2360 1736,2375 1761,2360 1823,2375 1860,2360 1925,2357 1947,2371 1983,2357 2115,2357 2151,2371 2198,2353 2413,2360 2424,2389 2388,2411 2333,2397 2198,2415 2166,2400 2140,2415 2053,2400 2034,2415 1933,2415 1896,2400 1831,2418 1758,2404 1721,2418 1616,2404 1503,2418 1408,2408 1365,2422 1099,2411" type="mask" xml:id="eSc_line_f554f2f0">
+     <path points="1096,2402 1849,2389 1954,2386 2426,2391" type="baseline"/>
+     <line>
+      Motrices au nom du Comte Honoré François Joseph) 24 ris Rue de Berri Paris
+     </line>
+    </zone>
+    <zone points="1092,2448 1095,2411 1197,2422 1328,2408 1350,2422 1408,2404 1470,2422 1590,2404 1681,2422 1732,2404 1787,2422 1871,2422 1892,2404 1940,2422 2100,2422 2166,2404 2195,2422 2224,2404 2249,2422 2326,2411 2373,2440 2362,2462 2220,2466 1095,2458" type="mask" xml:id="eSc_line_bab01043">
+     <path points="1093,2451 1201,2444 1299,2448 1474,2455 1619,2448 1871,2448 2031,2440 2376,2442" type="baseline"/>
+     <line>
+      Cornudet des Chomettes) de 4act. Banque Algérie, au nom de sus nommé
+     </line>
+    </zone>
+    <zone points="1092,2495 1095,2462 1248,2469 1285,2455 1336,2469 1368,2455 1408,2469 1579,2469 1601,2455 1627,2473 1659,2458 1758,2458 1787,2473 1823,2458 1842,2473 1885,2458 2111,2473 2155,2458 2322,2458 2333,2484 2311,2506 2144,2498 2118,2513 2074,2498 1630,2509 1612,2495 1554,2509 1095,2509" type="mask" xml:id="eSc_line_641d1e9a">
+     <path points="1093,2496 1252,2491 1306,2488 1390,2498 1535,2496 1634,2480 2335,2485" type="baseline"/>
+     <line>
+      Cornudet des Chomettes (de 13 act. Banque Indochine au même nom
+     </line>
+    </zone>
+    <zone points="1088,2542 1092,2513 1496,2513 1543,2498 1609,2498 1623,2513 1645,2498 2071,2498 2085,2513 2289,2498 2344,2513 2355,2531 2326,2557 1092,2557" type="mask" xml:id="eSc_line_a04563b8">
+     <path points="1092,2545 1270,2542 1359,2538 1404,2536 1594,2538 1638,2531 1721,2531 1856,2520 1907,2531 2356,2535" type="baseline"/>
+     <line>
+      Corudet des Chomettes (de 100 act et Foncier Indochine au même nom
+     </line>
+    </zone>
+    <zone points="1095,2589 1099,2557 1208,2568 1259,2553 1503,2549 1587,2564 1601,2546 1903,2557 2311,2542 2344,2546 2355,2564 2322,2586 2249,2593 2005,2597 1936,2578 1911,2600 1605,2586 1576,2608 1521,2608 1507,2593 1274,2597 1208,2615 1099,2608" type="mask" xml:id="eSc_line_9bf0c773">
+     <path points="1096,2591 1397,2582 1590,2576 1703,2582 1877,2577 1947,2575 2358,2568" type="baseline"/>
+     <line>
+      Cornudet des Chomettes (de 250 act. Menes de Lens au même non
+     </line>
+    </zone>
+    <zone points="1095,2629 1099,2608 1259,2611 1365,2593 1558,2608 1601,2589 1652,2589 1667,2604 1798,2586 2031,2600 2249,2597 2329,2578 2348,2578 2358,2615 2340,2637 2216,2640 1860,2629 1736,2648 1576,2633 1481,2651 1099,2644" type="mask" xml:id="eSc_line_5af701a5">
+     <path points="1096,2633 1343,2633 1499,2622 1562,2625 1612,2626 1663,2619 1800,2622 1907,2629 2005,2619 2085,2626 2362,2617" type="baseline"/>
+     <line>
+      Cornudet des Chagettes (de 60 act. Mires de Donges au même som)
+     </line>
+    </zone>
+    <zone points="1095,2680 1099,2648 1277,2651 1310,2637 1343,2651 1492,2651 1547,2633 1674,2651 1849,2633 2038,2633 2056,2651 2297,2633 2329,2648 2351,2633 2362,2669 2351,2699 2289,2684 2235,2699 2191,2684 2027,2684 2002,2699 1962,2684 1099,2699" type="mask" xml:id="eSc_line_45e69192">
+     <path points="1096,2681 1132,2680 1492,2684 1536,2677 1732,2673 2162,2677 2363,2670" type="baseline"/>
+     <line>
+      Cornudet des Chomettes (de 32 act. Ct Foncier de France au même nom
+     </line>
+    </zone>
+    <zone points="1099,2739 1103,2706 1201,2706 1223,2691 1336,2706 1372,2691 1423,2706 1488,2706 1503,2691 1612,2691 1634,2706 1689,2691 1707,2706 1751,2688 1816,2702 1871,2702 1885,2688 2166,2702 2195,2688 2220,2728 2187,2753 2027,2753 1998,2739 1852,2739 1834,2753 1740,2739 1612,2757 1419,2757 1401,2742 1299,2757 1103,2749" type="mask" xml:id="eSc_line_266e5f00">
+     <path points="1100,2742 1219,2742 1263,2735 1980,2731 2064,2720 2104,2731 2144,2724 2224,2731" type="baseline"/>
+     <line>
+      Cornudet des Chomettes (de 500 act. Gar Paris au même)
+     </line>
+    </zone>
+    <zone points="1095,2793 1099,2749 1295,2760 1310,2746 1350,2760 1372,2746 1427,2760 1609,2760 1627,2742 2122,2757 2209,2739 2253,2775 2202,2800 2162,2789 2136,2804 1780,2789 1765,2804 1619,2793 1558,2808 1492,2793 1448,2808 1292,2793 1255,2808 1099,2808" type="mask" xml:id="eSc_line_f487b498">
+     <path points="1099,2797 1259,2789 1295,2782 1587,2782 2254,2777" type="baseline"/>
+     <line>
+      Cornudet des Chomettes (de 32 act. Cap. Nord au même)
+     </line>
+    </zone>
+    <zone points="1092,2840 1095,2808 1259,2808 1292,2793 1310,2808 1368,2793 1467,2808 1492,2789 1565,2811 1616,2797 1794,2811 1816,2793 2002,2793 2031,2811 2045,2797 2104,2811 2144,2793 2184,2808 2238,2793 2271,2826 2227,2859 2118,2840 2067,2859 2016,2840 1761,2840 1674,2859 1609,2840 1554,2859 1518,2855 1503,2837 1412,2855 1394,2840 1343,2855 1095,2855" type="mask" xml:id="eSc_line_c18e298f">
+     <path points="1094,2843 1204,2844 1277,2833 1314,2840 1525,2833 1576,2826 1612,2833 1707,2819 2166,2829 2275,2828" type="baseline"/>
+     <line>
+      Cornudet des Chomettes de 300 mines de Courrières au même)
+     </line>
+    </zone>
+    <zone points="1095,2891 1099,2859 1325,2859 1383,2840 1408,2855 1496,2840 1554,2859 1601,2840 1649,2855 1842,2840 1860,2859 1922,2859 1951,2840 1980,2859 2067,2859 2118,2840 2147,2877 2071,2899 1099,2899" type="mask" xml:id="eSc_line_93b038a4">
+     <path points="1097,2894 1201,2895 1274,2880 1507,2877 2150,2879" type="baseline"/>
+     <line>
+      Coraudet des Chomettes (de 60 act. La Hénin (au même)
+     </line>
+    </zone>
+    <zone points="1110,2931 1121,2899 1248,2909 1292,2895 1321,2909 1354,2891 1423,2906 1448,2891 1616,2902 1645,2888 1801,2902 1820,2888 2053,2899 2147,2880 2293,2880 2322,2913 2286,2942 2242,2928 2224,2946 2122,2946 2085,2928 1973,2950 1892,2931 1805,2953 1678,2935 1616,2953 1587,2942 1576,2957 1532,2939 1357,2939 1339,2960 1295,2946 1270,2960 1113,2946" type="mask" xml:id="eSc_line_871f66c8">
+     <path points="1112,2933 1285,2935 1357,2928 1394,2931 1507,2924 1656,2924 1692,2931 1765,2931 1823,2924 1863,2928 2118,2920 2155,2913 2325,2917" type="baseline"/>
+     <line>
+      de Rossak (par Albert) 17 R. du fg S^t Martin Paris au profit de
+     </line>
+    </zone>
+    <zone points="1095,2982 1110,2942 1135,2960 1223,2946 1259,2960 1292,2942 1325,2960 1357,2946 1496,2960 1514,2942 1550,2957 1587,2942 1667,2957 1721,2939 1740,2957 1816,2957 1831,2942 1911,2939 1929,2957 1962,2957 1987,2935 2038,2950 2093,2935 2118,2953 2329,2935 2384,2968 2355,3004 2311,3008 2107,3008 2093,2993 2027,3008 1987,2993 1954,3011 1823,2997 1736,3011 1627,2990 1558,3004 1412,2993 1332,3011 1303,2993 1161,3008 1103,2993" type="mask" xml:id="eSc_line_37ed3f31">
+     <path points="1097,2986 1565,2982 1609,2990 1663,2982 2180,2979 2246,2971 2308,2971 2386,2970" type="baseline"/>
+     <line>
+      Henri Delbouis aux Cazals commune de Florentin Aveyron Adjudo
+     </line>
+    </zone>
+    <zone points="1095,3030 1099,2993 1153,3008 1248,2993 1343,3008 1368,2993 1394,3008 1416,2990 1445,3004 1510,2990 1616,3000 1627,3022 1619,3048 1103,3048" type="mask" xml:id="eSc_line_a49d76fe">
+     <path points="1096,3031 1185,3026 1241,3039 1292,3026 1332,3030 1521,3026 1572,3019 1630,3026" type="baseline"/>
+     <line>
+      Pinquier du 26 avrel
+     </line>
+    </zone>
+    <zone points="1103,3088 1143,3044 1248,3059 1346,3040 1390,3059 1448,3037 1528,3055 1692,3051 1718,3037 1780,3051 1791,3070 1751,3099 1554,3088 1350,3106 1288,3091 1183,3110 1106,3095" type="mask" xml:id="eSc_line_c721d12f">
+     <path points="1105,3089 1357,3080 1616,3080 1652,3073 1729,3077 1792,3071" type="baseline"/>
+     <line>
+      Delbouis (par le sus-nommé)
+     </line>
+    </zone>
+    <zone points="1103,3131 1106,3091 1132,3106 1219,3091 1492,3106 1554,3088 1579,3102 1612,3088 1630,3102 1740,3102 1765,3084 1892,3084 1914,3102 2082,3080 2326,3095 2337,3120 2326,3142 2151,3135 2125,3153 2053,3157 1856,3153 1838,3139 1820,3157 1670,3139 1623,3153 1583,3142 1565,3160 1539,3142 1390,3142 1346,3160 1310,3142 1226,3160 1106,3157" type="mask" xml:id="eSc_line_61238a3a">
+     <path points="1104,3135 1576,3124 2085,3128 2282,3124 2340,3124" type="baseline"/>
+     <line>
+      Breuilheid (concernant la succession de Nestor Joseph) 16 rue
+     </line>
+    </zone>
+    <zone points="1103,3182 1113,3157 1172,3168 1201,3153 1219,3168 1274,3146 1336,3168 1368,3142 1467,3146 1543,3182 1492,3208 1394,3190 1306,3208 1204,3208 1143,3190 1106,3208" type="mask" xml:id="eSc_line_8d971e71">
+     <path points="1104,3183 1201,3179 1266,3177 1372,3182 1547,3186" type="baseline"/>
+     <line>
+      de Chalon à Paris
+     </line>
+    </zone>
+    <zone points="1139,3230 1161,3182 1204,3204 1521,3204 1587,3193 1605,3175 1678,3204 1718,3204 1747,3175 1933,3175 1973,3204 2158,3204 2238,3175 2300,3175 2344,3226 2333,3248 2246,3237 2166,3251 1805,3251 1791,3237 1714,3251 1397,3251 1336,3237 1306,3251 1241,3251 1226,3237 1143,3251" type="mask" xml:id="eSc_line_bbee19ec">
+     <path points="1143,3233 1325,3237 1612,3237 1761,3232 2024,3233 2206,3237 2347,3230" type="baseline"/>
+     <line>
+      Slle (par Pierre) not. à Paris, 1594 B^d Haussmann Conférée
+     </line>
+    </zone>
+    <zone points="1204,3288 1219,3244 1248,3259 1317,3244 1379,3244 1394,3259 1572,3259 1594,3244 1656,3259 1732,3241 1809,3255 1838,3241 1871,3255 2111,3255 2311,3237 2366,3266 2355,3288 2322,3295 1208,3306" type="mask" xml:id="eSc_line_89d72881">
+     <path points="1206,3290 1292,3295 1328,3288 1725,3284 1761,3277 1907,3281 2095,3278 2135,3280 2289,3281 2369,3270" type="baseline"/>
+     <line>
+      par testament de Fourquet Marie Ambroisine, célibataire
+     </line>
+    </zone>
+    <zone points="1095,3339 1110,3299 1452,3310 1467,3295 1547,3310 1609,3310 1623,3295 1783,3295 1798,3310 1958,3295 1994,3310 2009,3291 2031,3306 2064,3291 2115,3291 2129,3306 2187,3291 2420,3291 2439,3328 2428,3361 2257,3361 2231,3346 2206,3361 1994,3350 1962,3364 1805,3364 1787,3350 1732,3364 1623,3350 1099,3361" type="mask" xml:id="eSc_line_6479e3bb">
+     <path points="1098,3340 1427,3342 1499,3335 2442,3331" type="baseline"/>
+     <line>
+      demt à Paris, 28 R. de l'Université, décédée à Lisieux le 28 Mars 1937
+     </line>
+    </zone>
+    <zone points="1306,3386 1376,3346 1412,3364 1448,3346 1488,3375 1616,3346 1678,3353 1725,3386 1659,3437 1634,3411 1576,3404 1528,3433 1488,3401 1467,3419 1405,3426 1314,3386" type="mask" xml:id="eSc_line_d5440ef4">
+     <path points="1306,3386 1725,3386" type="baseline"/>
+     <line>
+      Mois de Mai
+     </line>
+    </zone>
+    <zone points="1095,3441 1099,3375 1252,3375 1310,3386 1332,3408 1467,3408 1525,3393 1700,3404 1729,3382 1805,3371 1878,3382 2045,3368 2140,3382 2206,3368 2249,3401 2326,3397 2337,3422 2278,3455 2013,3441 1998,3455 1805,3444 1776,3459 1649,3459 1605,3444 1459,3462 1416,3448 1357,3462 1277,3462 1255,3448 1099,3459" type="mask" xml:id="eSc_line_d7f0f272">
+     <path points="1098,3444 1135,3441 1619,3441 1769,3433 2340,3426" type="baseline"/>
+     <line>
+      Bockairy (par Charles Edouard Jules Emile Ladan) 20 Rue de Long-
+     </line>
+    </zone>
+    <zone points="1095,3491 1099,3459 1219,3462 1255,3448 1277,3462 1354,3462 1405,3444 1430,3459 1499,3448 1514,3462 1700,3462 1718,3448 1754,3462 1834,3444 1892,3462 1940,3444 1994,3459 2013,3441 2093,3455 2133,3441 2206,3459 2224,3441 2278,3455 2326,3441 2351,3481 2340,3499 2293,3506 2216,3506 2195,3491 2158,3506 1987,3495 1936,3510 1645,3510 1550,3495 1463,3510 1397,3495 1285,3510 1099,3502" type="mask" xml:id="eSc_line_c239d199">
+     <path points="1096,3495 1365,3492 1590,3488 1695,3482 1776,3484 2355,3484" type="baseline"/>
+     <line>
+      Champ Paris à Robert Goisy 3 Rue Hoche Pantin 9 ans 3.600f
+     </line>
+    </zone>
+    <zone points="1092,3532 1095,3506 1197,3517 1532,3495 1659,3502 1670,3532 1656,3546 1565,3550 1550,3535 1507,3550 1448,3532 1416,3553 1357,3542 1325,3557 1288,3539 1212,3539 1146,3561 1095,3542" type="mask" xml:id="eSc_line_50723746">
+     <path points="1095,3534 1412,3521 1473,3524 1567,3530 1627,3521 1673,3534" type="baseline"/>
+     <line>
+      locaux à Pantin, 3 Rue Hoche
+     </line>
+    </zone>
+    <zone points="1095,3575 1099,3539 1194,3550 1215,3528 1303,3550 1416,3550 1441,3528 1503,3550 1689,3550 1718,3528 1751,3550 1780,3521 1922,3521 1973,3550 2034,3517 2151,3517 2184,3546 2235,3517 2293,3517 2348,3561 2337,3586 2191,3590 1099,3590" type="mask" xml:id="eSc_line_8112d560">
+     <path points="1099,3579 1561,3579 1805,3568 2144,3572 2180,3564 2351,3564" type="baseline"/>
+     <line>
+      Immobilière des Pyrénees (par la Sté) 27 Rue du Clos, à Paris
+     </line>
+    </zone>
+    <zone points="1092,3622 1095,3590 1128,3612 1146,3593 1186,3608 1325,3593 1350,3608 1405,3593 1572,3597 1594,3575 1619,3597 1736,3590 1754,3575 1820,3601 1852,3575 1874,3593 1969,3590 1998,3612 2031,3579 2162,3582 2187,3597 2235,3572 2257,3586 2333,3579 2351,3612 2333,3641 2176,3637 2122,3662 2093,3641 2002,3633 1820,3659 1787,3637 1554,3655 1372,3648 1354,3630 1332,3652 1153,3648 1121,3630 1095,3641" type="mask" xml:id="eSc_line_9ea93d69">
+     <path points="1093,3626 1366,3618 1417,3624 1434,3626 2355,3615" type="baseline"/>
+     <line>
+      à Alice Clerc rue Bélin Dedouvre n° 17 locaux à Paris 27 Rue du Clos
+     </line>
+    </zone>
+    <zone points="1099,3673 1103,3637 1456,3641 1488,3648 1499,3670 1437,3688 1103,3681" type="mask" xml:id="eSc_line_8cefcfdb">
+     <path points="1101,3676 1502,3672" type="baseline"/>
+     <line>
+      9 ans 4.000 francs.
+     </line>
+    </zone>
+    <zone points="1095,3717 1117,3670 1146,3692 1332,3677 1423,3688 1452,3673 1590,3684 1649,3681 1678,3659 1725,3673 1761,3655 1922,3677 1998,3659 2060,3673 2093,3648 2267,3644 2344,3644 2355,3699 2300,3717 2264,3706 2249,3724 2133,3724 2107,3710 2078,3728 1911,3732 1747,3721 1689,3735 1609,3721 1565,3739 1430,3728 1201,3746 1099,3732" type="mask" xml:id="eSc_line_fbe3d8cd">
+     <path points="1098,3721 1452,3710 1488,3717 1692,3713 1832,3711 1880,3710 1981,3713 2147,3702 2356,3701" type="baseline"/>
+     <line>
+      Delbouis (suite de l'adjudication Pinquier du 26 Avril 1937 x3.900f
+     </line>
+    </zone>
+    <zone points="1095,3768 1099,3739 1168,3735 1274,3746 1437,3742 1477,3728 2198,3728 2260,3713 2340,3713 2351,3746 2329,3772 2024,3761 1980,3779 1962,3764 1947,3779 1856,3768 1823,3782 1710,3782 1692,3768 1630,3786 1536,3786 1518,3772 1499,3786 1405,3775 1390,3790 1306,3775 1277,3793 1099,3782" type="mask" xml:id="eSc_line_4bb5aac3">
+     <path points="1099,3772 1834,3757 1863,3764 1998,3753 2238,3753 2354,3750" type="baseline"/>
+     <line>
+      Pieur (par Louise Marie Albertine Hébert veuve de Arthur Georges) 55
+     </line>
+    </zone>
+    <zone points="1095,3815 1099,3782 1295,3786 1321,3768 1346,3786 1430,3768 1499,3786 1518,3772 1536,3786 1627,3786 1641,3772 1670,3786 1692,3768 1783,3786 1856,3768 2085,3768 2111,3786 2144,3768 2344,3768 2355,3797 2344,3819 2253,3815 2224,3830 2191,3815 2118,3830 2100,3815 2034,3830 1692,3815 1550,3830 1510,3815 1452,3830 1408,3815 1357,3830 1295,3830 1277,3815 1244,3830 1099,3830" type="mask" xml:id="eSc_line_48b01c79">
+     <path points="1098,3816 1319,3819 1388,3813 1401,3815 1422,3811 1554,3804 1729,3808 1922,3808 1994,3797 2257,3804 2358,3800" type="baseline"/>
+     <line>
+      Rue de Boulainvilliers Paris à Jean Baptiste Victor Albert Massard
+     </line>
+    </zone>
+    <zone points="1099,3859 1103,3830 1168,3823 1598,3830 1619,3815 1798,3826 1809,3855 1765,3873 1627,3859 1598,3877 1521,3863 1503,3877 1441,3866 1132,3881 1103,3866" type="mask" xml:id="eSc_line_0623c93e">
+     <path points="1102,3861 1496,3855 1638,3850 1719,3850 1811,3859" type="baseline"/>
+     <line>
+      98 Rue la Boétie riduisant le gage
+     </line>
+    </zone>
+    <zone points="1103,3906 1106,3859 1128,3877 1507,3877 1547,3852 1583,3877 1634,3859 1736,3877 1809,3873 1852,3841 2136,3841 2158,3863 2246,3852 2267,3866 2300,3855 2333,3888 2253,3913 1838,3903 1754,3917 1106,3917" type="mask" xml:id="eSc_line_4b74f251">
+     <path points="1104,3907 1128,3906 1274,3910 1452,3899 1958,3895 1994,3888 2335,3890" type="baseline"/>
+     <line>
+      Sauvagt (par conserts Franck à Albertine Eugénie Follet Veuve de
+     </line>
+    </zone>
+    <zone points="1103,3950 1113,3913 1255,3921 1270,3906 1314,3921 1390,3921 1405,3906 1558,3921 1623,3903 1674,3917 1878,3917 1892,3903 1991,3917 2369,3899 2380,3935 2373,3957 2049,3946 1991,3961 1110,3961" type="mask" xml:id="eSc_line_ecafbf2e">
+     <path points="1104,3953 1430,3953 1467,3943 1700,3943 1751,3953 1925,3939 2202,3939 2381,3937" type="baseline"/>
+     <line>
+      Georges Albert Lefevre 2 Villa Victorien Saron à Paris 195.866f
+     </line>
+    </zone>
+    <zone points="1099,3993 1103,3961 1477,3964 1514,3950 1758,3968 1856,3968 1889,3950 1925,3964 2045,3950 2071,3964 2115,3950 2155,3968 2206,3950 2318,3950 2358,3983 2348,4019 2311,4004 2224,4004 2209,4019 1998,4019 1983,4004 1856,4019 1641,4015 1590,4001 1565,4015 1521,4001 1492,4015 1474,4001 1103,4008" type="mask" xml:id="eSc_line_4887b6ea">
+     <path points="1103,3994 1260,3990 1379,3983 1527,3981 1594,3983 1714,3990 1802,3992 1847,3988 1887,3984 1933,3977 2209,3990 2303,3983 2361,3985" type="baseline"/>
+     <line>
+      sur prix de vente du 20 Octobre 1929 à Paul Victor Jules Joseph) 16 Rue
+     </line>
+    </zone>
+    <zone points="1095,4037 1110,4004 1372,4012 1386,3997 1485,4008 1496,4033 1470,4052 1372,4059 1099,4055" type="mask" xml:id="eSc_line_4c195f6a">
+     <path points="1098,4039 1274,4044 1497,4034" type="baseline"/>
+     <line>
+      d'Auteuil à Paris
+     </line>
+    </zone>
+    <zone points="1095,4081 1128,4044 1157,4059 1419,4059 1485,4044 1605,4044 1619,4059 1718,4044 1758,4059 1791,4041 1874,4041 1889,4055 1947,4041 1965,4059 2005,4041 2034,4059 2107,4059 2125,4041 2195,4041 2216,4059 2271,4041 2311,4059 2355,4041 2362,4081 2355,4114 2249,4099 2078,4114 2002,4099 1900,4114 1721,4114 1707,4099 1667,4114 1623,4099 1598,4114 1474,4099 1437,4114 1368,4099 1350,4114 1274,4114 1255,4099 1135,4114 1103,4099" type="mask" xml:id="eSc_line_d0c5389a">
+     <path points="1098,4084 1115,4084 2366,4084" type="baseline"/>
+     <line>
+      Homterz (par Octave Marie Kerin) et Fanny Jeanne Boudeau
+     </line>
+    </zone>
+    <zone points="1099,4139 1106,4103 1128,4117 1175,4103 1208,4117 1248,4099 1270,4117 1343,4114 1357,4099 1470,4117 1518,4099 1565,4117 1616,4099 1645,4114 1707,4099 1725,4117 1827,4117 1849,4103 1903,4117 1947,4099 2020,4103 2034,4117 2100,4117 2129,4099 2169,4117 2184,4103 2344,4103 2355,4135 2344,4154 1103,4150" type="mask" xml:id="eSc_line_70769477">
+     <path points="1102,4143 2356,4138" type="baseline"/>
+     <line>
+      son épouse 2 B^d de La Touer Maulourz à Charles Thomas Camnington
+     </line>
+    </zone>
+    <zone points="1095,4186 1099,4146 1132,4161 1179,4146 1314,4146 1332,4161 1354,4146 1419,4161 1448,4146 1583,4161 1605,4146 1623,4161 1714,4161 1791,4146 2184,4157 2300,4143 2340,4157 2351,4179 2326,4219 2227,4204 1976,4219 1954,4197 1852,4197 1834,4215 1805,4197 1725,4197 1710,4215 1674,4201 1645,4223 1605,4204 1568,4223 1547,4208 1488,4223 1463,4204 1434,4215 1394,4201 1321,4204 1295,4223 1124,4201 1099,4223" type="mask" xml:id="eSc_line_7e67f8ac">
+     <path points="1099,4188 2355,4182" type="baseline"/>
+     <line>
+      93 Av° 29fé Mardons Caffitte, terrain à Maisms Laffitte moyennant 71f
+     </line>
+    </zone>
+   </surface>
+   <surface points="2121,118 2121,246 2764,261 2786,322 2935,307 2935,118" type="marginal" xml:id="eSc_textblock_511c3d34">
+    <zone points="2158,200 2166,109 2216,116 2242,98 2286,116 2460,101 2519,116 2562,101 2631,116 2817,105 2846,116 2864,98 2926,98 2934,200 2926,221 2890,236 2781,225 2755,243 2639,229 2621,243 2369,243 2318,221 2166,225" type="mask" xml:id="eSc_line_ea9f04e5">
+     <path points="2160,203 2937,203" type="baseline"/>
+     <line>
+      Soirante dir reutème feuillet
+     </line>
+    </zone>
+    <zone points="2795,272 2803,236 2875,225 2912,236 2919,272 2912,327 2879,312 2803,320" type="mask" xml:id="eSc_line_6636a497">
+     <path points="2799,275 2923,273" type="baseline"/>
+     <line>
+      78
+     </line>
+    </zone>
+   </surface>
+   <surface points="2474,640 2490,4224 2361,4224 2358,1164 2359,650" type="col_6" xml:id="eSc_textblock_ddf5bcdd">
+    <zone points="2369,774 2377,731 2453,716 2453,796 2377,792" type="mask" xml:id="eSc_line_21af469c">
+     <path points="2371,777 2463,775" type="baseline"/>
+     <line>
+      --
+     </line>
+    </zone>
+    <zone points="2355,836 2358,782 2420,796 2464,774 2468,880 2362,887" type="mask" xml:id="eSc_line_c347399b">
+     <path points="2356,838 2479,836" type="baseline"/>
+     <line>
+      26 av
+     </line>
+    </zone>
+    <zone points="2384,931 2391,916 2431,913 2457,913 2464,931 2435,953 2391,945" type="mask" xml:id="eSc_line_644cabf2">
+     <path points="2387,934 2466,934" type="baseline"/>
+     <line>
+      --
+     </line>
+    </zone>
+    <zone points="2358,1018 2362,960 2464,945 2468,1029 2366,1062" type="mask" xml:id="eSc_line_c551abf3">
+     <path points="2361,1019 2477,1017" type="baseline"/>
+     <line>
+      27 A.
+     </line>
+    </zone>
+    <zone points="2366,1160 2373,1113 2442,1113 2439,1196 2369,1196" type="mask" xml:id="eSc_line_aeb13e8e">
+     <path points="2368,1162 2453,1164" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2358,1258 2362,1207 2449,1196 2449,1284 2362,1280" type="mask" xml:id="eSc_line_acbe0f50">
+     <path points="2362,1260 2463,1258" type="baseline"/>
+     <line>
+      28 Av
+     </line>
+    </zone>
+    <zone points="2373,1447 2380,1396 2446,1393 2442,1487 2377,1487" type="mask" xml:id="eSc_line_a398c1aa">
+     <path points="2375,1449 2455,1453" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2380,1651 2384,1585 2431,1585 2442,1720 2391,1716" type="mask" xml:id="eSc_line_f213bcee">
+     <path points="2381,1652 2447,1648" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2358,1818 2366,1789 2457,1767 2457,1855 2366,1869" type="mask" xml:id="eSc_line_88c412f6">
+     <path points="2362,1819 2447,1820 2468,1822" type="baseline"/>
+     <line>
+      27 Av.
+     </line>
+    </zone>
+    <zone points="2348,2015 2358,1956 2464,1953 2460,2062 2406,2036 2351,2058" type="mask" xml:id="eSc_line_71f22cf7">
+     <path points="2350,2018 2472,2020" type="baseline"/>
+     <line>
+      21 Av.
+     </line>
+    </zone>
+    <zone points="2351,2146 2373,2084 2417,2077 2449,2095 2449,2171 2380,2186 2358,2167" type="mask" xml:id="eSc_line_69537cdb">
+     <path points="2355,2149 2460,2149" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2366,2247 2369,2211 2391,2189 2442,2193 2446,2277 2373,2277" type="mask" xml:id="eSc_line_643f960a">
+     <path points="2368,2249 2457,2247" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2362,2335 2366,2280 2464,2280 2468,2371 2369,2342" type="mask" xml:id="eSc_line_7f2da494">
+     <path points="2366,2336 2476,2335" type="baseline"/>
+     <line>
+      27 Av.
+     </line>
+    </zone>
+    <zone points="2391,2422 2442,2386 2442,2448 2398,2422" type="mask" xml:id="eSc_line_ebceb143">
+     <path points="2393,2423 2453,2423" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2388,2517 2406,2488 2439,2488 2453,2513 2442,2535 2395,2542" type="mask" xml:id="eSc_line_fd566a4b">
+     <path points="2389,2520 2455,2516" type="baseline"/>
+     <line>
+      de
+     </line>
+    </zone>
+    <zone points="2366,2568 2369,2546 2460,2524 2464,2589 2373,2578" type="mask" xml:id="eSc_line_edb2183b">
+     <path points="2367,2570 2473,2566" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2395,2604 2417,2582 2446,2604 2439,2637 2402,2629" type="mask" xml:id="eSc_line_baf9c49f">
+     <path points="2397,2608 2449,2606" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2384,2662 2388,2629 2428,2633 2446,2659 2439,2688 2391,2684" type="mask" xml:id="eSc_line_f1f319e2">
+     <path points="2387,2666 2447,2662" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2384,2713 2388,2684 2428,2688 2442,2709 2428,2739 2391,2731" type="mask" xml:id="eSc_line_543b7c53">
+     <path points="2385,2715 2443,2711" type="baseline"/>
+     <line>
+      do
+     </line>
+    </zone>
+    <zone points="2366,2764 2391,2735 2457,2742 2464,2764 2457,2793 2373,2789" type="mask" xml:id="eSc_line_f05abf7e">
+     <path points="2367,2765 2466,2765" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2388,2811 2406,2782 2428,2779 2460,2815 2391,2833" type="mask" xml:id="eSc_line_5e29d061">
+     <path points="2389,2815 2461,2817" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2388,2859 2395,2833 2457,2815 2457,2884 2395,2884" type="mask" xml:id="eSc_line_6153872b">
+     <path points="2389,2861 2465,2861" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2351,2920 2355,2877 2446,2884 2464,2917 2446,2942 2358,2939" type="mask" xml:id="eSc_line_874e229a">
+     <path points="2354,2922 2468,2920" type="baseline"/>
+     <line>
+      4 Mari
+     </line>
+    </zone>
+    <zone points="2358,3051 2366,3004 2406,2997 2446,3051 2428,3084 2366,3091" type="mask" xml:id="eSc_line_aa178ec6">
+     <path points="2361,3054 2447,3054" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2373,3117 2380,3000 2409,3000 2457,3048 2464,3117 2442,3139 2380,3146" type="mask" xml:id="eSc_line_48681b31">
+     <path points="2376,3118 2465,3118" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2373,3222 2377,3193 2453,3197 2464,3219 2449,3248 2380,3244" type="mask" xml:id="eSc_line_1d4ee9d5">
+     <path points="2375,3226 2466,3222" type="baseline"/>
+     <line>
+      --
+     </line>
+    </zone>
+    <zone points="2358,3419 2369,3375 2464,3379 2464,3462 2431,3444 2366,3462" type="mask" xml:id="eSc_line_32d4235b">
+     <path points="2360,3421 2472,3422" type="baseline"/>
+     <line>
+      7 Mai
+     </line>
+    </zone>
+    <zone points="2358,3561 2366,3513 2468,3513 2464,3608 2362,3593" type="mask" xml:id="eSc_line_e7a88064">
+     <path points="2359,3564 2478,3566" type="baseline"/>
+     <line>
+      10 Mai
+     </line>
+    </zone>
+    <zone points="2369,3695 2377,3637 2457,3637 2457,3721 2377,3724" type="mask" xml:id="eSc_line_8cff4283">
+     <path points="2371,3698 2467,3696" type="baseline"/>
+     <line>
+      7 Mai
+     </line>
+    </zone>
+    <zone points="2388,3753 2395,3717 2442,3721 2442,3772 2395,3775" type="mask" xml:id="eSc_line_db82d5d0">
+     <path points="2391,3756 2453,3756" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2391,3866 2398,3801 2442,3837 2449,3866 2442,3906 2398,3917" type="mask" xml:id="eSc_line_c6f50c7d">
+     <path points="2395,3870 2453,3870" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+    <zone points="2373,4084 2380,4044 2464,4059 2464,4099 2380,4103" type="mask" xml:id="eSc_line_51e9e132">
+     <path points="2375,4085 2474,4087" type="baseline"/>
+     <line>
+      --
+     </line>
+    </zone>
+   </surface>
+   <surface points="2777,654 2792,4172 2733,4215 2489,4215 2489,640" type="col_7" xml:id="eSc_textblock_258734fd">
+    <zone points="2599,771 2613,734 2650,731 2686,756 2730,752 2737,778 2679,800 2602,792" type="mask" xml:id="eSc_line_2ef00992">
+     <path points="2600,774 2739,780" type="baseline"/>
+     <line>
+      -|-
+     </line>
+    </zone>
+    <zone points="2555,825 2559,796 2744,782 2752,829 2741,862 2559,854" type="mask" xml:id="eSc_line_9e5ecf3b">
+     <path points="2559,829 2754,830" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2599,923 2661,898 2726,902 2737,923 2679,953 2606,953" type="mask" xml:id="eSc_line_4576ee99">
+     <path points="2600,926 2739,924" type="baseline"/>
+     <line>
+      -|-
+     </line>
+    </zone>
+    <zone points="2584,1007 2591,956 2617,971 2657,956 2682,982 2726,982 2737,1011 2726,1047 2679,1073 2588,1043" type="mask" xml:id="eSc_line_f23641e6">
+     <path points="2586,1011 2738,1013" type="baseline"/>
+     <line>
+      45-
+     </line>
+    </zone>
+    <zone points="2544,1149 2551,1113 2610,1098 2664,1113 2715,1102 2741,1149 2719,1189 2672,1171 2617,1189 2551,1164" type="mask" xml:id="eSc_line_7837dbae">
+     <path points="2545,1150 2701,1153 2744,1153" type="baseline"/>
+     <line>
+      22|50
+     </line>
+    </zone>
+    <zone points="2566,1262 2570,1196 2628,1178 2715,1196 2726,1258 2704,1284 2570,1280" type="mask" xml:id="eSc_line_9d3177ca">
+     <path points="2570,1263 2728,1261" type="baseline"/>
+     <line>
+      79|20
+     </line>
+    </zone>
+    <zone points="2489,1433 2493,1374 2613,1389 2661,1371 2679,1389 2712,1389 2722,1436 2712,1465 2493,1469" type="mask" xml:id="eSc_line_1b060521">
+     <path points="2491,1435 2625,1433 2725,1440" type="baseline"/>
+     <line>
+      4.961|-
+     </line>
+    </zone>
+    <zone points="2537,1644 2544,1593 2602,1596 2628,1622 2722,1615 2737,1644 2730,1753 2650,1764 2610,1727 2544,1720" type="mask" xml:id="eSc_line_43b65284">
+     <path points="2538,1647 2740,1646" type="baseline"/>
+     <line>
+      120|90
+     </line>
+    </zone>
+    <zone points="2551,1818 2559,1782 2621,1756 2675,1778 2733,1771 2733,1855 2697,1891 2661,1862 2559,1858" type="mask" xml:id="eSc_line_51a48068">
+     <path points="2553,1822 2742,1820" type="baseline"/>
+     <line>
+      88170
+     </line>
+    </zone>
+    <zone points="2555,2007 2559,1949 2621,1949 2650,1920 2686,1938 2726,1920 2730,2033 2562,2044" type="mask" xml:id="eSc_line_d0d6158c">
+     <path points="2557,2008 2739,2006" type="baseline"/>
+     <line>
+      586|90
+     </line>
+    </zone>
+    <zone points="2555,2146 2559,2098 2595,2098 2653,2051 2730,2047 2733,2171 2562,2175" type="mask" xml:id="eSc_line_1005866e">
+     <path points="2559,2149 2744,2145" type="baseline"/>
+     <line>
+      22|50
+     </line>
+    </zone>
+    <zone points="2566,2240 2573,2186 2631,2189 2653,2211 2737,2215 2744,2240 2733,2266 2704,2273 2675,2255 2573,2269" type="mask" xml:id="eSc_line_fd3031d4">
+     <path points="2568,2241 2746,2243" type="baseline"/>
+     <line>
+      22|50
+     </line>
+    </zone>
+    <zone points="2577,2324 2581,2306 2617,2295 2664,2306 2712,2287 2730,2291 2741,2328 2730,2349 2708,2342 2675,2360 2581,2342" type="mask" xml:id="eSc_line_37415e6c">
+     <path points="2579,2326 2744,2330" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2573,2415 2577,2389 2657,2389 2686,2371 2719,2386 2733,2371 2744,2411 2712,2437 2661,2418 2602,2437 2577,2418" type="mask" xml:id="eSc_line_0f820719">
+     <path points="2575,2418 2747,2413" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2577,2462 2581,2444 2617,2429 2675,2429 2690,2444 2719,2433 2744,2458 2733,2480 2581,2480" type="mask" xml:id="eSc_line_f1cc3886">
+     <path points="2578,2464 2748,2461" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2566,2509 2570,2484 2631,2484 2650,2469 2737,2477 2748,2502 2741,2531 2708,2520 2610,2538 2573,2520" type="mask" xml:id="eSc_line_01d85eed">
+     <path points="2568,2513 2750,2506" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2595,2557 2617,2535 2675,2542 2690,2528 2737,2531 2744,2557 2730,2571 2602,2575" type="mask" xml:id="eSc_line_1811597a">
+     <path points="2598,2560 2747,2558" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2595,2597 2602,2578 2664,2564 2737,2568 2744,2597 2737,2622 2679,2604 2642,2622 2602,2611" type="mask" xml:id="eSc_line_df7d36c9">
+     <path points="2598,2600 2747,2600" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2577,2644 2602,2619 2675,2629 2712,2615 2744,2644 2722,2666 2672,2651 2606,2666 2581,2651" type="mask" xml:id="eSc_line_4bbd7d3a">
+     <path points="2581,2648 2712,2644 2746,2645" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2573,2699 2577,2677 2631,2673 2653,2655 2733,2655 2744,2691 2712,2713 2679,2713 2661,2695 2639,2717 2581,2699" type="mask" xml:id="eSc_line_e66cf44a">
+     <path points="2576,2700 2745,2695" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2559,2742 2562,2728 2635,2728 2657,2706 2733,2706 2744,2746 2733,2779 2679,2768 2562,2782" type="mask" xml:id="eSc_line_d9d0fe2a">
+     <path points="2560,2746 2745,2748" type="baseline"/>
+     <line>
+      11|50
+     </line>
+    </zone>
+    <zone points="2606,2797 2610,2779 2653,2786 2672,2768 2712,2768 2733,2800 2722,2826 2650,2815 2610,2833" type="mask" xml:id="eSc_line_d5828db4">
+     <path points="2610,2799 2735,2801" type="baseline"/>
+     <line>
+      11 50
+     </line>
+    </zone>
+    <zone points="2584,2855 2624,2826 2672,2837 2697,2822 2722,2829 2733,2855 2726,2873 2672,2859 2613,2873 2591,2859" type="mask" xml:id="eSc_line_500f6f3c">
+     <path points="2588,2859 2737,2856" type="baseline"/>
+     <line>
+      1150
+     </line>
+    </zone>
+    <zone points="2570,2913 2573,2877 2635,2877 2650,2862 2726,2873 2737,2909 2730,2975 2686,2993 2642,2993 2610,2960 2577,2960" type="mask" xml:id="eSc_line_8dd742d6">
+     <path points="2572,2917 2707,2913 2739,2912" type="baseline"/>
+     <line>
+      22|50
+     </line>
+    </zone>
+    <zone points="2559,3048 2573,2990 2672,2982 2704,2997 2737,2982 2737,3070 2566,3077" type="mask" xml:id="eSc_line_2d183a26">
+     <path points="2562,3051 2747,3049" type="baseline"/>
+     <line>
+      22|50
+     </line>
+    </zone>
+    <zone points="2544,3106 2559,3070 2639,3080 2653,3066 2733,3066 2744,3106 2737,3146 2551,3142" type="mask" xml:id="eSc_line_fdb8b46a">
+     <path points="2547,3107 2746,3107" type="baseline"/>
+     <line>
+      22|50
+     </line>
+    </zone>
+    <zone points="2591,3230 2624,3200 2653,3215 2697,3200 2719,3230 2712,3259 2599,3237" type="mask" xml:id="eSc_line_05272f58">
+     <path points="2594,3233 2721,3233" type="baseline"/>
+     <line>
+      -|-
+     </line>
+    </zone>
+    <zone points="2591,3426 2606,3393 2646,3397 2664,3379 2686,3390 2708,3368 2741,3368 2741,3451 2712,3473 2664,3451 2635,3481 2599,3481" type="mask" xml:id="eSc_line_381019a4">
+     <path points="2592,3430 2749,3428" type="baseline"/>
+     <line>
+      97|92
+     </line>
+    </zone>
+    <zone points="2533,3557 2537,3535 2591,3491 2675,3513 2722,3502 2726,3575 2679,3619 2646,3593 2624,3604 2540,3586" type="mask" xml:id="eSc_line_fa04a1cb">
+     <path points="2537,3558 2734,3552" type="baseline"/>
+     <line>
+      123 30
+     </line>
+    </zone>
+    <zone points="2555,3688 2566,3641 2621,3641 2653,3666 2733,3666 2741,3695 2719,3713 2686,3699 2559,3702" type="mask" xml:id="eSc_line_cfc1cfef">
+     <path points="2559,3692 2742,3697" type="baseline"/>
+     <line>
+      301"
+     </line>
+    </zone>
+    <zone points="2577,3742 2581,3721 2610,3706 2646,3713 2657,3699 2701,3717 2733,3699 2744,3735 2701,3801 2653,3804 2624,3775 2584,3772" type="mask" xml:id="eSc_line_3f702ee7">
+     <path points="2578,3746 2745,3739" type="baseline"/>
+     <line>
+      37|50
+     </line>
+    </zone>
+    <zone points="2497,3877 2544,3812 2631,3823 2697,3812 2730,3786 2733,3903 2672,3950 2646,3935 2602,3957 2551,3913 2504,3899" type="mask" xml:id="eSc_line_11239998">
+     <path points="2500,3881 2570,3877 2742,3875" type="baseline"/>
+     <line>
+      2938|20
+     </line>
+    </zone>
+    <zone points="2591,4077 2595,4033 2631,4033 2657,4012 2690,4026 2730,4012 2730,4204 2595,4204" type="mask" xml:id="eSc_line_37de10b5">
+     <path points="2592,4079 2743,4083" type="baseline"/>
+     <line>
+      -
+     </line>
+    </zone>
+   </surface>
+   <surface type="none" xml:id="eSc_dummyblock_">
+    <zone points="2384,2462 2391,2411 2442,2462 2435,2484 2391,2498" type="mask" xml:id="eSc_line_a34cd5c5">
+     <path points="2387,2464 2443,2464" type="baseline"/>
+     <line>
+      d°
+     </line>
+    </zone>
+   </surface>
+  </surfaceGrp>
+ </sourceDoc>
+ <text>
+  <body>
+   <div type="main">
+    <table cols="8" rows="33">
+     <row n="0" role="label">
+      <cell n="1" role="label1">
+       Numéros du répertoire
+      </cell>
+      <cell n="2" role="label2">
+       Dates des actes
+      </cell>
+      <cell n="3" role="label3">
+       Actes en brevets
+      </cell>
+      <cell n="4" role="label4">
+       Actes en minutes
+      </cell>
+      <cell n="5" role="label5">
+       Noms, prénms et domiciles des parties ; indication, situations et prix des biens
+      </cell>
+      <cell n="6" role="label6">
+       Date de l'enregistrement
+      </cell>
+      <cell n="7" role="label7">
+       Droits de l'enregistrement
+      </cell>
+      <cell n="8" role="label8">
+       Autres
+      </cell>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_5864c2ee"/>
+       296
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_684232ad"/>
+       <date cert="high" when-iso="23">
+        23
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_1cbcfd35"/>
+       Donation
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_97ffa0d4" n="1"/>
+       Morlevat (par Made) à son mari sus-nommé pleine- propriété
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_21af469c"/>
+       <date cert="low">
+        --
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_2ef00992"/>
+       -|-
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_c15e783f"/>
+       297
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_b053e6fd"/>
+       <date cert="high" when-iso="24">
+        24
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_7d74ff51"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_fbe239b1" n="1"/>
+       Pénisjard (d'une action Boy Marché au nom de Joseph)
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_c347399b"/>
+       <date cert="medium">
+        26 av
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_9e5ecf3b"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_060a7332"/>
+       258
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_bbb1a1e5"/>
+       <date cert="high" when-iso="24">
+        24
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_e4956aeb"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_6abe5e83" n="1"/>
+       64 Rue Lepic à Paris, décédé
+       <lb facs="#eSc_line_4e4cbde5" n="2"/>
+       Brunet (de 1515f 12 livret Caisse d'Epargne au nom de Arsène
+       <lb facs="#eSc_line_85f55631" n="3"/>
+       Marie) 2 Rue Hoche à Ivry décédé
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_644cabf2"/>
+       <date cert="low">
+        --
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_4576ee99"/>
+       -|-
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_87ebb2f3"/>
+       299
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_37c5a5a5"/>
+       <date cert="high" when-iso="24">
+        24
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_a4a4cd19"/>
+       Prêt
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_a888b937" n="1"/>
+       Lucg (par Ct Foncier de France 19 Rue des Capucine Paris
+       <lb facs="#eSc_line_7192919d" n="2"/>
+       à Renée Augusta) 5 Rue Germain Piloy à Paris &amp; 55.000^f
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_c551abf3"/>
+       <date cert="low">
+        27 A.
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_f23641e6"/>
+       45-
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_ef667502"/>
+       300
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_150f6732"/>
+       <date cert="high" when-iso="26">
+        26
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_f13402cf"/>
+       Prestation de Serment
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_7eeed749" n="1"/>
+       20 ans à 6x2%
+       <lb facs="#eSc_line_f123fa6a" n="2"/>
+       Dubonnet (par Robert) 19 Av. de Versailles à Paris, Inventaire
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_aeb13e8e"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_7837dbae"/>
+       22|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_e7b3471d"/>
+       301
+      </cell>
+      <cell n="2" role="col2"/>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_f5527805"/>
+       26 (21 Maurs et)
+      </cell>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_fb19f4a9"/>
+       Bail
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_75c62cd4" n="1"/>
+       du 15-12-36 devant Collet not. à Nantes
+       <lb facs="#eSc_line_23b5bbf9" n="2"/>
+       Normandin (par Germaine Ernestine Adèle Gizot veuve de Jean Clémen
+       <lb facs="#eSc_line_85f2dca7" n="3"/>
+       Joseph) 1 Boulevard Bineau à Levallois-Perret à Robert Léonce
+       <lb facs="#eSc_line_7692a0b3" n="4"/>
+       Le Gall, 112 Rue de la Garenne à Courlevoie, locaux à Levallois
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_acbe0f50"/>
+       <date cert="medium">
+        28 Av
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_9d3177ca"/>
+       79|20
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_1eca9959"/>
+       302
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_c40ef663"/>
+       <date cert="high" when-iso="26">
+        26
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_9d919dab"/>
+       Vente
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_02fc39af" n="1"/>
+       1 Bd Bineau 6 ans 2900F + 50x
+       <lb facs="#eSc_line_0c1f49b1" n="2"/>
+       Henrat (par Louis Auguste) et Adèle Marie Amélie Sustrac
+       <lb facs="#eSc_line_4f323a37" n="3"/>
+       sa fe 154 Rue de Grenelle Paris à Jean Louis Gabriel Hélène Roche
+       <lb facs="#eSc_line_223bd2da" n="4"/>
+       35 ter av. Joffre à la Garenne Colombes propriété aux Petites Dalles
+       <lb facs="#eSc_line_31024b67" n="5"/>
+       45.000f payés comptants
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_a398c1aa"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_1b060521"/>
+       4.961|-
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_ed57f255"/>
+       303
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_94b3be7d"/>
+       <date cert="high" when-iso="26">
+        26
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_dfae641c"/>
+       Bail
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_f1869fe8" n="1"/>
+       Bruneau (par Madeleine Léoide Appoline) 89 B^d des Amtassa
+       <lb facs="#eSc_line_c2ec002e" n="2"/>
+       deurs à Herblay à Reine Anna Madeleine Marie Louise Dumas
+       <lb facs="#eSc_line_bc1cf1fc" n="3"/>
+       épouse de Herbert Maraval, locaux à Paris 45 Rue Rodier
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_f213bcee"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_43b65284"/>
+       120|90
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_718dc12d"/>
+       304
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_0c12e52a"/>
+       <date cert="low">
+        26 (2 et)
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_eea8058f"/>
+       Bail
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_e4a127ce" n="1"/>
+       Pans 4.000 fancs.
+       <lb facs="#eSc_line_b70726c5" n="2"/>
+       Hons-Olivier (par Joseph Edouard Gabriel) 8 Rue Boucherat
+       <lb facs="#eSc_line_6342a9d1" n="3"/>
+       à Athis Mons et
+       <lb facs="#eSc_line_6c5d8732" n="4"/>
+       autres à Pauline Marguerite Georgette Hausser
+       <lb facs="#eSc_line_744db043" n="5"/>
+       épouse de Robert Jean Jacques Geyrard 75 Bd Suchet 9 ans
+       <lb facs="#eSc_line_f0531e86" n="6"/>
+       35.000 frs locaux à Paris 34 Mdd de Clichy
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_88c412f6"/>
+       <date cert="medium">
+        27 Av.
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_51a48068"/>
+       88170
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_14004d2d"/>
+       305
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_7ab9916e"/>
+       <date cert="high" when-iso="26">
+        26
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_1b95bc1d"/>
+       Adjudication
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_35e56985" n="1"/>
+       Pinquier (par Albert de torak 17 R. St Martin, fonds de
+       <lb facs="#eSc_line_c6424cdb" n="2"/>
+       commerce) cahier de charges du 1^er Nv. 193775.100 + 2940f
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_71f22cf7"/>
+       <date cert="medium">
+        21 Av.
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_d0d6158c"/>
+       586|90
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_1e7ea673"/>
+       306
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_3e5ac04e"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_7e18536a"/>
+       Dépôt
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_f06f8ab1" n="1"/>
+       fois préalables + loyers Parrièrés.
+       <lb facs="#eSc_line_f667d40c" n="2"/>
+       Cobert (de décharge de mandat concernant la succession de Louise) pro-
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_69537cdb"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_1005866e"/>
+       22|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_24317d8c"/>
+       307
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_ca9de8ce"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_296e3b58"/>
+       Procuration
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_f1be6db8" n="1"/>
+       curation du 15 février 1936
+       <lb facs="#eSc_line_4b79ee59" n="2"/>
+       Denis (par Jules Maurice Armand) 20 B^d Malesherbes à Paris en bl
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_643f960a"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_fd3031d4"/>
+       22|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_888092aa"/>
+       308
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_1c3fbfbc"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_98ed5699"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_a4e50047" n="1"/>
+       pr mainlevée aux hypothèques de bours
+       <lb facs="#eSc_line_5177409a" n="2"/>
+       Cormedet des Chomettes (de 125 act. Ste Elairage Chaffage et Force
+       <lb facs="#eSc_line_f554f2f0" n="3"/>
+       Motrices au nom du Comte Honoré François Joseph) 24 ris Rue de Berri Paris
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_7f2da494"/>
+       <date cert="medium">
+        27 Av.
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_37415e6c"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_593a54c8"/>
+       309
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_b7cc2cfe"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_bab01043" n="1"/>
+       Cornudet des Chomettes) de 4act. Banque Algérie, au nom de sus nommé
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_ebceb143"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_0f820719"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1"/>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_2d27c184"/>
+       <date cert="high" when-iso="29">
+        29
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_99776add"/>
+       Certificat de Propriété
+       <lb facs="#eSc_line_64130e82"/>
+       Crtificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_641d1e9a" n="1"/>
+       Cornudet des Chomettes (de 13 act. Banque Indochine au même nom
+      </cell>
+      <cell n="6" role="col6"/>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_f1cc3886"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc">
+       <lb facs="#eSc_line_a34cd5c5" n="1"/>
+       d°
+      </cell>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_c6eb19f0"/>
+       310
+       <lb facs="#eSc_line_5eb5f27c"/>
+       311
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_49b775f3"/>
+       <date cert="low" when-iso="84">
+        84
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_e0fbcfbb"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_a04563b8" n="1"/>
+       Corudet des Chomettes (de 100 act et Foncier Indochine au même nom
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_fd566a4b"/>
+       <date cert="low">
+        de
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_01d85eed"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1"/>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_7ab031ac"/>
+       <date cert="low" when-iso="87">
+        87
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_9bf0c773" n="1"/>
+       Cornudet des Chomettes (de 250 act. Menes de Lens au même non
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_edb2183b"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_1811597a"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_9ab722d4"/>
+       312
+       <lb facs="#eSc_line_48aa0c9e"/>
+       715
+      </cell>
+      <cell n="2" role="col2"/>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_8ac7059d"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_5af701a5" n="1"/>
+       Cornudet des Chagettes (de 60 act. Mires de Donges au même som)
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_baf9c49f"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_df7d36c9"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_5ddc82c1"/>
+       314
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_ca1be64f"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+       <lb facs="#eSc_line_a5be088c"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_aac937f3"/>
+       Certificat de Propriété
+       <lb facs="#eSc_line_5609f660"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_45e69192" n="1"/>
+       Cornudet des Chomettes (de 32 act. Ct Foncier de France au même nom
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_f1f319e2"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_4bbd7d3a"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_e3a51323"/>
+       315
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_e920b408"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_76e32b07"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_266e5f00" n="1"/>
+       Cornudet des Chomettes (de 500 act. Gar Paris au même)
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_543b7c53"/>
+       <date cert="low">
+        do
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_e66cf44a"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_4f486460"/>
+       316
+      </cell>
+      <cell n="2" role="col2"/>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_f487b498" n="1"/>
+       Cornudet des Chomettes (de 32 act. Cap. Nord au même)
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_f05abf7e"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_d9d0fe2a"/>
+       11|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_5c0719ff"/>
+       317
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_021f81a8"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+       <lb facs="#eSc_line_4d9b8eb5"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_472765f7"/>
+       Certificat de Propriété
+       <lb facs="#eSc_line_747ed0f5"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_c18e298f" n="1"/>
+       Cornudet des Chomettes de 300 mines de Courrières au même)
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_5e29d061"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_d5828db4"/>
+       11 50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_6fae3dc1"/>
+       318
+      </cell>
+      <cell n="2" role="col2"/>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_93b038a4" n="1"/>
+       Coraudet des Chomettes (de 60 act. La Hénin (au même)
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_6153872b"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_500f6f3c"/>
+       1150
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_6d162ece"/>
+       39
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_586db3b6"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+       <lb facs="#eSc_line_382f6035"/>
+       <date cert="high" when-iso="27">
+        27
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_d61737eb"/>
+       Certificat de Propriété
+      </cell>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_f475e5e0"/>
+       Déclaration Commene
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_871f66c8" n="1"/>
+       de Rossak (par Albert) 17 R. du fg S^t Martin Paris au profit de
+       <lb facs="#eSc_line_37ed3f31" n="2"/>
+       Henri Delbouis aux Cazals commune de Florentin Aveyron Adjudo
+       <lb facs="#eSc_line_a49d76fe" n="3"/>
+       Pinquier du 26 avrel
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_874e229a"/>
+       <date cert="low">
+        4 Mari
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_8dd742d6"/>
+       22|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1"/>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_a38c1856"/>
+       <date cert="high" when-iso="28">
+        28
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_c721d12f" n="1"/>
+       Delbouis (par le sus-nommé)
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_aa178ec6"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_2d183a26"/>
+       22|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_afc7955c"/>
+       320
+       <lb facs="#eSc_line_288530aa"/>
+       321
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_36e628cc"/>
+       <date cert="high" when-iso="29">
+        29
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_7d48cab0"/>
+       Acceptation Command
+       <lb facs="#eSc_line_e6ffd8be"/>
+       Dépôt de Décharge
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_61238a3a" n="1"/>
+       Breuilheid (concernant la succession de Nestor Joseph) 16 rue
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_48681b31"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_fdb8b46a"/>
+       22|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_16075df1"/>
+       322
+       <lb facs="#eSc_line_610763ea"/>
+       323
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_51965978"/>
+       <date cert="high" when-iso="30">
+        30
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_df2895a4"/>
+       de Mandat
+       <lb facs="#eSc_line_80d33f8e"/>
+       Renonciation à fone
+       <lb facs="#eSc_line_371c5e7f"/>
+       Vio d'exicut en testamentaire
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_8d971e71" n="1"/>
+       de Chalon à Paris
+       <lb facs="#eSc_line_bbee19ec" n="2"/>
+       Slle (par Pierre) not. à Paris, 1594 B^d Haussmann Conférée
+       <lb facs="#eSc_line_89d72881" n="3"/>
+       par testament de Fourquet Marie Ambroisine, célibataire
+       <lb facs="#eSc_line_6479e3bb" n="4"/>
+       demt à Paris, 28 R. de l'Université, décédée à Lisieux le 28 Mars 1937
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_1d4ee9d5"/>
+       <date cert="low">
+        --
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_05272f58"/>
+       -|-
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_cf5f512e"/>
+       -
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_9b84b073"/>
+       <date cert="high" when-iso="3">
+        3
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_b34da084"/>
+       Bail
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_d5440ef4" n="1"/>
+       Mois de Mai
+       <lb facs="#eSc_line_d7f0f272" n="2"/>
+       Bockairy (par Charles Edouard Jules Emile Ladan) 20 Rue de Long-
+       <lb facs="#eSc_line_c239d199" n="3"/>
+       Champ Paris à Robert Goisy 3 Rue Hoche Pantin 9 ans 3.600f
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_32d4235b"/>
+       <date cert="medium">
+        7 Mai
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_381019a4"/>
+       97|92
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_5907c0d6"/>
+       324
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_7ff170f8"/>
+       <date cert="high" when-iso="3">
+        3
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_bef50f24"/>
+       Bail
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_50723746" n="1"/>
+       locaux à Pantin, 3 Rue Hoche
+       <lb facs="#eSc_line_8112d560" n="2"/>
+       Immobilière des Pyrénees (par la Sté) 27 Rue du Clos, à Paris
+       <lb facs="#eSc_line_9ea93d69" n="3"/>
+       à Alice Clerc rue Bélin Dedouvre n° 17 locaux à Paris 27 Rue du Clos
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_e7a88064"/>
+       <date cert="medium">
+        10 Mai
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_fa04a1cb"/>
+       123 30
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_7ca9d06e"/>
+       316
+      </cell>
+      <cell n="2" role="col2"/>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4"/>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_8cefcfdb" n="1"/>
+       9 ans 4.000 francs.
+       <lb facs="#eSc_line_fbe3d8cd" n="2"/>
+       Delbouis (suite de l'adjudication Pinquier du 26 Avril 1937 x3.900f
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_8cff4283"/>
+       <date cert="medium">
+        7 Mai
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_cfc1cfef"/>
+       301"
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_69a56124"/>
+       316
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_d3692820"/>
+       <date cert="high" when-iso="4">
+        4
+       </date>
+       <lb facs="#eSc_line_eebeb895"/>
+       <date cert="high" when-iso="4">
+        4
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_67d98838"/>
+       Dépôt ét at Matériel
+       <lb facs="#eSc_line_f25e743b"/>
+       Mainlevée
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_4bb5aac3" n="1"/>
+       Pieur (par Louise Marie Albertine Hébert veuve de Arthur Georges) 55
+       <lb facs="#eSc_line_48b01c79" n="2"/>
+       Rue de Boulainvilliers Paris à Jean Baptiste Victor Albert Massard
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_db82d5d0"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_3f702ee7"/>
+       37|50
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_59c9681d"/>
+       327
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_da7ca591"/>
+       <date cert="low">
+        9 (3 et)
+       </date>
+      </cell>
+      <cell n="3" role="col3"/>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_4e0830ee"/>
+       Transport
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_0623c93e" n="1"/>
+       98 Rue la Boétie riduisant le gage
+       <lb facs="#eSc_line_4b74f251" n="2"/>
+       Sauvagt (par conserts Franck à Albertine Eugénie Follet Veuve de
+       <lb facs="#eSc_line_ecafbf2e" n="3"/>
+       Georges Albert Lefevre 2 Villa Victorien Saron à Paris 195.866f
+       <lb facs="#eSc_line_4887b6ea" n="4"/>
+       sur prix de vente du 20 Octobre 1929 à Paul Victor Jules Joseph) 16 Rue
+       <lb facs="#eSc_line_4c195f6a" n="5"/>
+       d'Auteuil à Paris
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_c6f50c7d"/>
+       <date cert="unknown">
+        d°
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_11239998"/>
+       2938|20
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+     <row>
+      <cell n="1" role="col1">
+       <lb facs="#eSc_line_b2798c4c"/>
+       38
+      </cell>
+      <cell n="2" role="col2">
+       <lb facs="#eSc_line_62bec548"/>
+       <date cert="high" when-iso="4">
+        4
+       </date>
+      </cell>
+      <cell n="3" role="col3">
+       <lb facs="#eSc_line_c77a9c78"/>
+       Subte M^e Baullar
+      </cell>
+      <cell n="4" role="col4">
+       <lb facs="#eSc_line_cb1a354c"/>
+       Vente
+      </cell>
+      <cell n="5" role="col5">
+       <lb facs="#eSc_line_d0c5389a" n="1"/>
+       Homterz (par Octave Marie Kerin) et Fanny Jeanne Boudeau
+       <lb facs="#eSc_line_70769477" n="2"/>
+       son épouse 2 B^d de La Touer Maulourz à Charles Thomas Camnington
+       <lb facs="#eSc_line_7e67f8ac" n="3"/>
+       93 Av° 29fé Mardons Caffitte, terrain à Maisms Laffitte moyennant 71f
+      </cell>
+      <cell n="6" role="col6">
+       <lb facs="#eSc_line_51e9e132"/>
+       <date cert="low">
+        --
+       </date>
+      </cell>
+      <cell n="7" role="col7">
+       <lb facs="#eSc_line_37de10b5"/>
+       -
+      </cell>
+      <cell n="8" role="misc"/>
+     </row>
+    </table>
+   </div>
+  </body>
+ </text>
+</TEI>

@@ -1,0 +1,216 @@
+# -*- coding: UTF-8 -*-
+
+import json
+
+
+from flask import (
+    request,
+    Response,
+    make_response,
+    jsonify,
+    flash,
+    render_template,
+    redirect,
+    url_for)
+
+from app.config import (app, db)
+from app.models import (
+    Project,
+    StandoffView,
+    ConfigurationProject,
+    Document,
+    Sentence,
+    WordToken)
+
+from app.lib.IO_utils.parsers.XMLParser import XMLStrategiesParser
+from app.lib.IO_utils.exporters.XMLExporter import XMLExporterStrategies
+from app.lib.Ner.NerSpacy import NerSpacyEngine
+
+
+@app.route('/project/<int:project_id>', methods=['GET', 'POST'])
+def project(project_id):
+    """Returns project workflow view"""
+    return render_template('main/project.workflow.html',
+                           project=Project.query.filter_by(id=project_id).first(),
+                           documents=Document.return_all_documents_from_project_id(project_id=project_id))
+
+
+@app.route('/get_ner_statistics_project/<int:project_id>', methods=['GET', 'POST'])
+def statistics_ner_project(project_id):
+    """Returns proportion of entities per class in the whole project"""
+    if request.method == 'GET':
+        labels, values = WordToken.compute_stats_entities_for_project(project_id=project_id)
+        return jsonify({
+            'labels': labels,
+            'values': values
+        })
+
+
+@app.route('/save_description/<int:project_id>', methods=['GET', 'POST'])
+def new_project_description(project_id):
+    """Store markdown project description from workflow view"""
+    if request.method == "POST":
+        Project.query.filter_by(id=project_id).first().description = json.loads(request.data)['new_description']
+        db.session.commit()
+        return jsonify(status=True)
+
+
+@app.route('/progress_parse/PROJECT=<int:project_id>/DOCUMENT=<int:doc_id>', methods=['GET', 'POST'])
+def parse_document(project_id, doc_id):
+    """Parse document and store content in database"""
+    document = Document.query.filter_by(id=doc_id).first()
+    try:
+        result = XMLStrategiesParser(document.data)
+        if result.schema == "tei":
+            new_standoff_representation = StandoffView(
+                plain_text=result.plain_text,
+                format="tei",
+                document_id=doc_id
+            )
+            db.session.add(new_standoff_representation)
+            db.session.commit()
+        if result.schema == "ead":
+            sentences = []
+            order = 0
+            for sentence in result.sentences:
+                order += 1
+                sentences.append(Sentence(content=sentence, order_id=order, document_id=doc_id))
+            db.session.add_all(sentences)
+            db.session.commit()
+            new_standoff_representation = StandoffView(
+                plain_text=result.plain_text,
+                format="ead",
+                document_id=doc_id
+            )
+            db.session.add(new_standoff_representation)
+            db.session.commit()
+
+        document.is_parse = 1
+        db.session.commit()
+
+        flash(f"{document.filename} parse with success", "info")
+        return make_response(jsonify({"status": "success"}), 200)
+    except ValueError:
+        return make_response(jsonify({"status": "error"}), 400)
+
+
+@app.route('/progress_ner/PROJECT=<int:project_id>/DOCUMENT=<int:doc_id>/<int:rewrite>', methods=['GET', 'POST'])
+def ner(project_id, doc_id, rewrite=False):
+    """Apply named-entity recognition pipeline on document"""
+    document = Document.query.filter_by(
+        id=doc_id
+    ).first()
+
+    if bool(rewrite):
+        db.session.query(WordToken).filter_by(document_id=doc_id).delete()
+        db.session.commit()
+
+    standoffview = StandoffView.query.filter_by(
+        document_id=doc_id
+        ).first()
+
+    # retrieve Ner config for spacy engine
+    try:
+        ner_config = ConfigurationProject.query.filter_by(project_id=document.project_id).first()
+
+        ner_engine = NerSpacyEngine(
+            language=ner_config.language,
+            type_model=ner_config.type_model,
+            length_threshold=3)
+
+        # clear all the actual tokens for a document
+        db.session.query(WordToken).filter(WordToken.document_id == doc_id).delete()
+        db.session.commit()
+
+        if standoffview.format == 'tei':
+            plain = standoffview.plain_text
+            document.is_ner_applied = True
+            db.session.commit()
+            flash(f'{document.filename} ner with success', 'info')
+
+            return Response(ner_engine.get_ner(
+                project_id=project_id,
+                document_id=doc_id,
+                schema='tei',
+                sentences=None,
+                document=plain
+            ), mimetype='text/event-stream')
+
+        if standoffview.format == 'ead':
+            content_sentences_tuples = Sentence.return_texts_tuples(doc_id)
+            plain = standoffview.plain_text
+            document.is_ner_applied = True
+            db.session.commit()
+            flash(f'{document.filename} ner with success', 'info')
+
+            return Response(ner_engine.get_ner(
+                project_id=project_id,
+                document_id=doc_id,
+                schema='ead',
+                sentences=content_sentences_tuples,
+                document=plain
+            ), mimetype='text/event-stream')
+
+    except AttributeError:
+        return jsonify(status=400)
+
+
+@app.route('/export/PROJECT=<int:project_id>/DOCUMENT=<int:doc_id>', methods=['GET', 'POST'])
+def export_enhanced(project_id, doc_id):
+    """Export enhanced content into new XML with annotations (inline or not)"""
+    output_xml = ""
+    # publish = True
+    # get document infos
+    document = Document.query.filter_by(
+        id=doc_id
+    ).first()
+    annotations = WordToken.query.filter_by(document_id=doc_id).all()
+    if request.method == 'POST':
+        if len(annotations) > 0:
+            # get type export
+            type_export = request.form['export_format']
+            if type_export == 'w3c_annotations':
+                annotations_W3C = WordToken.get_annotations(doc_id)
+                return Response(json.dumps(annotations_W3C, ensure_ascii=False), mimetype='application/json', headers={
+                'Content-Disposition': f'attachment; filename={document.filename}_annotations.w3c.json'
+            })
+            else:
+                if type_export == 'inline_xslt':
+                    type_xslt = True
+                else:
+                    type_xslt = False
+                # pass exporter class
+                document_to_export = XMLExporterStrategies(source=document.data,
+                                                           document_id=doc_id,
+                                                           project_id=project_id,
+                                                           type_xslt=type_xslt)
+                if type_export == 'ead_controlaccess':
+                    output_xml = document_to_export.ead_results_to_controlaccess_level()
+                elif type_export == 'tei_inline_offsets':
+                    output_xml = document_to_export.tei_results_to_inline_standoff()
+                elif type_export == 'inline_xslt':
+                    output_xml = document_to_export.results_to_inline_xslt()
+
+            """ experimental TEI Publisher publication
+        if publish:
+            import requests
+            tei_publisher_instance = "http://127.0.1.1:8080/exist/apps/tei-publisher/api/upload/playground"
+            headers = {
+                'Content-Type': 'multipart/form-data',
+            }
+            files = {
+                f'{document.filename}.xml': str(output_xml)
+            }
+            response = requests.post(tei_publisher_instance, headers=headers, files=files, auth=('*****', '*****'))
+            if  response.status_code == 200:
+                print("send OK")
+            else:
+                print("fail")
+            """
+
+            return Response(str(output_xml), mimetype='application/xml', headers={
+            'Content-Disposition': f'attachment; filename={document.filename}_enhanced.xml'
+            })
+        else:
+            flash("It seems there are no annotations in your document.", category='warning')
+            return redirect(url_for('project', project_id=project_id))

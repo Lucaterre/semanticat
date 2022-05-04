@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title> L-echo-de-la-fabrique_1833-8-25_0092 </title>
+    <editor> Manuela Martini </editor>
+    <respStmt>
+     <name> Laurie Vanneau </name>
+     <resp> correction </resp>
+    </respStmt>
+    <respStmt>
+     <name> Marie Lauricella </name>
+     <resp> collecte </resp>
+    </respStmt>
+    <respStmt>
+     <name> Margot Magguili </name>
+     <resp> collecte </resp>
+    </respStmt>
+    <respStmt>
+     <name> Alix Chagué </name>
+     <resp> collecte, transcription, correction </resp>
+    </respStmt>
+    <respStmt>
+     <name> Anaïs Chambat </name>
+     <resp> édition </resp>
+    </respStmt>
+   </titleStmt>
+   <publicationStmt>
+    <p> ANR Time-Us(2017-2021) </p>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     <idno type="Numelyo"> BML_01PER0030214481 </idno>
+    </p>
+    <p type="published"> publié le <date when-iso="1833-08-25"> 1833-8-25 </date>
+    </p>
+    <p>
+     <idno type="num_journal"> 96 </idno>
+    </p>
+    <p>
+     <idno type="num_year"> 0 </idno>
+    </p>
+    <p>
+     <idno type="URI"> http://collections.bm-lyon.fr/BML_01PER0030214481 </idno>
+    </p>
+    <p type="hearing"> audience du <date when-iso="1833-08-22"> 1833-8-22 </date>
+    </p>
+   </sourceDesc>
+  </fileDesc>
+ </teiHeader>
+ <text ana="L'Echo de la Fabrique_1833-8-22">
+  <milestone ana="PH-Lyon" unit="audience"/>
+  <pb n="5"/>
+  <body>
+   <p> ( PRÉSIDÉ PAR M. PUTINIER , VICE-PRÉSIDENT. ) </p>
+   <p> Audience du 22 août 1833. </p>
+   <p> M. Trouba-Berna avait fait au conseil des prudhommes un dépôt de plusieurs dessins nouveaux,
+    afin d'en acquérir par là la propriété. Quelques jours après ce négociant ayant appris que M.
+    Bernard, marchand déchantillons , possédait dans sa collection des dessins parfaitement
+    conformes aux siens , les démarches légales furent faites pour constater l'existence de ces
+    dessins. C'est sous cette prévention que cette affaire a paru aujourdhui au conseil, qui a
+    reconnu l'identité des dessins et a renvoyé les parties par devant le tribunal de commerce. </p>
+   <p> Morellon avait confié à Napoly et Lansard , pourvoyeurs d'ouvrages de Poncharra, près Tarare
+    , des pièces et trames dont ils étaient responsables; après réglement de compte Napoly se trouve
+    débiteur de 6,990 grammes de soie qui furent estimés par le sieur Morellon à la somme de 489 f.
+    30 c., qui fut réduite à 389 f. 30 c. Mais Napoly se croyant lésé dans cette affaire fit
+    paraître Morellon devant le conseil. Cette affaire fut renvoyée pardevant MM. Carnot et Labory ,
+    qui reconnurent, après examen, que le déchet n'avait été porté qu'à 1|2 pour 0|0 , et que
+    d'après ce , malgré une bonification de 1,500 grammes que Morellon avait accordée à Napoly , une
+    différence de 2 kilog. existait encore en faveur de ce dernier. Il fut donc rendu un jugement
+    d'après le rapport de ces arbitres , par lequel la somme de 150 fr. serait remboursée à Napoly,
+    sans préjudice de la somme de 50 fr., montant de la façon d'une pièce qui était encore en
+    fabrication. Morellon ayant mis opposition à ce jugement, la cause fut appelée de nouveau , et
+    ce dernier condamné par défaut. Hier, les parties étant présentes , le conseil a confirmé le
+    jugement et condamné en outre Morellon à payer 25 fr. à Napoly pour indemnité de déplacement. </p>
+   <p> Une cause du plus haut intérêt., entre Henri Droiteau et Daviet, a été présentée au conseil ;
+    mais n'ayant pu se terminer sans examen d'arbitre , nous en rendrons compte dans notre prochain
+    numéro. </p>
+  </body>
+ </text>
+</TEI>

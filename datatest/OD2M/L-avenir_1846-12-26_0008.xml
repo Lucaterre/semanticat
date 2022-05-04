@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title> L-avenir_1846-12-26_0008 </title>
+    <editor> Manuela Martini </editor>
+    <respStmt>
+     <name> Laurie Vanneau </name>
+     <resp> correction </resp>
+    </respStmt>
+    <respStmt>
+     <name> Marie Lauricella </name>
+     <resp> collecte </resp>
+    </respStmt>
+    <respStmt>
+     <name> Margot Magguili </name>
+     <resp> collecte </resp>
+    </respStmt>
+    <respStmt>
+     <name> Alix Chagué </name>
+     <resp> collecte, transcription, correction </resp>
+    </respStmt>
+    <respStmt>
+     <name> Anaïs Chambat </name>
+     <resp> édition </resp>
+    </respStmt>
+   </titleStmt>
+   <publicationStmt>
+    <p> ANR Time-Us(2017-2021) </p>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     <idno type="Numelyo"> BML_01PER0030210739 </idno>
+    </p>
+    <p type="published"> publié le <date when-iso="1846-12-26"> 1846-12-26 </date>
+    </p>
+    <p>
+     <idno type="num_journal"> 24 </idno>
+    </p>
+    <p>
+     <idno type="num_year"> 0 </idno>
+    </p>
+    <p>
+     <idno type="URI"> http://collections.bm-lyon.fr/BML_01PER0030210739 </idno>
+    </p>
+    <p type="hearing"> audience du <date when-iso="1846-12-23"> 1846-12-23 </date>
+    </p>
+   </sourceDesc>
+  </fileDesc>
+ </teiHeader>
+ <text ana="L'Avenir_1846-12-23">
+  <milestone ana="PH-Lyon" unit="audience"/>
+  <pb n="3"/>
+  <body>
+   <p> Audience du 23 décembre 1846. — Présidence de M. Bertrand; </p>
+   <p> Constan demande la résiliation avec indemnité de l'acte dapprenlissage du fils Ginat. Il se
+    fonde sur l'insubordination de l'apprenti. Le rapport des membres Chargés de la surveillance
+    ayant établi l'insubordination, le Conseil résilié les conventions, accorde cent fr.
+    d'indemnité, déclare le père responsable , et décide que Ginat fils ne pourra se replacer qu'en
+    qualité dapprenti </p>
+   <p> — Mlle Crétinet récîame contre Rozier , chef d'atelier, le payement de sa huitaine , se
+    plaignant d'avoir été frappée.— Rozier, de son côté, se plaint de la Dlle Crétinet, dont le
+    caractère et le peu d'égards ont motivé le renvoi.—Des témoins sont entendus, il résulte de
+    leurs explications que les parties ont des torts réciproques. Le Conseil les renvoie d'instance.
+    — Carret occupait sans livret un ouvrier qui devait a Vanet. —Celui-ci a fait constater le fait
+    et exerce son recours contre Carret, qui prétend et prouve qu'il n'a occupé cet ouvrier qu'avec
+    la permission du chef d'atelier Assada ; mais le livret réel de l'ouvrier se trouvant entre les
+    mains de Vanet, Carret; n'étant nanti que d'un livret secondaire d'un chef d'atelier, le Conseil
+    prononce la validité de la contravention, condamne Assada et Carrela payer par moitié la créance
+    due à Vanet.— Tous les droits de Carret réservés pour la retenue qu'il aura de son côté à
+    exercer contre l'ouvrier. Le Conseil a pris en. considération la bonne foi de Carret, qui se
+    croyait en régle avec le livret délivré par Assada. </p>
+   <p> Les chefs d'ateliers doivent apporter la plus grande circonspection dans la livraison de ces
+    livrets secondaires, parce que, par ce moyen, les ouvriers pourraient facilement éluder la loi </p>
+   <p> et se soustraire à la seule garantie qui fait la sécurité des chefs d'ateliers. </p>
+   <p> — Guichard, chef d'atelier, demande à la maison Faure et Combalot, la réduction d'un rabais
+    de 20 cent. par mètre qui lui a été fait sur une pièce d'étoffe, sous le prétexte que la
+    quadrillage n'était pas conforme à la note. Il produit la note. Le Conseil, après l'avoir
+    examinée et s'être convaincu qu'elle nétait pas suffisamment détaillée, réduit le rabais de
+    moitié. </p>
+   <p> — Thomas réclame une indemnité pour son temps perdu, un montage métier et le changement de la
+    pièce montée, changenient dont les causes lui sont étrangères. Celte affaire est renvoyée devant
+    arbitres. </p>
+  </body>
+ </text>
+</TEI>

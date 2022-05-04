@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Semantic@ - {% block title %}{% endblock title %} </title>
+    {% block metadata %}
+        {% include 'partials/_metadata.html' %}
+    {% endblock metadata %}
+    {% include 'partials/_base_css.html' %}
+    {% block add_css %}{% endblock add_css %}
+</head>
+<body>
+{% block body %}
+{% endblock body %}
+</body>
+</html>
