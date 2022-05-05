@@ -26,9 +26,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Linter (pylint) and CI tests (flask-pytest)
+    - name: Linter (pylint)
       run: |
-        chmod +x ./app/tests/launchTest.sh
-        sh ./app/tests/launchTest.sh
+        pylint ./app/lib/IO_utils/
+        pylint ./app/lib/Ner/
+        pylint ./app/views/*.py
+        pylint ./app/config.py
+        pylint ./app/models.py
+    - name: CI tests (flask-pytest)
+      run: |
+        pytest ./app/tests/testProject.py
