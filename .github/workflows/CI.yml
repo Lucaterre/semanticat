@@ -30,7 +30,7 @@ jobs:
     - name: Linter (pylint)
       run: |
         pylint ./app/lib/IO_utils/
-        pylint ./app/lib/Ner/
+        # pylint ./app/lib/Ner/
         pylint ./app/views/*.py
         pylint ./app/config.py
         pylint ./app/models.py
