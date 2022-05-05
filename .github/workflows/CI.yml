@@ -30,4 +30,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Linter (pylint) and CI tests (flask-pytest)
       run: |
+        chmod +x ./app/tests/launchTest.sh
         sh ./app/tests/launchTest.sh
