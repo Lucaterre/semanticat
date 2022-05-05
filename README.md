@@ -5,8 +5,6 @@
 
 # Semanti🐱 
 
-----
-
 **WORK-IN-PROGRESS**
 
 Semantic@ is a semantic annotation platform for enriching XML documents in [TEI](https://tei-c.org/) or [EAD](https://www.loc.gov/ead/) schemas with semantic annotations.
@@ -96,7 +94,7 @@ Others arguments :
 
 - Whatever the chosen scenario, once the correction is finished, you can export your document (see the "Export details" section) !
 
-## Detail sections
+## :dart: Detail sections
 
 ### Mapping
 
@@ -142,7 +140,7 @@ There are different XML export solutions :
 
 ## :crying_cat_face: Bug reports
 
-Feel free to create a new issue (new features, bug reports, documentation etc.).
+Feel free to create a [new issue](https://github.com/Lucaterre/semanticat/issues/new/choose) (new features, bug reports, documentation etc.).
 
 ## :computer: Stack 
 
@@ -165,7 +163,7 @@ Feel free to create a new issue (new features, bug reports, documentation etc.).
 - [@Lucaterre](https://github.com/Lucaterre)
 
 
-## How to cite
+## :black_nib: How to cite
 
 Please use the following citation:
 
