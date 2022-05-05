@@ -6,7 +6,8 @@ from flask import (request,
                    redirect,
                    render_template,
                    flash,
-                   abort)
+                   abort,
+                   url_for)
 
 from app.config import (app,
                         db)
@@ -36,8 +37,6 @@ def index():
                 db.session.commit()
                 flash(f'New project {project_name} created now.',
                       category='success')
-                return render_template('main/project.edition.html',
-                                       projects=Project.return_all_projects())
         else:
             flash('Project always exist ! Please change the name.', category='warning')
     return render_template('main/project.edition.html',
@@ -53,6 +52,6 @@ def remove_project(project_id):
         db.session.delete(project)
         db.session.commit()
         flash(f'Project : {project.project_name} completely removed.', category='warning')
-        return redirect("/"), 200
+        return redirect(url_for('index'))
     else:
         abort(404, description="Project not found")
