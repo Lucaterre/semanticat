@@ -45,7 +45,7 @@ def test_remove_project(client):
     # add some data
     # Remove project and test response + test remove all data
     response = client.get('/delete_project/'+str(project.id))
-    assert response.status_code == 200
+    assert response.status_code == 302
     response = client.get('/delete_project/'+str(1))
     assert response.status_code == 404
 
