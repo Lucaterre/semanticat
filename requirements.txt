@@ -52,3 +52,4 @@ urllib3==1.26.9
 wasabi==0.9.1
 Werkzeug==2.1.2
 zipp==3.8.0
+pylint==2.13.8
