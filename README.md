@@ -1,6 +1,6 @@
 <!--<img src="" width=300 align=right>-->
 
-![Python Version](https://img.shields.io/badge/python-3.8-blue) [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+![Python Version](https://img.shields.io/badge/python-3.8-blue) [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) [![Semantic@ CI build](https://github.com/Lucaterre/semanticat/actions/workflows/CI.yml/badge.svg)](https://github.com/Lucaterre/semanticat/actions/workflows/CI.yml)
 <!-- CI badge -->
 # Semanti🐱 
 
