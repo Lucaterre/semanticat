@@ -14,6 +14,7 @@ After importing the document(s), apply the NER model and correct prediction or a
 ## :battery: Installation
 
 
+
 1. Clone the Github repository
 
 ```bash
