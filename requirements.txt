@@ -25,7 +25,6 @@ numpy==1.22.3
 packaging==21.3
 pandas==1.4.2
 pathy==0.6.1
-pkg_resources==0.0.0
 pluggy==1.0.0
 preshed==3.0.6
 py==1.11.0
