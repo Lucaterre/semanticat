@@ -1,10 +1,11 @@
 # IDEs, notebooks
-.vscode/*
-.idea/*
-ipynb_checkpoints/*
+.vscode/
+.idea/
+ipynb_checkpoints/
 
 # caches
-.pytest_cache/*
+.pytest_cache/
+__pychache__/
 
 # virtualenv
 venv/
