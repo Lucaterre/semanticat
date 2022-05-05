@@ -29,7 +29,11 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Linter (pylint)
       run: |
-        find . -name '*.py' -exec pylint {} \;
+        find ./app/lib/IO_utils/ -name '*.py' -exec pylint {} \;
+        find ./app/lib/Ner/ -name '*.py' -exec pylint {} \;
+        find ./app/views/ -name '*.py' -exec pylint {} \;
+        find ./app/ -name 'config.py' -exec pylint {} \;
+        find ./app/ -name 'models.py' -exec pylint {} \;
     - name: CI tests (flask-pytest)
       run: |
         pytest ./app/tests/testProject.py
