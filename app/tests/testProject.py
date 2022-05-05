@@ -22,7 +22,7 @@ PROJECT_CASES = {
 
 def test_get_project_view(client):
     response = client.get('/')
-    assert response.status_code == 400
+    assert response.status_code == 200
 
 
 def test_create_project(client):
