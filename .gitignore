@@ -3,9 +3,10 @@
 .idea/
 ipynb_checkpoints/
 
-# caches
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
 .pytest_cache/
-__pychache__/
 
 # virtualenv
 venv/
