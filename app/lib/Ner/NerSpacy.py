@@ -38,12 +38,16 @@ class NerSpacyEngine:
     def __init__(self,
                  language: str,
                  type_model: str,
+                 mapping_filter: list = None,
                  patterns: list = None,
                  threshold: float = None,
                  length_threshold: float = None) -> None:
 
+        if mapping_filter is None:
+            mapping_filter = []
         self.language = language
         self.type_model = type_model
+        self.mapping_filter = mapping_filter if mapping_filter is not None else []
 
         self.patterns = patterns
         self.threshold = threshold
@@ -70,12 +74,13 @@ class NerSpacyEngine:
             doc = self.nlp(document)
             for ent in doc.ents:
                 counter += 1
-                results.append(WordToken(project_id=project_id,
-                                         document_id=document_id,
-                                         mention=str(ent),
-                                         label=ent.label_,
-                                         start=ent.start_char,
-                                         end=ent.end_char))
+                if ent.label_ in self.mapping_filter:
+                    results.append(WordToken(project_id=project_id,
+                                             document_id=document_id,
+                                             mention=str(ent),
+                                             label=ent.label_,
+                                             start=ent.start_char,
+                                             end=ent.end_char))
                 percentage = counter / len(doc.ents) * 100
                 yield "data:" + str(int(percentage)) + "\n\n"
 
@@ -98,13 +103,14 @@ class NerSpacyEngine:
                 for ent in doc.ents:
                     ent_start_char = start_sentence + ent.start_char
                     ent_end_char = ent_start_char + len(ent.text)
-                    results.append(WordToken(project_id=project_id,
-                                             document_id=document_id,
-                                             start=ent_start_char,
-                                             end=ent_end_char,
-                                             mention=str(ent),
-                                             label=ent.label_,
-                                             sentence_id=context["text_id"])
+                    if ent.label_ in self.mapping_filter:
+                        results.append(WordToken(project_id=project_id,
+                                                 document_id=document_id,
+                                                 start=ent_start_char,
+                                                 end=ent_end_char,
+                                                 mention=str(ent),
+                                                 label=ent.label_,
+                                                 sentence_id=context["text_id"])
                                    )
                 start_sentence = end_sentence
                 percentage = counter / len(sentences) * 100
