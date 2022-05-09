@@ -31,7 +31,7 @@
             <!-- if lot of options create a scroll bar here : -->
             <!-- <div style="overflow:scroll; height:900px; width:1800px;"> -->
             <form id="ner-recommender-form">
-                <h2 class="title-ner-recommender"> <input id="activate-settings-ner-recommenders" class="activate-ner-recommender-checkbox" type="checkbox" onchange="ChangeNerModelSettingsContainer(this)"> NER Recommenders
+                <h2 class="title-ner-recommender"> <input id="activate-settings-ner-recommenders" class="activate-ner-recommender-checkbox" type="checkbox" onchange="openCloseSettingsContainer(this, '#ner-recommenders-settings', '#btn-confirm-ner-recommender')"> NER Recommenders
                     {% if project.is_config_ner_valid %}<i id="state-ner-recommender" class="fa fa-check"></i>{% else %}<i id="state-ner-recommender" class="fa fa-times"></i>{% endif %}
                 </h2>
                 <div id="ner-recommenders-settings">
@@ -71,6 +71,25 @@
                     "apply-recommender-anyway",
                     "True",
                     "Save & Continue") }}
+
+            <!-- experimental index settings -->
+            <form id="control-index-settings" method="POST" action="/save_index/{{ project.id }}" enctype="multipart/form-data">
+                <h2 class="title-ner-recommender"><input id="" class="activate-ner-recommender-checkbox" type="checkbox" onchange="openCloseSettingsContainer(this, '#index-settings', '#btn-confirm-index')"> Manage terms index</h2>
+                <div id="index-settings" style="display: none;">
+                    <label for="index-name"><b>Index name:</b> </label>
+                    <input id="index-name" name="index-name" type="text">
+                    <br>
+                    <label for="inputFile"><b>Import your control vocabulary (csv only, [term, label, uri(optionnal)])</b></label>
+                    <input type="file" name="inputFile[]" class="form-control-file">
+                </div>
+                <button id="btn-confirm-index" type="submit"  name="submit" class="btn btn-outline-primary" style="display: none;">
+                <i class="fa fa-save"></i> Save
+                </button>
+            </form>
+            <br>
+            <hr>
+
+            <!-- end exp -->
             <h2>Annotation mapping</h2>
             <table id="table_mapping" class="table table-bordered table-hover">
                 <thead>
@@ -131,5 +150,5 @@
 
 {% block script %}
     <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/configuration_requests.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/configuration_requests.js')}}"></script>
 {% endblock script %}

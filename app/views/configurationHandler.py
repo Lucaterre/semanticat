@@ -2,12 +2,18 @@
 
 import json
 import random
+from unicodedata import normalize
+from io import StringIO
+import csv
+import pandas
 
 from flask import (
     request,
     render_template,
     make_response,
-    jsonify)
+    jsonify,
+    url_for,
+    redirect)
 
 from app.config import (app, db)
 from app.models import (
@@ -153,6 +159,61 @@ def save_ner_recommender_configuration(project_id):
             'ner_configuration': 'success'
         })
 
+##########################################
+
+
+@app.route('/save_index/<int:project_id>', methods=['GET', 'POST'])
+def save_vocabulary(project_id):
+    """save control vocabulary in database"""
+    """
+    TODO : 
+        1. check if is CSV
+        2. create JS requests
+        3. not possible if a NER recommender is not activate 
+        4. remove index 
+        5. one index only ! 
+    
+    """
+    if request.method == "POST":
+        name_index = request.form['index-name']
+
+        file = request.files.getlist('inputFile[]')[0]
+
+        # create a ner engine with actual configuration
+        ner_config = ConfigurationProject.query.filter_by(project_id=project_id).first()
+
+        ner_engine = NerSpacyEngine(
+            language=ner_config.language,
+            type_model=ner_config.type_model,
+            length_threshold=3)
+
+        # add all in method ner_engine :
+        # create a ruler
+        ruler = ner_engine.nlp.add_pipe("entity_ruler")
+
+        # transform into patterns
+        data = pandas.read_csv(file)
+        terms = data.term.to_list()
+        labels = data.label.to_list()
+        ids = data.id.to_list()
+        patterns = [{"label": label, "pattern": term, "id": id} for term, label, id in zip(terms, labels, ids)]
+
+        # add and convert patterns to bytes
+        ruler.add_patterns(patterns)
+        ruler_bytes = ruler.to_bytes()
+
+        # save patterns bytes to DB and create a flag in config for is_index : True|False
+        print(ruler_bytes)
+
+        # remove ruler from nlp pipe
+        # ner_engine.nlp.select_pipes(disable="entity_ruler")
+
+    return redirect(url_for('configuration', project_id=project_id))
+
+
+
+
+########################################
 
 @app.route('/remove_pair_ner_label/<int:project_id>', methods=['GET', 'POST'])
 def remove_pair(project_id):
