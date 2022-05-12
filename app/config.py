@@ -14,7 +14,7 @@ LOGGER.setLevel(logging.DEBUG)
 LOGGER.addHandler(handler)
 
 PATH = os.path.dirname(os.path.abspath(__file__))
-ALLOWED_EXTENSIONS = {"xml"}
+ALLOWED_EXTENSIONS = {"xml", "txt"}
 TEMPLATES = os.path.join(PATH, 'templates')
 STATICS = os.path.join(PATH, 'static')
 

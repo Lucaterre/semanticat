@@ -18,9 +18,12 @@ class XML:
     """
     def __init__(self, source):
         self.source = source
-        self.tree = etree.fromstring(self.source)
+        self.allowed_schemas = ["tei", "ead"]
         try:
+            self.tree = etree.fromstring(self.source)
             self.schema = re.sub(r'\{.*\}', '', str(etree.XML(self.source).tag)).lower()
+            if self.schema not in self.allowed_schemas:
+                self.schema = "error_schema"
         except etree.XMLSyntaxError:
             self.schema = "conformity_error"
         except Exception:

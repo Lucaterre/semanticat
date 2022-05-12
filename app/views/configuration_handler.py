@@ -2,18 +2,18 @@
 
 import json
 import random
-from unicodedata import normalize
-from io import StringIO
-import csv
-import pandas
+# from unicodedata import normalize
+# from io import StringIO
+# import csv
+# import pandas
 
 from flask import (
     request,
     render_template,
     make_response,
-    jsonify,
-    url_for,
-    redirect)
+    jsonify)
+# url_for,
+# redirect
 
 from app.config import (app, db)
 from app.models import (
@@ -81,7 +81,7 @@ def actual_configuration_ner_recommender_project(project_id):
             'language': actual_configuration.language,
             'model_tag_set': actual_configuration.model_ner_tagset,
             'ner_performance': actual_configuration.model_ner_f_score
-        })
+        }) if actual_configuration is not None else jsonify({})
 
 
 @app.route('/new_ner_recommender_configuration/<int:project_id>', methods=['GET', 'POST'])
@@ -161,19 +161,19 @@ def save_ner_recommender_configuration(project_id):
 
 ##########################################
 
-
+""" Experimental index
 @app.route('/save_index/<int:project_id>', methods=['GET', 'POST'])
 def save_vocabulary(project_id):
-    """save control vocabulary in database"""
-    """
+    ""save control vocabulary in database""
+    
     TODO : 
         1. check if is CSV
         2. create JS requests
         3. not possible if a NER recommender is not activate 
         4. remove index 
         5. one index only ! 
-    
-    """
+
+    ""
     if request.method == "POST":
         name_index = request.form['index-name']
 
@@ -209,7 +209,7 @@ def save_vocabulary(project_id):
         # ner_engine.nlp.select_pipes(disable="entity_ruler")
 
     return redirect(url_for('configuration', project_id=project_id))
-
+"""
 
 
 

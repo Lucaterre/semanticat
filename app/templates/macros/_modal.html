@@ -115,6 +115,8 @@
                         <h5 class="modal-title" id="ExporterModalLabel">Export XML EAD options</h5>
                     {% elif schema == "tei" %}
                         <h5 class="modal-title" id="ExporterModalLabel">Export XML TEI options</h5>
+                    {% elif schema == "text" %}
+                        <h5 class="modal-title" id="ExporterModalLabel">Export TEXT options</h5>
                     {% endif %}
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -125,6 +127,9 @@
                         <input type="radio" id="exportW3cAnnotations-{{ document_id }}"
                                name="export_format" value="w3c_annotations" checked>
                         <label for="exportW3cAnnotations">annotations in JSON (<a href="https://www.w3.org/TR/annotation-model/" target="_blank">W3C data model</a>)</label><br>
+                        <input type="radio" id="exportCsvAnnotations-{{ document_id }}"
+                               name="export_format" value="csv" checked>
+                        <label for="exportCsvAnnotations">annotations in CSV</label><br>
                         {% if schema == "ead" %}
                             <input type="radio" id="exportEadInline-{{ document_id }}"
                                    name="export_format" value="inline_xslt" checked>

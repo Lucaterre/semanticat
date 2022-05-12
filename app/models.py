@@ -50,6 +50,13 @@ class WordToken(db.Model):
     project_id = db.Column(db.Integer, db.ForeignKey('project.id', ondelete='CASCADE'))
 
     @staticmethod
+    def get_annotations_mention_label(document_id):
+        """Get list of annotations in tuples as
+        [(mention, label), ...]
+        """
+        return [(annotation.mention, annotation.label) for annotation in WordToken.query.filter_by(document_id=document_id).order_by(WordToken.start).all() if annotation.label != ""]
+
+    @staticmethod
     def get_annotations(document_id):
         """Get list of data models corresponding to annotations
         filter by document and order by offset start
@@ -231,7 +238,8 @@ class Document(db.Model):
     __tablename__ = "document"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     filename = db.Column(db.String(300))
-    data = db.Column(db.LargeBinary)
+    data = db.Column(db.LargeBinary, default=b'')
+    data_text = db.Column(db.Text, default='')
     schema = db.Column(db.String(10))
     edited_at = db.Column(db.String(50), default='')
     is_parse = db.Column(db.Boolean, default=False)

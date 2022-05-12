@@ -70,7 +70,7 @@ class NerSpacyEngine:
         counter = 0
         results = []
         # batch_size=200, n_process=2
-        if schema == "tei":
+        if schema == "tei" or schema == "text":
             doc = self.nlp(document)
             for ent in doc.ents:
                 counter += 1
