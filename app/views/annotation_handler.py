@@ -52,6 +52,8 @@ def workbase_ner(project_id, doc_id):
         end = max(sentences_to_return)
         sentences = Sentence.return_texts_tuples(doc_id=doc_id)
         text = "".join([f"<p id='{sentence[1]['text_id']}'>{sentence[0]}</p>" for sentence in sentences[start:end]])
+    if document.schema == 'text':
+        text = document.data_text
     return render_template('main/project.document.annotation.html',
                            project_id=project_id,
                            mapping=mapping,

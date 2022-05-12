@@ -13,6 +13,8 @@ from flask import (
     redirect,
     url_for)
 
+import pandas
+
 from app.config import (app, db)
 from app.models import (
     Project,
@@ -115,44 +117,55 @@ def ner(project_id, doc_id, rewrite=False):
         ner_config = ConfigurationProject.query.filter_by(project_id=document.project_id).first()
         filter_labels = [mapper.label for mapper in MappingNerLabel.query.filter_by(project_id=project_id).all()]
         ner_engine = NerSpacyEngine(
-            language=ner_config.language,
-            type_model=ner_config.type_model,
-            mapping_filter=filter_labels,
-            length_threshold=3)
-
+           language=ner_config.language,
+           type_model=ner_config.type_model,
+           mapping_filter=filter_labels,
+           length_threshold=3)
         # clear all the actual tokens for a document
         db.session.query(WordToken).filter(WordToken.document_id == doc_id).delete()
         db.session.commit()
+        if standoffview is not None:
+            if standoffview.format == 'tei':
+                plain = standoffview.plain_text
+                document.is_ner_applied = True
+                db.session.commit()
+                flash(f'{document.filename} ner with success', 'info')
+                return Response(ner_engine.get_ner(
+                               project_id=project_id,
+                               document_id=doc_id,
+                               schema='tei',
+                               sentences=None,
+                               document=plain
+                               ), mimetype='text/event-stream')
 
-        if standoffview.format == 'tei':
-            plain = standoffview.plain_text
-            document.is_ner_applied = True
-            db.session.commit()
-            flash(f'{document.filename} ner with success', 'info')
 
-            return Response(ner_engine.get_ner(
-                project_id=project_id,
-                document_id=doc_id,
-                schema='tei',
-                sentences=None,
-                document=plain
-            ), mimetype='text/event-stream')
+            if standoffview.format == 'ead':
+                content_sentences_tuples = Sentence.return_texts_tuples(doc_id)
+                plain = standoffview.plain_text
+                document.is_ner_applied = True
+                db.session.commit()
+                flash(f'{document.filename} ner with success', 'info')
+                return Response(ner_engine.get_ner(
+                   project_id=project_id,
+                   document_id=doc_id,
+                   schema='ead',
+                   sentences=content_sentences_tuples,
+                   document=plain
+               ), mimetype='text/event-stream')
 
-        if standoffview.format == 'ead':
-            content_sentences_tuples = Sentence.return_texts_tuples(doc_id)
-            plain = standoffview.plain_text
-            document.is_ner_applied = True
-            db.session.commit()
-            flash(f'{document.filename} ner with success', 'info')
-
-            return Response(ner_engine.get_ner(
-                project_id=project_id,
-                document_id=doc_id,
-                schema='ead',
-                sentences=content_sentences_tuples,
-                document=plain
-            ), mimetype='text/event-stream')
-
+        else:
+            if document.schema == 'text':
+                plain = document.data_text
+                document.is_ner_applied = True
+                db.session.commit()
+                flash(f'{document.filename} ner with success', 'info')
+                return Response(ner_engine.get_ner(
+                   project_id=project_id,
+                   document_id=doc_id,
+                   schema='text',
+                   sentences=None,
+                   document=plain
+               ), mimetype='text/event-stream')
     except AttributeError:
         return jsonify(status=400)
 
@@ -175,6 +188,12 @@ def export_enhanced(project_id, doc_id):
                 annotations_W3C = WordToken.get_annotations(doc_id)
                 return Response(json.dumps(annotations_W3C, ensure_ascii=False), mimetype='application/json', headers={
                 'Content-Disposition': f'attachment; filename={document.filename}_annotations.w3c.json'
+            })
+            if type_export == 'csv':
+                annotations = WordToken.get_annotations_mention_label(doc_id)
+                csv = pandas.DataFrame(annotations).to_csv(index=False, header=False)
+                return Response(csv, mimetype='text/csv', headers={
+                'Content-Disposition': f'attachment; filename={document.filename}_annotations.csv'
             })
             else:
                 if type_export == 'inline_xslt':

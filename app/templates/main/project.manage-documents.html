@@ -15,8 +15,8 @@
                       enctype="multipart/form-data">
                     <div class="form-group">
                         <br>
-                        <label for="inputFile" class="label-input-file"><i class="fa fa-file-code"></i> Import XML (TEI or
-                            EAD required)</label>
+                        <label for="inputFile" class="label-input-file"><i class="fa fa-file-code"></i> Import Files</label>
+                        <p>formats allowed : .xml (TEI or EAD schemas), .txt</p>
                         <hr>
                         <input type="file" name="inputFile[]" class="form-control-file" multiple="">
                         <br>
@@ -53,14 +53,13 @@
                     <ul class="list-inputfiles-already-load">
                         {% for document in documents %}
                             <div>
-                                <label for="remove_document"><span class="material-icons">article</span> {{
-                                        document.filename
-                                        }}</label>
-                                {{ modal.modal_btn(
+                                <label for="remove_document">{{ modal.modal_btn(
                                 "#Delete-document-"+document.id|string,
                                 "fa fa-trash-alt",
                                 "",
-                                "danger") }}
+                                "danger") }}<span class="material-icons">article</span> {{
+                                        document.filename
+                                        }}</label>
                                 {{ modal.modal_box(
                                 "Delete-document-"+document.id | string,
                                 "Delete-Document-ModalLabel",
