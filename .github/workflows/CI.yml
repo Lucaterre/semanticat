@@ -32,7 +32,8 @@ jobs:
         find ./app/lib/IO_utils/ -name '*.py' -exec pylint --rcfile=./app/tests/.pylintrc {} \;
         find ./app/lib/Ner/ -name '*.py' -exec pylint --rcfile=./app/tests/.pylintrc {} \;
         find ./app/views/ -name '*.py' -exec pylint --rcfile=./app/tests/.pylintrc {} \;
-        find ./app/ -name '*.py' -exec pylint --rcfile=./app/tests/.pylintrc {} \;
+        find ./app/ -name 'config.py' -exec pylint --rcfile=./app/tests/.pylintrc {} \;
+        find ./app/ -name 'models.py' -exec pylint --rcfile=./app/tests/.pylintrc {} \;
     - name: CI tests (flask-pytest)
       run: |
         pytest ./app/tests/testProject.py

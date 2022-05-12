@@ -13,6 +13,7 @@ venv/
 venvtest/
 
 # DB test
+./identifier.sqlite
 app/db_config/semanticat_test.db
 app/db_config/semanticat_dev.db
 app/db_config/semanticat.db
