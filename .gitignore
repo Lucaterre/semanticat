@@ -26,9 +26,11 @@ app/instance_config/my_features/my_models/v1_n4a
 app/stylesheet/*
 LEGACY/
 app/lib/linking_components/
-
+patterns.jsonl
 # dataset
 datatest/ead
 datatest/ehri
 datatest/reden_dataset
 datatest/text
+datatest/indexes
+

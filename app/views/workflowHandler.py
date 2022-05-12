@@ -20,7 +20,9 @@ from app.models import (
     ConfigurationProject,
     Document,
     Sentence,
-    WordToken)
+    WordToken,
+    Index,
+    MappingNerLabel)
 
 from app.lib.IO_utils.parsers.XMLParser import XMLStrategiesParser
 from app.lib.IO_utils.exporters.XMLExporter import XMLExporterStrategies
@@ -112,10 +114,12 @@ def ner(project_id, doc_id, rewrite=False):
     # retrieve Ner config for spacy engine
     try:
         ner_config = ConfigurationProject.query.filter_by(project_id=document.project_id).first()
-
+        filter_labels = [mapper.label for mapper in MappingNerLabel.query.filter_by(project_id=project_id).all()]
         ner_engine = NerSpacyEngine(
             language=ner_config.language,
             type_model=ner_config.type_model,
+            patterns=Index.get_rules_patterns(project_id=project_id),
+            mapping_filter=filter_labels,
             length_threshold=3)
 
         # clear all the actual tokens for a document

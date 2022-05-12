@@ -45,6 +45,7 @@ class WordToken(db.Model):
     start = db.Column(db.Integer)
     end = db.Column(db.Integer)
     label = db.Column(db.String(12))
+    id_from_index = db.Column(db.Text, default='')
     sentence_id = db.Column(db.Integer, default=0)
     document_id = db.Column(db.Integer, db.ForeignKey('document.id', ondelete='CASCADE'))
     project_id = db.Column(db.Integer, db.ForeignKey('project.id', ondelete='CASCADE'))
@@ -260,8 +261,30 @@ class ConfigurationProject(db.Model):
     type_model = db.Column(db.Text)
     model_ner_tagset = db.Column(db.Text, default='')
     model_ner_f_score = db.Column(db.Integer, default=0)
-    rules_activated = db.Column(db.Boolean, default=False)
+    #rules_activated = db.Column(db.Boolean, default=False)
+    name_index = db.Column(db.Text, default='')
+    index = db.Column(db.LargeBinary, default=b'')
+    is_index = db.Column(db.Boolean, default=False)
     project_id = db.Column(db.Integer, db.ForeignKey('project.id', ondelete='CASCADE'))
+
+class Index(db.Model):
+    __tablename__ = "index"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name_index = db.Column(db.Text, default='')
+    pattern = db.Column(db.Text, default='')
+    label = db.Column(db.Text, default='')
+    identifier = db.Column(db.Text, default='')
+
+    project_id = db.Column(db.Integer, db.ForeignKey('project.id', ondelete='CASCADE'))
+
+    @staticmethod
+    def get_rules_patterns(project_id):
+        return [
+            {"label": str(index_item.label),
+             "pattern": str(index_item.pattern),
+             "id": str(index_item.identifier)
+             } for index_item in Index.query.filter_by(project_id=project_id).all()
+        ]
 
 
 class MappingNerLabel(db.Model):

@@ -16,6 +16,10 @@
         <p id="recommender-language-field"></p>
         <h6>Ner model name :</h6>
         <p id="recommender-model-name-field"></p>
+        {% if config.is_index %}
+            <h6>Index name :</h6>
+            <p id="index-name-field">{{ config.name_index }}</p>
+        {% endif %}
         <h6>Model tags :</h6>
         <ul id="actual-mapping-tagset"></ul>
         {% if project.is_config_ner_valid %}
@@ -31,7 +35,7 @@
             <!-- if lot of options create a scroll bar here : -->
             <!-- <div style="overflow:scroll; height:900px; width:1800px;"> -->
             <form id="ner-recommender-form">
-                <h2 class="title-ner-recommender"> <input id="activate-settings-ner-recommenders" class="activate-ner-recommender-checkbox" type="checkbox" onchange="ChangeNerModelSettingsContainer(this)"> NER Recommenders
+                <h2 class="title-ner-recommender"> <input id="activate-settings-ner-recommenders" class="activate-ner-recommender-checkbox" type="checkbox" onchange="openCloseSettingsContainer(this, '#ner-recommenders-settings', '#btn-confirm-ner-recommender')"> NER Recommenders
                     {% if project.is_config_ner_valid %}<i id="state-ner-recommender" class="fa fa-check"></i>{% else %}<i id="state-ner-recommender" class="fa fa-times"></i>{% endif %}
                 </h2>
                 <div id="ner-recommenders-settings">
@@ -71,6 +75,42 @@
                     "apply-recommender-anyway",
                     "True",
                     "Save & Continue") }}
+
+            <!-- experimental index settings -->
+            <form id="control-index-settings" action="{{ url_for('save_vocabulary', project_id=project.id) }}" method="POST" enctype="multipart/form-data">
+                <h2 class="title-ner-recommender"><input id="" class="activate-ner-recommender-checkbox" type="checkbox" onchange="openCloseSettingsContainer(this, '#index-settings', '#btn-confirm-index')"> Manage terms index
+                    {% if config.is_index %}<i id="state-ner-recommender" class="fa fa-check"></i>{% else %}<i id="state-ner-recommender" class="fa fa-times"></i>{% endif %}
+                </h2>
+                <div id="index-settings" style="display: none;">
+                    <label for="index-name"><b>Index name:</b> </label>
+                    <input id="index-name" name="index-name" type="text">
+                    <br>
+                    <label for="inputFile">Import your control vocabulary (csv only, [term, label, uri(optionnal)])</label>
+                    <br>
+                    <input class="form-control-file" type="file" name="inputFile">
+
+                    <br>
+                    <button id="btn-confirm-index" type="submit"  name="submit" class="btn btn-outline-primary" style="display: none;">
+                        <i class="fa fa-save"></i> Save
+                    </button>
+                    <br>
+                    <h6>Actual index :</h6>
+                    <label for="remove_index"><span class="material-icons">article</span> {{
+                            config.name_index
+                            }}
+                        {{ modal.modal_btn(
+                                "#Delete-index-"+project.id|string,
+                                "fa fa-trash-alt",
+                                "",
+                                "danger") }}</label>
+                </div>
+            </form>
+            <br>
+
+            <hr>
+
+            <!-- end exp -->
+
             <h2>Annotation mapping</h2>
             <table id="table_mapping" class="table table-bordered table-hover">
                 <thead>
@@ -131,5 +171,5 @@
 
 {% block script %}
     <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/configuration_requests.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/configuration_requests.js')}}"></script>
 {% endblock script %}

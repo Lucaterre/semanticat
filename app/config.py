@@ -6,6 +6,8 @@ import logging
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+from werkzeug.middleware.profiler import ProfilerMiddleware
+
 LOGGER = logging.getLogger('[SEMANTIC@]')
 
 handler = colorlog.StreamHandler()
@@ -60,6 +62,7 @@ def create_app(config=None, erase_recreate=False):
         app.config.from_object(BaseConfig)
     elif config == "dev":
         LOGGER.info('Initialize Semantic@ dev mode...')
+        # app.wsgi_app = ProfilerMiddleware(app.wsgi_app)
         app.config.from_object(DevConfig)
     elif config == "test":
         LOGGER.info('Initialize Semantic@ test mode...')

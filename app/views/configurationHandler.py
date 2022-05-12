@@ -2,12 +2,17 @@
 
 import json
 import random
+from io import StringIO
 
 from flask import (
     request,
     render_template,
     make_response,
-    jsonify)
+    jsonify,
+    url_for,
+    redirect)
+
+import pandas
 
 from app.config import (app, db)
 from app.models import (
@@ -15,7 +20,9 @@ from app.models import (
     ConfigurationProject,
     Document,
     MappingNerLabel,
-    WordToken)
+    WordToken,
+    Index)
+
 from app.lib.Ner.NerSpacy import (
     NerSpacyEngine,
     get_models,
@@ -39,9 +46,11 @@ def configuration(project_id):
     """Returns the configuration view"""
     project = Project.query.filter_by(id=project_id).first()
     mapping = MappingNerLabel.query.filter_by(project_id=project_id).all()
+    actual_configuration = ConfigurationProject.query.filter_by(project_id=project_id).first()
     return render_template('main/project.configuration.html',
                            project=project,
-                           mappings=mapping)
+                           mappings=mapping,
+                           config=actual_configuration)
 
 
 @app.route('/models', methods=['GET', 'POST'])
@@ -152,6 +161,54 @@ def save_ner_recommender_configuration(project_id):
         return jsonify({
             'ner_configuration': 'success'
         })
+
+
+##########################################
+
+
+@app.route('/save_index/<int:project_id>', methods=['GET', 'POST'])
+def save_vocabulary(project_id):
+    """save control vocabulary in database"""
+    """
+    TODO : 
+        1. check if is CSV
+        2. create JS requests
+        3. not possible if a NER recommender is not activate 
+        4. remove index 
+        5. one index only ! 
+
+    """
+    if request.method == "POST":
+        name_index = request.form['index-name']
+        file = request.files['inputFile']
+
+
+        # add index flag ner engine with actual configuration
+        ner_config = ConfigurationProject.query.filter_by(project_id=project_id).first()
+        ner_config.is_index = True
+        ner_config.name_index = name_index
+        db.session.commit()
+
+        # transform into patterns and add to Index Table
+        data = pandas.read_csv(StringIO(file.read().decode('utf-8'), newline=None))
+        terms = data.term.to_list()
+        labels = data.label.to_list()
+        ids = data.id.to_list()
+
+        index_items = [Index(name_index=name_index,
+                             pattern=str(term),
+                             label=str(label),
+                             identifier=str(identifier),
+                             project_id=project_id) for term, label, identifier in zip(terms, labels, ids)]
+        with app.app_context():
+            db.session.bulk_save_objects(index_items)
+            db.session.commit()
+
+
+    return redirect(url_for('configuration', project_id=project_id))
+
+
+########################################
 
 
 @app.route('/remove_pair_ner_label/<int:project_id>', methods=['GET', 'POST'])

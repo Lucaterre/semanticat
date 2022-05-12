@@ -97,14 +97,14 @@ $('#apply-recommender-anyway').click(function () {
     sendNerRecommenderConfiguration();
 })
 
-function ChangeNerModelSettingsContainer(element, size_mapping) {
+function openCloseSettingsContainer(element, idContainer, idBtnConfirm) {
     if(element.checked){
-        RecommenderSettingsContainer.css('display', 'inline');
-        $('#btn-confirm-ner-recommender').css('display', 'inline');
+        $(idContainer).css('display', 'inline');
+        $(idBtnConfirm).css('display', 'inline');
     }
     else{
-        RecommenderSettingsContainer.css('display', 'None');
-        $('#btn-confirm-ner-recommender').css('display', 'None');
+        $(idContainer).css('display', 'None');
+        $(idBtnConfirm).css('display', 'None');
     }
 }
 
