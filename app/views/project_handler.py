@@ -1,5 +1,14 @@
 # -*- coding: UTF-8 -*-
 
+"""
+project_handler.py
+
+This view manages the routes
+to control documents in the instance (import, deletion).
+
+last updated : 12/05/2022
+"""
+
 import datetime
 
 from flask import (request,
@@ -25,7 +34,8 @@ def index():
                 flash('The project name cannot be empty ! Please try again.',
                       category='warning')
             if ' ' in project_name:
-                flash('The project name cannot contains empty string ! Please check typo and try again.',
+                flash('The project name cannot contains empty string '
+                      '! Please check typo and try again.',
                       category='warning')
             else:
                 new_project = Project(
@@ -38,7 +48,8 @@ def index():
                 flash(f'New project {project_name} created now.',
                       category='success')
         else:
-            flash('Project always exist ! Please change the name.', category='warning')
+            flash('Project always exist ! Please change the name.',
+                  category='warning')
     return render_template('main/project.edition.html',
                            projects=Project.return_all_projects(),
                            mode=app.config['FLASK_ENV']), 200
@@ -46,12 +57,13 @@ def index():
 
 @app.route('/delete_project/<int:project_id>', methods=['GET', 'POST'])
 def remove_project(project_id):
-    """Delete a project and dependencies that inherit from it (documents, entities, configuration etc.)"""
+    """Delete a project and dependencies that
+    inherit from it (documents, entities, configuration etc.)"""
     project = Project.query.filter_by(id=project_id).first()
-    if project != None:
+    if project is not None:
         db.session.delete(project)
         db.session.commit()
-        flash(f'Project : {project.project_name} completely removed.', category='warning')
+        flash(f'Project : {project.project_name} completely removed.',
+              category='warning')
         return redirect(url_for('index'))
-    else:
-        abort(404, description="Project not found")
+    return abort(404, description="Project not found")

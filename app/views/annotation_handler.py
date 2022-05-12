@@ -1,5 +1,15 @@
 # -*- coding: UTF-8 -*-
 
+"""
+annotation_handler.py
+
+This view manages the routes
+to control manual annotation of named entities
+(e.g. add, delete, edit/update annotation, annotation statistics).
+
+last updated : 12/05/2022
+"""
+
 import datetime
 import json
 
@@ -10,7 +20,6 @@ from flask import (
 
 from app.config import (app, db)
 from app.models import (
-    Project,
     StandoffView,
     Document,
     Sentence,
@@ -19,18 +28,15 @@ from app.models import (
 
 
 @app.route('/project/<int:project_id>/document/<int:doc_id>/features_ner', methods=['GET', 'POST'])
-def workbase_ner(project_id, doc_id):
+def annotation_base(project_id, doc_id):
     """Returns annotation view"""
-    s = None
+    sentences_from_db = None
     text = ''
     document = Document.query.filter_by(
         id=doc_id
     ).first()
     document.edited_at = str(datetime.datetime.now().strftime('%d/%m/%Y - %H:%M:%S'))
     db.session.commit()
-    project = Project.query.filter_by(
-        id=document.project_id
-    ).first()
     mapping = MappingNerLabel.get_dict(project_id)
     stats_mentions_count = WordToken.get_mentions_count(doc_id)
     if document.schema == 'tei':
@@ -43,15 +49,21 @@ def workbase_ner(project_id, doc_id):
             page = int(page)
         else:
             page = 1
-        s = Sentence.query.filter_by(document_id=doc_id).filter(Sentence.order_id).paginate(
+        sentences_from_db = Sentence.query.filter_by(
+            document_id=doc_id
+        ).filter(
+            Sentence.order_id).paginate(
             page=page,
             per_page=50
         )
-        sentences_to_return = [se.order_id for se in s.items]
+        sentences_to_return = [sentence.order_id for sentence in sentences_from_db.items]
         start = min(sentences_to_return) - 1
         end = max(sentences_to_return)
         sentences = Sentence.return_texts_tuples(doc_id=doc_id)
-        text = "".join([f"<p id='{sentence[1]['text_id']}'>{sentence[0]}</p>" for sentence in sentences[start:end]])
+        text = "".join([
+                f"<p id='{sentence[1]['text_id']}'>"
+                f"{sentence[0]}</p>" for sentence in sentences[start:end]
+            ])
     if document.schema == 'text':
         text = document.data_text
     return render_template('main/project.document.annotation.html',
@@ -59,8 +71,7 @@ def workbase_ner(project_id, doc_id):
                            mapping=mapping,
                            stats_mention=stats_mentions_count,
                            document_id=doc_id,
-                           sentences=s,
-                           project=project,
+                           sentences=sentences_from_db,
                            document=document,
                            text=text,
                            format=document.schema
@@ -73,8 +84,7 @@ def get_mapping(project_id):
     if request.method == 'GET':
         mapping = MappingNerLabel.get_dict(project_id)
         return jsonify(mapping)
-    else:
-        return jsonify(status='error')
+    return jsonify({})
 
 
 @app.route('/annotations/<int:document_id>/<int:page>', methods=['GET', 'POST'])
@@ -84,22 +94,25 @@ def get_annotations(document_id, page):
         id=document_id
     ).first()
     if document.schema == 'ead':
-        s = Sentence.query.filter_by(document_id=document_id).filter(Sentence.order_id).paginate(
+        sentences_from_db = Sentence.query.filter_by(
+            document_id=document_id).filter(
+            Sentence.order_id).paginate(
             page=page,
             per_page=50
         )
-        sentences_to_return = [se.id for se in s.items]
+        sentences_to_return = [sentence.id for sentence in sentences_from_db.items]
 
         annotations = WordToken.get_annotations_ead(document_id, sentences_to_return)
     else:
         annotations = WordToken.get_annotations(document_id)
     if request.method == 'GET':
         return jsonify(annotations)
-    else:
-        return jsonify(status=False)
+
+    return jsonify({})
 
 
 def get_correct_data(data, from_w3c):
+    """finds and prepares the variables from the formats received by the request"""
     if from_w3c:
         mention = data['destroyOne']['target']['selector'][0]['exact']
         label = data['destroyOne']['body'][0]['value']
@@ -118,6 +131,8 @@ def get_correct_data(data, from_w3c):
 
 
 def get_correct_token(data, token_id, from_w3c):
+    """Select the correct token in the database
+    according to the format of the token annotated id received"""
     mention, label, start, end, document_id, project_id = get_correct_data(data, from_w3c=from_w3c)
     if str(token_id).startswith('#'):
         # New annotation provides from Recogito with UUID
@@ -144,13 +159,15 @@ def annotations_to_delete():
                                                           mention=mention_to_delete,
                                                           label=label_to_delete)
         return jsonify(annotations)
+    return jsonify({})
 
 
-@app.route('/get_statitics/<int:document_id>', methods=['GET', 'POST'])
+@app.route('/get_statistics/<int:document_id>', methods=['GET', 'POST'])
 def labels_count(document_id):
     """Count number of entities per labels"""
     if request.method == 'GET':
         return WordToken.get_simple_statistics(document_id=document_id)
+    return jsonify({})
 
 
 @app.route('/new_annotation', methods=['GET', 'POST'])
@@ -170,7 +187,8 @@ def add_annotation():
     return jsonify(status=True)
 
 
-@app.route('/load_annotations_from_json/<int:project_id>/<int:document_id>', methods=['GET', 'POST'])
+@app.route('/load_annotations_from_json/<int:project_id>/<int:document_id>',
+           methods=['GET', 'POST'])
 def add_annotations_from_json(project_id, document_id):
     """Add multiples annotations from JSON"""
     if request.method == 'POST':
@@ -220,7 +238,7 @@ def remove_all_annotations():
             try:
                 db.session.query(WordToken).filter_by(document_id=data['id']).delete()
                 db.session.commit()
-            except Exception:
+            except AssertionError:
                 db.session.rollback()
         elif data['destroyOne']:
             token_id = str(data['destroyOne']['id'])

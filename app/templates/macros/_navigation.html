@@ -156,7 +156,7 @@
                                             NER</button>
                                         {{ modal.modal_warning_retry_ner(project.id, doc.id) }}
                                         <i class="fa fa-chevron-right"></i>
-                                        <button type="button" class="btn btn-outline-dark" onclick="window.location.href='{{ url_for('workbase_ner', project_id=project.id, doc_id=doc.id) }}';"><i class="fa fa-highlighter"></i>
+                                        <button type="button" class="btn btn-outline-dark" onclick="window.location.href='{{ url_for('annotation_base', project_id=project.id, doc_id=doc.id) }}';"><i class="fa fa-highlighter"></i>
                                             Correct named entities</button>
 
 

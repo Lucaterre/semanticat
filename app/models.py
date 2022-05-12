@@ -1,5 +1,17 @@
 # -*- coding: UTF-8 -*-
 
+"""
+models.py
+
+Declaration of all the models used in the database
+
+TODO: rename models and refactor attributes/methods
+TODO: reformat docstrings
+TODO: include a diagram
+
+last updated : 12/05/2022
+"""
+
 from collections import Counter
 from sqlalchemy import func
 
@@ -7,6 +19,7 @@ from app.config import db
 
 
 class Sentence(db.Model):
+    """Sentence Model"""
     __tablename__ = "sentence"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     order_id = db.Column(db.Integer)
@@ -28,7 +41,6 @@ class Sentence(db.Model):
         sentences_content = [(sentence.id, sentence.content) for sentence in sentences]
         return sentences_content
 
-
     @staticmethod
     def return_texts_tuples(doc_id):
         """Get all sentences inherit from a specific document by ID attribute
@@ -39,6 +51,7 @@ class Sentence(db.Model):
 
 
 class WordToken(db.Model):
+    """WordToken Model"""
     __tablename__ = "word_token"
     id = db.Column(db.Integer, primary_key=True)
     mention = db.Column(db.String(64))
@@ -54,7 +67,14 @@ class WordToken(db.Model):
         """Get list of annotations in tuples as
         [(mention, label), ...]
         """
-        return [(annotation.mention, annotation.label) for annotation in WordToken.query.filter_by(document_id=document_id).order_by(WordToken.start).all() if annotation.label != ""]
+        return [
+            (annotation.mention, annotation.label)
+            for annotation in WordToken.query.filter_by(
+                document_id=document_id
+            ).order_by(
+                WordToken.start
+            ).all() if annotation.label != ""
+        ]
 
     @staticmethod
     def get_annotations(document_id):
@@ -65,7 +85,7 @@ class WordToken(db.Model):
         return [{
             "@context": "http://www.w3.org/ns/anno.jsonld",
             "id": annotation.id,
-            "sentence_id":annotation.sentence_id,
+            "sentence_id": annotation.sentence_id,
             "type": "Annotation",
             "body": [{
                 "type": "TextualBody",
@@ -82,7 +102,12 @@ class WordToken(db.Model):
                     "end": annotation.end
                 }]
             }
-        } for annotation in WordToken.query.filter_by(document_id=document_id).order_by(WordToken.start).all()]
+        } for annotation in WordToken.query.filter_by(
+            document_id=document_id
+        ).order_by(
+            WordToken.start
+        ).all()
+        ]
 
     @staticmethod
     def get_annotations_to_delete(document_id, mention, label):
@@ -110,7 +135,14 @@ class WordToken(db.Model):
                     "end": annotation.end
                 }]
             }
-        } for annotation in WordToken.query.filter_by(document_id=document_id).order_by(WordToken.start).all() if (annotation.mention == mention and annotation.label == label)]
+        } for annotation in WordToken.query.filter_by(
+            document_id=document_id
+        ).order_by(
+            WordToken.start
+        ).all() if (
+                annotation.mention == mention and annotation.label == label
+        )
+        ]
 
     @staticmethod
     def get_annotations_ead(document_id, list_ids):
@@ -137,7 +169,13 @@ class WordToken(db.Model):
                     "end": annotation.end
                 }]
             }
-        } for annotation in WordToken.query.filter_by(document_id=document_id).order_by(WordToken.start).all() if annotation.sentence_id in list_ids]
+        } for annotation in WordToken.query.filter_by(
+            document_id=document_id
+        ).order_by(
+            WordToken.start
+        ).all()
+            if annotation.sentence_id in list_ids
+        ]
 
     """
     @staticmethod
@@ -172,7 +210,15 @@ class WordToken(db.Model):
     @staticmethod
     def compute_stats_entities_for_project(project_id):
         """Returns classes and number of entities per classes"""
-        labels_counts_unique = dict(Counter([tok.label for tok in WordToken.query.filter_by(project_id=project_id).all()]))
+        labels_counts_unique = dict(
+            Counter(
+                [
+                    tok.label for tok in WordToken.query.filter_by(
+                        project_id=project_id
+                    ).all()
+                ]
+            )
+        )
         # create two list that contains labels and values
         labels = []
         values = []
@@ -185,10 +231,15 @@ class WordToken(db.Model):
     def get_simple_statistics(document_id):
         """Returns classes and number of entities per classes order by numbers of entities
         per class"""
-        return {label: count for label, count in db.session.query(
-            WordToken.label,
-            func.count(WordToken.label)
-        ).filter_by(document_id=document_id).group_by(WordToken.label).all()}
+        return dict(
+            db.session.query(
+                WordToken.label, func.count(WordToken.label)
+            ).filter_by(
+                document_id=document_id
+            ).group_by(
+                WordToken.label
+            ).all()
+        )
 
     @staticmethod
     def get_mentions_count(document_id):
@@ -204,7 +255,12 @@ class WordToken(db.Model):
                 converted_dict.setdefault(label, []).append(group_mentions)
             return converted_dict
 
-        return {label: Counter(mentions).most_common() for label, mentions in convert(mentions_counter).items()}
+        return {
+            label: Counter(mentions).most_common()
+            for label, mentions in convert(
+                mentions_counter
+            ).items()
+        }
 
     """
     @staticmethod
@@ -227,6 +283,7 @@ class WordToken(db.Model):
 
 
 class StandoffView(db.Model):
+    """StandoffView Model"""
     __tablename__ = "standoff_view"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     plain_text = db.Column(db.Text)
@@ -235,6 +292,7 @@ class StandoffView(db.Model):
 
 
 class Document(db.Model):
+    """Document Model"""
     __tablename__ = "document"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     filename = db.Column(db.String(300))
@@ -248,13 +306,22 @@ class Document(db.Model):
     is_ner_applied = db.Column(db.Boolean, default=False)
     is_nel_applied = db.Column(db.Boolean, default=False)
     is_edit = db.Column(db.Boolean, default=False)
-    project_id = db.Column(db.Integer, db.ForeignKey('project.id', ondelete='CASCADE'))
+    project_id = db.Column(db.Integer, db.ForeignKey('project.id',
+                                                     ondelete='CASCADE'))
 
-    standoff_view = db.relationship(StandoffView, cascade='all, delete, delete-orphan', backref="document",
-                                overlaps="document,standoff_view")
-    sentences = db.relationship(Sentence, cascade='all, delete, delete-orphan', backref="document", overlaps="document,sentence")
-    word_tokens = db.relationship(WordToken, cascade='all, delete, delete-orphan', backref="document", overlaps="document,word_token")
-    
+    standoff_view = db.relationship(StandoffView,
+                                    cascade='all, delete, delete-orphan',
+                                    backref="document",
+                                    overlaps="document,standoff_view")
+    sentences = db.relationship(Sentence,
+                                cascade='all, delete, delete-orphan',
+                                backref="document",
+                                overlaps="document,sentence")
+    word_tokens = db.relationship(WordToken,
+                                  cascade='all, delete, delete-orphan',
+                                  backref="document",
+                                  overlaps="document,word_token")
+
     @staticmethod
     def return_all_documents_from_project_id(project_id):
         """List of documents for a project"""
@@ -262,6 +329,7 @@ class Document(db.Model):
 
 
 class ConfigurationProject(db.Model):
+    """ConfigurationProject Model"""
     __tablename__ = "configuration_project"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     language = db.Column(db.Text)
@@ -273,7 +341,8 @@ class ConfigurationProject(db.Model):
 
 
 class MappingNerLabel(db.Model):
-    __tablename__= "mapping_ner_label"
+    """MappingNerLabel Model"""
+    __tablename__ = "mapping_ner_label"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     label = db.Column(db.Text)
     pref_label = db.Column(db.Text)
@@ -289,9 +358,17 @@ class MappingNerLabel(db.Model):
 
     @staticmethod
     def get_dict(project_id):
-        """Returns a dict mapping (key : ner label model ; value : list of color and preferred label)
+        """Returns a dict mapping
+        (key : ner label model ; value : list of color and preferred label)
          for a project : {'PER' : ['#FFF', 'PERSON']}"""
-        return {ma.label: [ma.color, ma.pref_label] for ma in MappingNerLabel.query.filter_by(project_id=project_id).all()}
+        return {
+            ma.label: [
+                ma.color, ma.pref_label
+            ]
+            for ma in MappingNerLabel.query.filter_by(
+                project_id=project_id
+            ).all()
+        }
 
     """
     @staticmethod
@@ -301,13 +378,16 @@ class MappingNerLabel(db.Model):
     """
     @staticmethod
     def mapping_ner_as_dict(project_id):
-        """Returns a dict mapping (key : ner label model ; value : list of color and preferred label)
-        for a project : {'PER' : {'color':'#FFF', 'prefLabel':'PERSON'}}"""
+        """Returns a dict mapping
+        (key : ner label model ; value : list of color and preferred label)
+        for a project :
+        {'PER' : {'color':'#FFF', 'prefLabel':'PERSON'}}"""
         return {pair.label: {"color": pair.color, "prefLabel": pair.pref_label}
                 for pair in MappingNerLabel.query.filter_by(project_id=project_id).all()}
 
 
 class Project(db.Model):
+    """Project Model"""
     __tablename__ = "project"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     project_name = db.Column(db.String(300))
@@ -317,15 +397,24 @@ class Project(db.Model):
     is_config_nel_valid = db.Column(db.Boolean, default=False)
     is_config_ner_mapping_valid = db.Column(db.Boolean, default=False)
 
-    documents = db.relationship(Document, backref="project", cascade='all, delete, delete-orphan', overlaps="project,document")
-    configuration = db.relationship(ConfigurationProject, cascade='all, delete, delete-orphan', backref="project", overlaps="project,configuration_project")
-    mapping_ner_label = db.relationship(MappingNerLabel, cascade='all, delete, delete-orphan', backref="project", overlaps="project,mapping_ner_label")
+    documents = db.relationship(Document,
+                                backref="project",
+                                cascade='all, delete, delete-orphan',
+                                overlaps="project,document")
+    configuration = db.relationship(ConfigurationProject,
+                                    cascade='all, delete, delete-orphan',
+                                    backref="project",
+                                    overlaps="project,configuration_project")
+    mapping_ner_label = db.relationship(MappingNerLabel,
+                                        cascade='all, delete, delete-orphan',
+                                        backref="project",
+                                        overlaps="project,mapping_ner_label")
 
     @staticmethod
     def return_all_projects():
         """Returns all projects"""
         return Project.query.all()
-    
+
     @staticmethod
     def is_project_exists(new_project_name):
         """Check if new project already exists in database by its name"""

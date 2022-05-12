@@ -1,5 +1,18 @@
 # -*- coding: UTF-8 -*-
 
+"""
+configuration_handler.py
+
+This view manages the routes
+to control the user's custom configuration for their project, including :
+- Setup NER recommenders (NER model choice, model language);
+- Input/Output mapping for named entities;
+- Setup Index/Vocabularies
+- Setup NEL pipeline
+
+last updated : 12/05/2022
+"""
+
 import json
 import random
 # from unicodedata import normalize
@@ -55,6 +68,7 @@ def list_models():
     """Returns a list of all models available (pretrained and custom)"""
     if request.method == 'GET':
         return jsonify({'available_models': [str(model) for model in get_models()]})
+    return jsonify({'available_models': []})
 
 
 @app.route('/spaCy_languages', methods=['GET', 'POST'])
@@ -62,6 +76,7 @@ def list_languages():
     """Returns all available languages pipelines from SpaCy API"""
     if request.method == 'GET':
         return jsonify({'available_langs': get_spacy_languages()})
+    return jsonify({'available_langs': []})
 
 
 @app.route('/actual_mapping/<int:project_id>', methods=['GET', 'POST'])
@@ -70,6 +85,7 @@ def list_tagset(project_id):
     if request.method == 'GET':
         mapping = MappingNerLabel.query.filter_by(project_id=project_id).all()
         return jsonify({'available_tags': [tag.label for tag in mapping]})
+    return jsonify({'available_tags': []})
 
 
 @app.route('/actual_configuration_recommender/<int:project_id>')
@@ -100,11 +116,19 @@ def save_ner_recommender_configuration(project_id):
             # rewrite actual config
             actual_configuration.language = response['language']
             actual_configuration.type_model = response['model_type']
-            actual_configuration.model_ner_f_score = int(float(ner_engine.meta['performance']['ents_f'])*100)
+            actual_configuration.model_ner_f_score = int(
+                float(
+                    ner_engine.meta['performance']['ents_f']
+                )*100
+            )
             actual_configuration.model_ner_tagset = ','.join(ner_engine.meta['labels']['ner'])
             db.session.commit()
             # remove actual mapping
-            db.session.query(MappingNerLabel).filter(MappingNerLabel.project_id == project_id).delete()
+            db.session.query(
+                MappingNerLabel
+            ).filter(
+                MappingNerLabel.project_id == project_id
+            ).delete()
             db.session.commit()
             # write a new mapping
             for label in ner_engine.meta['labels']['ner']:
@@ -125,7 +149,11 @@ def save_ner_recommender_configuration(project_id):
                 db.session.commit()
         else:
             # remove actual mapping
-            db.session.query(MappingNerLabel).filter(MappingNerLabel.project_id == project_id).delete()
+            db.session.query(
+                MappingNerLabel
+            ).filter(
+                MappingNerLabel.project_id == project_id
+            ).delete()
             db.session.commit()
             # delete all entities from documents
             db.session.query(WordToken).filter(WordToken.project_id == project_id).delete()
@@ -150,21 +178,26 @@ def save_ner_recommender_configuration(project_id):
             # write a new mapping from model
             for label in ner_engine.meta['labels']['ner']:
                 color = get_random_hex()
-                pre_mapping = MappingNerLabel(label=label, pref_label=label, color=color, project_id=project_id)
-                # TODO : create a list of object to add in one time
+                pre_mapping = MappingNerLabel(label=label,
+                                              pref_label=label,
+                                              color=color,
+                                              project_id=project_id)
                 db.session.add(pre_mapping)
             db.session.commit()
             # create a cache (load) for model
         return jsonify({
             'ner_configuration': 'success'
         })
+    return jsonify({
+            'ner_configuration': 'unknown'
+        })
 
-##########################################
 
-""" Experimental index
+"""
+Experimental index
 @app.route('/save_index/<int:project_id>', methods=['GET', 'POST'])
 def save_vocabulary(project_id):
-    ""save control vocabulary in database""
+    save control vocabulary in database
     
     TODO : 
         1. check if is CSV
@@ -212,9 +245,6 @@ def save_vocabulary(project_id):
 """
 
 
-
-########################################
-
 @app.route('/remove_pair_ner_label/<int:project_id>', methods=['GET', 'POST'])
 def remove_pair(project_id):
     """Remove mapping pair"""
@@ -252,10 +282,16 @@ def save_pair():
     pair.color = color
 
     db.session.commit()
-    return make_response(jsonify({
-        'status': 'success',
-        'type': 'success',
-        'message': f'Mapping group : {ner_label} | {pref_ner_label} | {color} in table is updated.'}), 200)
+    return make_response(
+        jsonify(
+            {
+                'status': 'success',
+                'type': 'success',
+                'message': f'Mapping group : {ner_label} '
+                           f'| {pref_ner_label} '
+                           f'| {color} in table is updated.'
+            }
+        ), 200)
 
 
 @app.route('/new_pair_ner_label', methods=['GET', 'POST'])
@@ -271,14 +307,14 @@ def new_pair():
         if ner_label in labels_list:
             return make_response(jsonify({'status': 'error',
                                           'message': 'duplicate'}), 400)
-        else:
-            new_entry_mapping = MappingNerLabel(label=ner_label,
-                                                pref_label=pref_ner_label,
-                                                color=color,
-                                                project_id=project_id)
-            db.session.add(new_entry_mapping)
-            db.session.commit()
-            return make_response(jsonify({'status': 'success'}), 200)
+
+        new_entry_mapping = MappingNerLabel(label=ner_label,
+                                            pref_label=pref_ner_label,
+                                            color=color,
+                                            project_id=project_id)
+        db.session.add(new_entry_mapping)
+        db.session.commit()
+        return make_response(jsonify({'status': 'success'}), 200)
     except AttributeError:
         new_entry_mapping = MappingNerLabel(label=ner_label,
                                             pref_label=pref_ner_label,

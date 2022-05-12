@@ -58,7 +58,7 @@
         });
 
     // Get labels statitics (db)
-    const fetchStatsLabel = fetch("/get_statitics/"+document_id)
+    const fetchStatsLabel = fetch("/get_statistics/"+document_id)
         .then((response) => response.json())
         .then((res) => {
             return res;

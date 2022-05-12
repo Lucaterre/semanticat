@@ -1,5 +1,16 @@
 # -*- coding: UTF-8 -*-
 
+"""
+app_handler.py
+
+This view manages the routes
+to control the operations concerning the server, the database
+carried out by the user in the interface (eg close the application,
+restore the database).
+
+last updated : 12/05/2022
+"""
+
 from flask import (redirect,
                    url_for,
                    request)

@@ -64,7 +64,7 @@
                                     {% if page %}
                                         {% if page != sentences.page %}
                                             <li class="page-item">
-                                                <a class="page-link" href="{{url_for('workbase_ner', doc_id=document_id, project_id=project_id,  page=page) }}">{{page}}</a>
+                                                <a class="page-link" href="{{url_for('annotation_base', doc_id=document_id, project_id=project_id,  page=page) }}">{{page}}</a>
                                             </li>
                                         {% else %}
                                             <li class="page-item active disabled">

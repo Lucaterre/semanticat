@@ -1,8 +1,21 @@
 # -*- coding: UTF-8 -*-
 
+"""
+config.py
+
+Groups Flask environment constants and variables/
+global configuration when creating the Semantic@ app according
+to the selected mode (prod, dev, test)
+
+last updated : 12/05/2022
+"""
+
+
 import os
-import colorlog
 import logging
+
+import colorlog
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -33,6 +46,7 @@ db = SQLAlchemy()
 
 
 class BaseConfig(object):
+    """Configuration used in production mode."""
     DEBUG = False
     TESTING = False
     SECRET_KEY = b'_5#y2L"F4Q8z\n\xec]/'
@@ -42,12 +56,14 @@ class BaseConfig(object):
 
 
 class DevConfig(BaseConfig):
+    """Configuration used in development mode."""
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = "sqlite:////" + DEV_DB
     FLASK_ENV = "development"
 
 
 class TestConfig(BaseConfig):
+    """Configuration used in test mode."""
     DEBUG = False
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "sqlite:////" + TEST_DB
@@ -55,6 +71,8 @@ class TestConfig(BaseConfig):
 
 
 def create_app(config=None, erase_recreate=False):
+    """Create and configure the app with correct
+    configuration mode."""
     if config is None:
         LOGGER.info('Start Semantic@...')
         app.config.from_object(BaseConfig)
@@ -66,7 +84,6 @@ def create_app(config=None, erase_recreate=False):
         app.config.from_object(TestConfig)
     db.init_app(app)
     with app.app_context():
-        from . import views
         if erase_recreate:
             LOGGER.critical('Erase all database...')
             db.drop_all()

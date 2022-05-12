@@ -1,5 +1,15 @@
 # -*- coding: UTF-8 -*-
 
+"""
+error_handler.py
+
+This view manages the routes
+to control redirects after
+HTTP error (eg. 404, 500).
+
+last updated : 12/05/2022
+"""
+
 from flask import render_template
 from app.config import app
 
