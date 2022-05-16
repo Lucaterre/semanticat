@@ -13,7 +13,6 @@ from spacy.tokens import Doc
 from app.config import db, PATH, app
 from app.models import WordToken
 
-from app.lib.linking_components.EntityFishingLinking import fishing_entities
 
 CUSTOM_MODELS_SPACY_LOCATION = Path(path.join(PATH, 'instance_config/my_features/my_models/'))
 
@@ -65,8 +64,6 @@ class NerSpacyEngine:
             path_model = path.join(CUSTOM_MODELS_SPACY_LOCATION, self.type_model)
             self.nlp = spacy.load(path_model, disable=['parser', 'tagger', 'textcat'])
 
-        self.nlp.add_pipe("entity_fishing")
-
         self.meta = self.nlp.meta
 
     def get_ner(self, project_id, document_id, schema, sentences=None, document=None):
@@ -78,7 +75,6 @@ class NerSpacyEngine:
             for ent in doc.ents:
                 counter += 1
                 if ent.label_ in self.mapping_filter:
-                    print(ent._.QID)
                     results.append(WordToken(project_id=project_id,
                                              document_id=document_id,
                                              mention=str(ent),
