@@ -87,7 +87,7 @@ def new_project_description(project_id):
 
 @app.route('/progress_parse/PROJECT=<int:project_id>/DOCUMENT=<int:doc_id>',
            methods=['GET', 'POST'])
-def parse_document(doc_id):
+def parse_document(project_id, doc_id):
     """Parse document and store content in database"""
     document = Document.query.filter_by(id=doc_id).first()
     try:
