@@ -427,3 +427,11 @@ a.btn_expand_doc:focus {
 .warning-overlap-msg{
     color: var(--red-dark-contrast);
 }
+
+
+td, th {
+  padding: 1px 4px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}

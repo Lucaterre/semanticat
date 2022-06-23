@@ -17,7 +17,7 @@ last updated : 12/05/2022
 """
 
 import json
-
+import requests
 
 from flask import (
     request,
@@ -183,6 +183,74 @@ def ner(project_id, doc_id, rewrite=False):
 
     except AttributeError:
         return jsonify(status=400)
+
+
+@app.route('/progress_nel/PROJECT=<int:project_id>/DOCUMENT=<int:doc_id>', methods=['GET', 'POST'])
+def nel(project_id, doc_id):
+    annotations = WordToken.query.filter_by(document_id=doc_id).order_by(WordToken.start).all()
+    text = StandoffView.query.filter_by(document_id=doc_id).first().plain_text
+    from app.lib.linking_components.EntityFishingLinking import LinkingEntityFishing
+    LinkingEntityFishing(language="fr", text=text, entities=annotations, document_id=doc_id).apply_nel()
+    Document.query.filter_by(id=doc_id).first().is_nel_applied = True
+    db.session.commit()
+    return redirect(url_for('project', project_id=project_id))
+
+@app.route('/correct_nel/<int:project_id>/<int:doc_id>', methods=['GET', 'POST'])
+def nel_work_view(project_id, doc_id):
+    entities = WordToken.query.filter_by(document_id=doc_id).order_by(WordToken.start).all()
+    entities = [{"entity_id":entity.id, "rawName":entity.mention,"type":entity.label,"wikidataId":entity.wikidata_qid} for entity in entities]
+    labels = [label.label for label in MappingNerLabel.query.filter_by(project_id=project_id).all()]
+    return render_template("main/test_linking_table.html", entities=entities, labels=labels, project_id=project_id, doc_id=doc_id)
+
+
+@app.route('/data_nel/<int:project_id>/<int:doc_id>', methods=['GET', 'POST'])
+def get_nel_data(project_id, doc_id):
+    if request.method == "GET":
+        entities = WordToken.query.filter_by(project_id=project_id, document_id=doc_id).order_by(WordToken.start).all()
+        entities = [{"ID": entity.id, "Mention": entity.mention, "Label": entity.label, "Wikidata ID": entity.wikidata_qid} for entity in entities]
+        return make_response(jsonify(entities), 200)
+
+@app.route('/reconcile/<int:project_id>/<int:doc_id>', methods=['GET', 'POST'])
+def reconcile_wiki(project_id, doc_id):
+    if request.method == "POST":
+        import requests
+        new_data = json.loads(
+            request.data
+        )
+        property_name = new_data['propertyName']
+        property_wiki = new_data['propertyWikidata']
+        labels = new_data['labels']
+        # retrieve from DB entities ID, wikidata_QID filter project_id and doc_id and filter by labels
+        entities = [token for token in WordToken.query.filter_by(project_id=project_id, document_id=doc_id).order_by(WordToken.start).all()]
+        # request EF API for each entities to resolve
+        entities_resolved = []
+        for entity in entities:
+            if entity.wikidata_qid != "NIL" and entity.label in labels:
+                entity_resolved = {}
+                req = requests.request(method="GET",
+                                   url="http://nerd.huma-num.fr/nerd/service/kb/concept/"+entity.wikidata_qid,
+                                   headers={
+                                       "Accept":"application/json"
+                                   },
+                                 params={"lang":"en"})
+                res = req.json()
+                new_statements = {k: content[k] for k in ['propertyName',
+                                                          'propertyId',
+                                                           'value']
+                                  for content in res['statements'] if content['propertyId'] == property_wiki}
+
+                if len(new_statements) != 0:
+                    entities_resolved.append({"ID": entity.id, "Mention": entity.mention, "Label": entity.label,
+                                              "Wikidata ID": entity.wikidata_qid, property_name: new_statements['value']})
+                else:
+                    entities_resolved.append({"ID": entity.id, "Mention": entity.mention, "Label": entity.label,
+                                              "Wikidata ID": entity.wikidata_qid, property_name: ""})
+            else:
+                entities_resolved.append({"ID": entity.id, "Mention": entity.mention, "Label": entity.label, "Wikidata ID": entity.wikidata_qid, property_name: ""})
+
+
+        return make_response(jsonify(entities_resolved), 200)
+    return redirect(url_for("nel_work_view", project_id=project_id, doc_id=doc_id))
 
 
 @app.route('/export/PROJECT=<int:project_id>/DOCUMENT=<int:doc_id>', methods=['GET', 'POST'])

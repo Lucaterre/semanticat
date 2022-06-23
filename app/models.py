@@ -58,6 +58,8 @@ class WordToken(db.Model):
     start = db.Column(db.Integer)
     end = db.Column(db.Integer)
     label = db.Column(db.String(12))
+    wikidata_qid = db.Column(db.Text, default="NIL")
+    attributes_ids = db.Column(db.PickleType, default={"Properties": {}})
     sentence_id = db.Column(db.Integer, default=0)
     document_id = db.Column(db.Integer, db.ForeignKey('document.id', ondelete='CASCADE'))
     project_id = db.Column(db.Integer, db.ForeignKey('project.id', ondelete='CASCADE'))

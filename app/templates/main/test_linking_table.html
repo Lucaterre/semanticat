@@ -1,0 +1,264 @@
+{% extends 'layouts/container.html' %}
+{% import "macros/_navigation.html" as nav %}
+{% import "macros/_menu.html" as menu %}
+{% import "macros/_modal.html" as modal %}
+
+
+{% block content %}
+    <span id="project_{{ project_id }}" class="project_id"></span>
+    <span id="doc_{{ doc_id }}" class="doc_id"></span>
+    <div class="container">
+        <a class="btn btn-outline-info" href="#"><span class="material-icons">keyboard_return</span> Back to sentences</a>
+    </div>
+    <br>
+
+    <div>
+
+        <div class="container" >
+
+            <div style="border:3px; border-style:solid; border-color:black; padding: 1em;">
+            </div>
+            <br>
+
+            <div><form method="get" id="search">
+                <input type="text" class="searchbox" value="Enter QID test MediaWiki " onblur="if(this.value == '') { this.value = 'Enter band name...'; }" onfocus="if(this.value == 'Enter band name...') { this.value = ''; }" name="s">
+                <button type="submit">Submit</button>
+
+            </form>
+
+
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Reconciliation</button>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <form id="reconcile_form">
+                                <label>Property Name</label>
+                                <input id="property_name" name="property_name" type="text">
+                                <br>
+                                <label>Property on Wikidata</label>
+                                <input id="property_wiki" name="property_wiki" type="text">
+
+                                <fieldset name="check_labels">
+                                    <legend>Choose labels where apply :</legend>
+                                    {% for label in labels %}
+                                        <input type="checkbox" name="checkboxes_labels" value="{{ label }}">{{ label }}<br>
+                                    {% endfor %}
+                                </fieldset>
+                                <button type="button" onclick="reconcileEntities(this)">Reconcile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="table-container"></div>
+
+            <!--
+            <table id="table_linking" class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Entity ID</th>
+                    <th scope="col">Entity</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Wikidata ID</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {#% for row in  entities %#}
+                    <tr>
+                        <td class="entity_id">{# { row["entity_id"] }}</td>
+                        <td>{#  #}{ row["rawName"]}}</td>
+                        <td>{#  #}{ row["type"]}}</td>
+                        <td> <a class="qid" href="https://www.wikidata.org/wiki/{#  #}{ row["wikidataId"] }}" target="_blank">{#  #}{ row["wikidataId"] }}</a></td>
+
+                    </tr>
+                {#% endfor %#}
+
+
+                </tbody>
+            </table>-->
+
+
+        </div>
+
+
+    </div>
+
+
+{% endblock content %}
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        <script src="http://codegena.com/assets/js/image-preview-for-link.js"></script>
+    <link href="http://codegena.com/assets/css/image-preview-for-link.css" rel="stylesheet">
+    <script type="text/javascript">
+    const ProjectID  = $('.project_id').attr('id').split('_')[1];
+    const DocID = $('.doc_id').attr('id').split('_')[1];
+    let columns;
+
+    function tabulate(data, columns) {
+		var table = d3.select('#table-container').append('table')
+		var thead = table.append('thead')
+		var	tbody = table.append('tbody');
+
+		// append the header row
+		thead.append('tr')
+		  .selectAll('th')
+		  .data(columns).enter()
+		  .append('th')
+		    .text(function (column) { return column; });
+
+		// create a row for each object in the data
+		var rows = tbody.selectAll('tr')
+		  .data(data)
+		  .enter()
+		  .append('tr');
+
+		// create a cell in each row for each column
+		var cells = rows.selectAll('td')
+		  .data(function (row) {
+		    return columns.map(function (column) {
+		      return {column: column, value: row[column]};
+		    });
+		  })
+		  .enter()
+		  .append('td')
+		    .text(function (d) { return d.value; });
+
+	  return table;
+	}
+
+    function getNelDataToTable(){
+        $.ajax({
+            async:false,
+            type:'GET',
+            traditional: true,
+            url:'/data_nel/'+ProjectID+'/'+DocID,
+            success: function (data) {
+                // ajouter une colonne dans tableau
+                columns = Object.keys(data[0]);
+                tabulate(data, columns);
+            },
+            error: function (){
+                console.log("error")
+            }
+    });
+    }
+
+    getNelDataToTable();
+
+    function reconcileEntities(e){
+            const ProjectID  = $('.project_id').attr('id').split('_')[1];
+            const DocID = $('.doc_id').attr('id').split('_')[1];
+            let inputs     = $('#reconcile_form').serializeArray();
+            let propertyName, propertyWikidata;
+            let labels = [];
+            for (let input in inputs){
+                let name = inputs[input].name;
+                let value = inputs[input].value;
+                if (name === "property_name"){
+                    propertyName = value;
+                }
+                if (name === "property_wiki"){
+                    propertyWikidata = value;
+                }
+                if (name === "checkboxes_labels"){
+                    labels.push(value);
+                }
+
+            }
+            let data = {
+                propertyName: propertyName,
+                propertyWikidata: propertyWikidata,
+                labels: labels
+            }
+            $.ajax({
+            async:false,
+            type:'POST',
+                traditional: true,
+            url:'/reconcile/'+ProjectID+'/'+DocID,
+            data:JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                // ajouter une colonne dans tableau
+                console.log(data);
+                $("#table-container").empty();
+                columns = Object.keys(data[0]);
+                tabulate(data, columns)
+            },
+            error: function (){
+                console.log("error")
+            }
+        });
+        }
+    </script>
+    <script type="text/javascript">
+
+
+        $(".searchbox").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    type:"GET",
+                    url: "https://www.wikidata.org/w/api.php",
+                    jsonp: "callback",
+                    dataType: 'jsonp',
+                    data: {
+                        'action': "wbsearchentities",
+                        'language':"fr",
+                        'uselang':'fr',
+                        'limit':5,
+                        'format':'json',
+                        'props':'info|sitelinks|aliases|labels|descriptions|claims|datatype',
+                        'search': request.term,
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        var search_res = data["search"];
+                        var titles = search_res.map(function(article) {
+                            return "<div><a href=" + article["concepturi"] + "> here" + "</a>" + "|" + article["label"] + "|" + article["description"] + "</div>"
+                        });
+                        response(titles);
+                    }
+                })
+                $.ajax({
+                    type:"GET",
+                    url: "https://www.wikidata.org/w/api.php",
+                    jsonp: "callback",
+                    dataType: 'jsonp',
+                    data: {
+                        'action': "wbgetclaims",
+                        'language':"fr",
+                        'uselang':'fr',
+                        'format':'json',
+                        'property':'P18',
+                        'entity':"Q90",
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        console.log(data['claims']['P18'][0]['mainsnak']['datavalue']['value']);
+                        //var search_res = data["search"];
+                        //var titles = search_res.map(function(article) {
+                        //    return article["concepturi"] + "|" + article["label"] + "|" + article["description"]
+                        //});
+                        //response(titles);
+                    }
+                });
+            }
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            return $("<li></li>")
+                .data("item.autocomplete", item)
+                .append("<a>" + item.label + "</a>")
+                .appendTo(ul);
+        };;
+
+    </script>
+{% endblock %}
+
+

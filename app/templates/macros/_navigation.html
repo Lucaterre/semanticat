@@ -161,17 +161,17 @@
 
 
                                         <i class="fa fa-chevron-right"></i>
-                                        {#% if doc.is_nel_applied == False %#}
-                                           <!-- <a class="btn btn-primary" href="{#{
-                                                    url_for('nel', project_id=project.id, doc_id=doc.id) }#}"><i
+                                        {% if doc.is_ner_applied == True %}
+                                            <a class="btn btn-primary" href="{{ url_for("nel", project_id=project.id, doc_id=doc.id) }}"><i
                                                     class="fa fa-play-circle" style="font-size: 1.30em;"></i> Launch
                                                 Linking</a>
-                                            <i class="fa fa-chevron-right"></i>-->
-                                        {#%  elif doc.is_nel_applied %#}
-                                          <!--  <a class="btn btn-outline-dark" href="#"><i class="fa fa-spider-web" style="font-size: 1.30em; color:  #2cb23e ;"></i>
+                                            <i class="fa fa-chevron-right"></i>
+                                        {% endif %}
+                                        {%  if doc.is_nel_applied == True %}
+                                                <a class="btn btn-outline-dark" href="{{ url_for("nel_work_view", project_id=project.id, doc_id=doc.id) }}"><i class="fa fa-spider-web" style="font-size: 1.30em; color:  #2cb23e ;"></i>
                                                 Correct linking</a>
-                                            <i class="fa fa-chevron-right"></i>-->
-                                        {#% endif %#}
+                                                <i class="fa fa-chevron-right"></i>
+                                        {% endif %}
 
                                         {{ modal.modal_btn(
                                                 "#ExporterModal-"+doc.id|string,
