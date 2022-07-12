@@ -288,6 +288,7 @@ class StandoffView(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     plain_text = db.Column(db.Text)
     format = db.Column(db.Text)
+    table_pos_name = db.Column(db.Text)
     document_id = db.Column(db.Integer, db.ForeignKey('document.id', ondelete='CASCADE'))
 
 

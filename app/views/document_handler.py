@@ -136,6 +136,7 @@ def remove_document(project_id):
     if request.method == 'POST':
         document_id = request.form['remove_document']
         document = Document.query.filter_by(id=int(document_id)).first()
+        # TODO : Remove associate table pos
         db.session.delete(document)
         db.session.commit()
         flash(f'{document.filename} completely removed.', category='warning')
@@ -154,6 +155,7 @@ def remove_documents(project_id):
         if bool(request.form['remove_all_documents']):
             documents = Document.query.filter_by(project_id=project_id).all()
             for document in documents:
+                # TODO : Remove associate table pos
                 db.session.delete(document)
                 db.session.commit()
             flash(

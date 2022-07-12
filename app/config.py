@@ -18,6 +18,7 @@ import colorlog
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
 
 LOGGER = logging.getLogger('[SEMANTIC@]')
 
@@ -35,6 +36,7 @@ PRODUCTION_DB = os.path.join(PATH, "./db_config/semanticat.db")
 DEV_DB = os.path.join(PATH, "./db_config/semanticat_dev.db")
 TEST_DB = os.path.join(PATH, "./db_config/semanticat_test.db")
 
+
 DEBUG = False
 
 app = Flask("Semantic@",
@@ -43,7 +45,6 @@ app = Flask("Semantic@",
             instance_relative_config=True)
 
 db = SQLAlchemy()
-
 
 class BaseConfig(object):
     """Configuration used in production mode."""

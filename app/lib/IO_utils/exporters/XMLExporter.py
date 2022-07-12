@@ -53,6 +53,7 @@ class XMLExporterStrategies(XMLStrategiesParser):
         """
         for annotation in self.annotations:
             try:
+                # TODO use table associated and no recreate table
                 self.so.add_inline(
                     begin=self.view.get_table_pos(annotation.start),
                     end=self.view.get_table_pos(annotation.end),

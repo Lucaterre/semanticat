@@ -98,6 +98,7 @@ def parse_document(project_id, doc_id):
                 format="tei",
                 document_id=doc_id
             )
+            # TODO : store here table pos in DB
             db.session.add(new_standoff_representation)
             db.session.commit()
         if result.schema == "ead":
