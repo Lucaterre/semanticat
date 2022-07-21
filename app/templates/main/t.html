@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<style>
+	.hidden{
+        display:none;
+    }
+
+    .result{
+    	max-width:80px;
+    }
+
+</style>
+</head>
+<body>
+<div class="row">
+
+
+
+	<div class="col-6">
+
+
+
+			<!-- Form Wrapper & Button -->
+			<button class="btn btn-sm btn-primary" id="add-test">Add Test</button>
+			<div class="form-wrapper hidden">
+				<select class="form-control" id="test-name">
+					<option>----------</option>
+					<option>Flash Point</option>
+					<option>Water</option>
+					<option>Distillation</option>
+				</select>
+				<input class="form-control" type="text" id="test-result">
+				<button class="btn btn-sm btn-info" id="create-test">Add</button>
+			</div>
+
+			<!-- Data Table -->
+			<table class="table table-dark">
+			  <thead>
+			    <tr>
+			          <th scope="col"></th>
+			      <th scope="col">ID</th>
+			      <th scope="col">Mention</th>
+                  <th scope="col">Label</th>
+                  <th scope="col">WikidataQID</th>
+                     <th scope="col">Wikidata link</th>
+
+			    </tr>
+			  </thead>
+			  <tbody id="tests-table">
+
+			  </tbody>
+			</table>
+
+
+	</div>
+
+
+</div>
+
+
+<script>
+
+    /* Data tests */
+    var initialData = [
+		{"entity_id": 1, "rawName": "Paris","type":"LOC","wikidataId":"Q90"},
+		{"entity_id": 2, "rawName": "Victor Hugo","type":"PER","wikidataId":"Q535"},
+		{"entity_id": 3, "rawName": "Paris","type":"LOC","wikidataId":"Q90"},
+		{"entity_id": 4, "rawName": "Montreuil","type":"LOC","wikidataId":"Q193370"},
+        {"entity_id": 5, "rawName": "Honoré de Balzac","type":"PER","wikidataId":"Q9711"},
+        {"entity_id": 6, "rawName": "Pérou","type":"LOC","wikidataId":"Q419"},
+	]
+
+	var ReconcileData = {
+        'col_name': 'VIAFID',
+        'statements':
+        [
+            {"entity_id": 1, "newval":"NIL"},
+            {"entity_id": 2,"newval":"58395"},
+            {"entity_id": 3, "newval":"NIL"},
+            {"entity_id": 4,"newval":"NIL"},
+            {"entity_id": 5, "newval":"29529595"},
+            {"entity_id": 6, "newval":"NIL"},
+         ]
+    }
+
+    /* Main */
+
+    let table = CrudTable();
+
+    table.addRow()
+    // 1. Create first rows (wikidata) with API JSON response
+
+    /* CRUD Functions */
+    var CrudTable = function() {
+
+    }
+
+    // Methods
+    CrudTable.prototype.editResult = function () {
+
+    }
+
+    CrudTable.prototype.addRow = function(data) {
+      //
+    }
+
+    CrudTable.prototype.CancelDelete = function() {
+      //
+    }
+
+    CrudTable.prototype.ConfirmDelete = function (){
+
+    }
+
+
+
+
+    /* Special functions */
+
+
+
+
+
+
+
+
+
+
+
+    /* STOP */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	var newId = 4
+	var newTest = {'name':null, 'id':newId, 'result':null}
+
+	$('#add-test').on('click', function(){
+		$('.form-wrapper').removeClass('hidden')
+	})
+
+
+	$('#test-result').on('keyup', function(){
+		newTest.result = $(this).val()
+		console.log(newTest)
+
+	})
+
+	$('#test-name').on('change', function(){
+		newTest.name = $(this).val()
+		console.log(newTest)
+	})
+
+	$('#create-test').on('click', function(){
+		if(newTest.name == null){
+			alert('No test selected!')
+		}else{
+			addRow(newTest)
+			$('#test-name').val('')
+			$('#test-result').val('')
+			$('.form-wrapper').addClass('hidden')
+		}
+	})
+
+
+	var tests = [
+		{'name':'Distillation 50%', 'id':'1', 'result':"43"},
+	    {'name':'Flash Point', 'id':'2', 'result':"61"},
+	    {'name':'Water By Karl Fischer', 'id':'3', 'result':"24"},
+	]
+
+
+	for (var i in tests){
+		addRow(tests[i])
+	}
+
+	function addRow(obj){
+		var row = `<tr scope="row" class="test-row-${obj.id}">
+	    			   <td>${obj.name}</td>
+	                   <td id="result-${obj.id}" data-testid="${obj.id}"">${obj.result}</td>
+	                   <td>
+	                   		<button class="btn btn-sm btn-danger" data-testid=${obj.id} id="delete-${obj.id}">Delete</button>
+	                   		<button class="btn btn-sm btn-info" disabled data-testid="${obj.id}"  id="save-${obj.id}">Save</button>
+
+	                   		<button class="btn btn-sm btn-danger hidden" data-testid="${obj.id}"  id="cancel-${obj.id}">Cancel</button>
+	                   		<button class="btn btn-sm btn-primary hidden" data-testid="${obj.id}"  id="confirm-${obj.id}">Confirm</button>
+
+	                   </td>
+	    		   </tr>`
+		$('#tests-table').append(row)
+
+		$(`#delete-${obj.id}`).on('click', deleteTest)
+		$(`#cancel-${obj.id}`).on('click', cancelDeletion)
+		$(`#confirm-${obj.id}`).on('click', confirmDeletion)
+		$(`#save-${obj.id}`).on('click', saveUpdate)
+
+
+		$(`#result-${obj.id}`).on('click', editResult)
+
+	}
+
+	function editResult(){
+		var testid = $(this).data('testid')
+		var value = $(this).html()
+
+		$(this).unbind()
+		$(this).html(`<input class="result form-control" data-testid="${testid}" type="text" value="${value}">`)
+
+		$(`.result`).on('keyup', function(){
+			var testid = $(this).data('testid')
+			var saveBtn = $(`#save-${testid}`)
+			saveBtn.prop('disabled', false)
+
+		})
+
+	}
+
+	function saveUpdate(){
+		console.log('Saved!')
+		var testid = $(this).data('testid')
+		var saveBtn = $(`#save-${testid}`)
+		var row = $(`.test-row-${testid}`)
+
+		saveBtn.prop('disabled', true)
+		row.css('opacity', "0.5")
+
+		setTimeout(function(){
+			row.css('opacity', '1')
+		}, 2000)
+
+
+	}
+
+
+	function deleteTest(){
+		var testid = $(this).data('testid')
+
+		var deleteBtn = $(`#delete-${testid}`)
+		var saveBtn = $(`#save-${testid}`)
+		var cancelBtn = $(`#cancel-${testid}`)
+		var confirmBtn = $(`#confirm-${testid}`)
+
+		deleteBtn.addClass('hidden')
+		saveBtn.addClass('hidden')
+
+		cancelBtn.removeClass('hidden')
+		confirmBtn.removeClass('hidden')
+	}
+
+	function cancelDeletion(){
+		var testid = $(this).data('testid')
+
+		var deleteBtn = $(`#delete-${testid}`)
+		var saveBtn = $(`#save-${testid}`)
+		var cancelBtn = $(`#cancel-${testid}`)
+		var confirmBtn = $(`#confirm-${testid}`)
+
+		deleteBtn.removeClass('hidden')
+		saveBtn.removeClass('hidden')
+
+		cancelBtn.addClass('hidden')
+		confirmBtn.addClass('hidden')
+
+	}
+
+	function confirmDeletion(){
+		var testid = $(this).data('testid')
+		var row = $(`.test-row-${testid}`)
+		row.remove()
+
+	}
+</script>
+</body>
+</html>

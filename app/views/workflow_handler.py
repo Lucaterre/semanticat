@@ -198,7 +198,7 @@ def nel(project_id, doc_id):
 @app.route('/correct_nel/<int:project_id>/<int:doc_id>', methods=['GET', 'POST'])
 def nel_work_view(project_id, doc_id):
     entities = WordToken.query.filter_by(document_id=doc_id).order_by(WordToken.start).all()
-    entities = [{"entity_id":entity.id, "rawName":entity.mention,"type":entity.label,"wikidataId":entity.wikidata_qid} for entity in entities]
+    entities = [{"entity_id": entity.id, "rawName": entity.mention,"type":entity.label,"wikidataId":entity.wikidata_qid} for entity in entities]
     labels = [label.label for label in MappingNerLabel.query.filter_by(project_id=project_id).all()]
     return render_template("main/test_linking_table.html", entities=entities, labels=labels, project_id=project_id, doc_id=doc_id)
 

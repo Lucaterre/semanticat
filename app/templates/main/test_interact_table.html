@@ -1,0 +1,387 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link
+      href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+
+</head>
+<style>
+	.hidden{
+        display:none;
+    }
+
+    .result{
+    	max-width:80px;
+    }
+
+    .val:hover{
+        color: dodgerblue;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="row">
+
+	<div class="col-md-4"></div>
+
+	<div class="col-md-4">
+
+		<div class="card card-body">
+
+			<!-- Form Wrapper & Button -->
+			<button class="btn btn-sm btn-primary" id="add-test">Reconciliation</button>
+			<div class="form-wrapper hidden">
+			<input class="form-control" type="text" id="test-propertyName">
+			<input class="form-control" type="text" id="test-propertyID">
+			<fieldset>
+    <legend>Choose the labels where apply reconciliation:</legend>
+
+    <div>
+      <input type="checkbox" id="LOC" name="label" value="LOC"
+             >
+      <label for="LOC">LOC</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="PER" name="label" value="PER">
+      <label for="PER">PER</label>
+    </div>
+</fieldset>
+			<!--<select class="form-control" id="test-name">
+					<option>----------</option>
+					<option>Flash Point</option>
+					<option>Water</option>
+					<option>Distillation</option>
+				</select>
+				<input class="form-control" type="text" id="test-result">-->
+				<button class="btn btn-sm btn-info" id="create-test">Reconcile</button>
+
+			</div>
+
+			<!-- Data Table -->
+			<table class="table table-dark">
+			  <thead>
+			    <tr class="table-tr">
+			    <th scope="col"></th>
+			      <th scope="col">ID</th>
+			      <th scope="col">Mention</th>
+                  <th scope="col">Label</th>
+                  <th scope="col">WikidataQID</th>
+                     <th scope="col">Wikidata link</th>
+
+			    </tr>
+			  </thead>
+			  <tbody id="tests-table">
+
+			  </tbody>
+			</table>
+
+		</div>
+
+	</div>
+
+	<div class="col-md-4"></div>
+</div>
+
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+      integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+<script>
+
+	// var newId = 4
+	var newTest = {'property_name':null, 'property_id':null, 'labels_selected':[]}
+
+	$('#add-test').on('click', function(){
+		$('.form-wrapper').removeClass('hidden')
+	})
+
+
+	$('#test-propertyName').on('keyup', function(){
+		newTest.property_name = $(this).val()
+
+
+	})
+
+	$('#test-propertyID').on('keyup', function(){
+		newTest.property_id = $(this).val()
+
+
+	})
+
+	function arrayRemove(arr, value) {
+
+        return arr.filter(function(ele){
+            return ele !== value;
+        });
+    }
+
+    var tests2 = {
+        'col_name': 'VIAFID',
+        'statements':
+        [
+            {"entity_id": 1, "newval":"NIL"},
+            {"entity_id": 2,"newval":"58395"},
+            {"entity_id": 3, "newval":"NIL"},
+            {"entity_id": 4,"newval":"NIL"},
+            {"entity_id": 5, "newval":"29529595"},
+            {"entity_id": 6, "newval":"NIL"},
+         ]
+    }
+
+
+	$('#create-test').on('click', function(){
+		newTest.labels_selected = [];
+		$('#test-name').val('')
+		$('#test-result').val('')
+		$.each($('input[name="label"]:checked'), function() {
+			  newTest.labels_selected.push($(this).val())
+			})
+			$('.form-wrapper').addClass('hidden')
+
+		console.log(newTest)
+
+		// here send new TESt
+		//success retrieve test2
+		var col_name = tests2.col_name
+		var new_values = tests2.statements
+		$(".table-tr").append('<th>'+col_name+'</th>')
+		for (var i in new_values){
+            var newid = new_values[i].entity_id;
+            var newval = new_values[i].newval;
+		 $(".test-row-"+newid).append('<td id="result-newval-'+newid+'" data-testid="'+newid+'" class="val">'+newval+'</td>')
+		 $("#result-newval-"+newid).on('click', editNewvalue)
+	}
+
+	})
+
+
+
+
+
+	    var tests = [
+		{"entity_id": 1, "rawName": "Paris","type":"LOC","wikidataId":"Q90"},
+		{"entity_id": 2, "rawName": "Victor Hugo","type":"PER","wikidataId":"Q535"},
+		{"entity_id": 3, "rawName": "Paris","type":"LOC","wikidataId":"Q90"},
+		{"entity_id": 4, "rawName": "Montreuil","type":"LOC","wikidataId":"Q193370"},
+        {"entity_id": 5, "rawName": "Honoré de Balzac","type":"PER","wikidataId":"Q9711"},
+        {"entity_id": 6, "rawName": "Pérou","type":"LOC","wikidataId":"Q419"},
+	]
+
+
+
+
+	for (var i in tests){
+		addRow(tests[i])
+	}
+
+	function addRow(obj){
+		var row = `<tr scope="row" class="test-row-${obj.entity_id}">
+<td>
+	                   		<button class="btn btn-sm btn-danger" data-testid=${obj.entity_id} id="delete-${obj.entity_id}">Delete</button>
+	                   		<button class="btn btn-sm btn-info" disabled data-testid="${obj.entity_id}"  id="save-${obj.entity_id}">Save</button>
+
+	                   		<button class="btn btn-sm btn-danger hidden" data-testid="${obj.entity_id}"  id="cancel-${obj.entity_id}">Cancel</button>
+	                   		<button class="btn btn-sm btn-primary hidden" data-testid="${obj.entity_id}"  id="confirm-${obj.entity_id}">Confirm</button>
+
+	                   </td>
+	    			   <td>${obj.entity_id}</td>
+                         <td id="rawName-${obj.entity_id}">${obj.rawName}</td>
+<td>${obj.type}</td>
+	                   <td id="result-${obj.entity_id}" class="val" data-testid="${obj.entity_id}">${obj.wikidataId}</td>
+                        <td id="result-link-${obj.entity_id}" data-testid="${obj.entity_id}"><a id="wikidata-link-${obj.entity_id}" href="https://www.wikidata.org/wiki/${obj.wikidataId}" target="_blank">link</a></td>
+
+
+
+	    		   </tr>`
+		$('#tests-table').append(row)
+
+		$(`#delete-${obj.entity_id}`).on('click', deleteTest)
+		$(`#cancel-${obj.entity_id}`).on('click', cancelDeletion)
+		$(`#confirm-${obj.entity_id}`).on('click', confirmDeletion)
+		$(`#save-${obj.entity_id}`).on('click', saveUpdate)
+
+
+		$(`#result-${obj.entity_id}`).on('click', editResult)
+
+	}
+
+
+
+     function editNewvalue() {
+        console.log("ici")
+       var newID = $(this).data('testid')
+       var value = $(this).html();
+       console.log(newID);
+       $(this).unbind();
+       $("#result-newval-"+newID).html(`<input id="result-newval-${newID}" class="result form-control test-search" data-testid="${newID}" type="text" value="${value}">`)
+
+       $(`.result`).on('keyup', function(){
+            console.log("test")
+            var iv = $("#result-newval-"+newID).text()
+            console.log(iv)
+			var testid = $(this).data('testid')
+			var saveBtn = $(`#save-${testid}`)
+			saveBtn.prop('disabled', false)
+
+		})
+     }
+
+
+	function editResult(){
+
+		var testid = $(this).data('testid')
+		var mentionVal = $("#rawName-"+testid).text();
+		var value = $(this).html()
+
+
+
+		$(this).unbind()
+
+		$(this).html(`<input id="${testid}" class="result form-control test-search" data-testid="${testid}" type="text" value="${value}">`)
+
+		$("#"+testid).autocomplete({
+
+		focus: function (event, ul){
+
+            $("#"+testid).val( ul.item.label );
+            return false;
+            },
+         select: function (event, ul){
+
+            $("#"+testid).val( ul.item.id );
+            $(this).replaceWith(ul.item.id);
+            $("#wikidata-link-"+testid).attr("href", 'https://www.wikidata.org/wiki/'+ul.item.id)
+            $("#result-"+testid).on('click', editResult)
+            return false;
+            },
+        source: function(request, response) {
+
+                $.ajax({
+                    type:"GET",
+                    url: "https://www.wikidata.org/w/api.php",
+                    jsonp: "callback",
+                    dataType: 'jsonp',
+                    data: {
+                        'action': "wbsearchentities",
+                        'language':"fr",
+                        'uselang':'fr',
+                        'limit':5,
+                        'format':'json',
+                        'props':'info|sitelinks|aliases|labels|descriptions|claims|datatype',
+                        'search': request.term,
+                    },
+                    success: function(data) {
+
+                        var search_res = data["search"];
+                        var titles = search_res.map(function(article) {
+
+                            return article
+                        });
+
+                        response(titles)
+                    }
+                })
+            }
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            return $("<li></li>")
+                .data("item.autocomplete", item)
+                .append("<a> • <b>" + item.label + "</b> ("+ item.id +") <i>" + item.description + "</i></a>")
+                .appendTo(ul);
+        };
+
+
+
+
+		$(`.result`).on('keyup', function(){
+			var testid = $(this).data('testid')
+			var saveBtn = $(`#save-${testid}`)
+			saveBtn.prop('disabled', false)
+
+		})
+
+	}
+
+
+
+	function saveUpdate(){
+		console.log('Saved!')
+
+		var testid = $(this).data('testid')
+		var saveBtn = $(`#save-${testid}`)
+		var row = $(`.test-row-${testid}`)
+
+        var inputVal = $("#result-"+testid).text()
+
+        if (inputVal === "" || inputVal.toLowerCase() === "nil"){
+            $("#"+testid).replaceWith("NIL");
+            $("#result-link-"+testid).textContent = 'NIL';
+            $("#wikidata-link-"+testid).removeAttr('href').removeAttr('target');
+            $("#result-"+testid).on('click', editResult)
+            console.log("on supprime QID et link avec valeur NIL")
+        }
+
+		saveBtn.prop('disabled', true)
+		row.css('opacity', "0.5")
+
+		setTimeout(function(){
+			row.css('opacity', '1')
+
+		}, 2000)
+
+
+	}
+
+
+	function deleteTest(){
+		var testid = $(this).data('testid')
+
+		var deleteBtn = $(`#delete-${testid}`)
+		var saveBtn = $(`#save-${testid}`)
+		var cancelBtn = $(`#cancel-${testid}`)
+		var confirmBtn = $(`#confirm-${testid}`)
+
+		deleteBtn.addClass('hidden')
+		saveBtn.addClass('hidden')
+
+		cancelBtn.removeClass('hidden')
+		confirmBtn.removeClass('hidden')
+	}
+
+	function cancelDeletion(){
+		var testid = $(this).data('testid')
+
+		var deleteBtn = $(`#delete-${testid}`)
+		var saveBtn = $(`#save-${testid}`)
+		var cancelBtn = $(`#cancel-${testid}`)
+		var confirmBtn = $(`#confirm-${testid}`)
+
+		deleteBtn.removeClass('hidden')
+		saveBtn.removeClass('hidden')
+
+		cancelBtn.addClass('hidden')
+		confirmBtn.addClass('hidden')
+
+	}
+
+	function confirmDeletion(){
+		var testid = $(this).data('testid')
+		var row = $(`.test-row-${testid}`)
+		row.remove()
+
+	}
+</script>
+</body>
+</html>
