@@ -169,7 +169,7 @@ Feel free to create a [new issue](https://github.com/Lucaterre/semanticat/issues
 Please use the following citation:
 
     @misc{terriel-2022-semanticat,
-        title = "Semantic@ : a semantic annotation platform for enriching XML documents in TEI or EAD schemas with semantic annotations.",
+        title = "Semanticat: Annotation tool (NER) for XML documents",
         author = "Terriel, Lucas",
         year = "2022",
         url = "https://github.com/Lucaterre/semanticat",
