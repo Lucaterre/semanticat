@@ -11,7 +11,7 @@ Semantic@ (or sematicat) is a GUI prototype to annotate and to embed annotations
 
 This tool follows a linear workflow: Import the document(s), apply a NER model and correct prediction or annotate manually from-zero and export and/or publish XML with annotations directly inside.
 
-This platform is also designed to adapt generically to the diversity of publishing projects and its component are highly customisable.
+This platform is also designed to adapt generically to the diversity of publishing projects and its components are highly customisable.
 
 ## :movie_camera: Demo
 
