@@ -7,9 +7,9 @@
 
 **WORK-IN-PROGRESS!** (experimental usage) 
 
-Semantic@ is a GUI prototype to annotate and to embed annotations in XML documents in [TEI](https://tei-c.org/) or [EAD](https://www.loc.gov/ead/).
+Semantic@ (or sematicat) is a GUI prototype to annotate and to embed annotations in XML documents in [TEI](https://tei-c.org/) or [EAD](https://www.loc.gov/ead/).
 
-This tool follows a linear workflow: Import the document(s), apply a NER model and correct prediction or annotate manually from-zero. Finally export and/or publish your XML with annotations directly inside.
+This tool follows a linear workflow: Import the document(s), apply a NER model and correct prediction or annotate manually from-zero and export and/or publish XML with annotations directly inside.
 
 This platform is also designed to adapt generically to the diversity of publishing projects and its component are highly customisable.
 
